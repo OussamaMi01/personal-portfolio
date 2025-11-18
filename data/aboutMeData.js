@@ -2,14 +2,14 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const aboutMeData = [{
         id: uuidv4(),
-        bio: "👋 HI THERE! I'm Oussama Missaoui – a passionate software engineering student and digital creator who bridges the gap between technical innovation and creative expression. With expertise spanning full-stack development, mobile applications, and data science, I craft digital solutions that are both powerful and user-centric.",
+        bio: " HI THERE! I'm Oussama Missaoui – a passionate software engineering student and digital creator who bridges the gap between technical innovation and creative expression. With expertise spanning full-stack development, mobile applications, and data science, I craft digital solutions that are both powerful and user-centric.",
         type: 'intro',
         emoji: '👋',
         highlight: 'bridges the gap between technical innovation and creative expression'
     },
     {
         id: uuidv4(),
-        bio: "💻 As a full-stack developer, I specialize in creating responsive web applications using modern technologies like React, Next.js, Node.js, and MongoDB. I'm passionate about writing clean, efficient code and building seamless user experiences that solve real-world problems.",
+        bio: "As a full-stack developer, I specialize in creating responsive web applications using modern technologies like React, Next.js, Node.js, and MongoDB. I'm passionate about writing clean, efficient code and building seamless user experiences that solve real-world problems.",
         type: 'technical',
         emoji: '💻',
         technologies: ['React', 'Next.js', 'Node.js', 'MongoDB'],
@@ -17,7 +17,7 @@ export const aboutMeData = [{
     },
     {
         id: uuidv4(),
-        bio: "📱 My mobile development journey includes building cross-platform applications with React Native and Android Studio, focusing on performance optimization and intuitive UI/UX design that delights users across all devices.",
+        bio: "My mobile development journey includes building cross-platform applications with React Native and Android Studio, focusing on performance optimization and intuitive UI/UX design that delights users across all devices.",
         type: 'mobile',
         emoji: '📱',
         technologies: ['React Native', 'Android Studio'],
@@ -25,7 +25,7 @@ export const aboutMeData = [{
     },
     {
         id: uuidv4(),
-        bio: "🤖 I'm deeply fascinated by data science and machine learning, leveraging Python, TensorFlow, and data analysis techniques to extract meaningful insights and build intelligent systems that drive data-informed decision making.",
+        bio: "I'm deeply fascinated by data science and machine learning, leveraging Python, TensorFlow, and data analysis techniques to extract meaningful insights and build intelligent systems that drive data-informed decision making.",
         type: 'data-science',
         emoji: '🤖',
         technologies: ['Python', 'TensorFlow', 'Data Analysis'],
@@ -33,7 +33,7 @@ export const aboutMeData = [{
     },
     {
         id: uuidv4(),
-        bio: "🎨 Beyond coding, I'm an experienced digital creator with expertise in UI/UX design, digital marketing, and content creation. I use tools like Figma, Adobe Creative Suite, and marketing analytics to create compelling digital experiences and campaigns.",
+        bio: "Beyond coding, I'm an experienced digital creator with expertise in UI/UX design, digital marketing, and content creation. I use tools like Figma, Adobe Creative Suite, and marketing analytics to create compelling digital experiences and campaigns.",
         type: 'creative',
         emoji: '🎨',
         technologies: ['Figma', 'Adobe Creative Suite', 'Marketing Analytics'],
@@ -41,14 +41,14 @@ export const aboutMeData = [{
     },
     {
         id: uuidv4(),
-        bio: "🚀 What sets me apart is my ability to combine technical depth with creative thinking. I don't just build applications – I create solutions that understand user needs, leverage data insights, and deliver measurable business results while maintaining elegant design and smooth functionality.",
+        bio: " What sets me apart is my ability to combine technical depth with creative thinking. I don't just build applications – I create solutions that understand user needs, leverage data insights, and deliver measurable business results while maintaining elegant design and smooth functionality.",
         type: 'unique-value',
         emoji: '🚀',
         highlight: 'combine technical depth with creative thinking'
     },
     {
         id: uuidv4(),
-        bio: "🌟 I thrive in collaborative environments where I can contribute to innovative projects, continuously learn new technologies, and help teams deliver exceptional digital products. I'm always excited to take on new challenges that push the boundaries of what's possible.",
+        bio: " I thrive in collaborative environments where I can contribute to innovative projects, continuously learn new technologies, and help teams deliver exceptional digital products. I'm always excited to take on new challenges that push the boundaries of what's possible.",
         type: 'collaboration',
         emoji: '🌟',
         highlight: 'contribute to innovative projects and continuously learn'

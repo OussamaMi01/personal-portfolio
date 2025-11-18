@@ -1,9 +1,7 @@
-// pages/index.jsx - WITH PROPER SPACING
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-// Import components
 import PagesMetaHead from '../components/PagesMetaHead';
 import AppBanner from '../components/shared/AppBanner';
 import ProjectsGrid from '../components/projects/ProjectsGrid';
@@ -12,6 +10,8 @@ import Experience from '../components/experience/Experience';
 import Service from '../components/service/Service';
 import SectionDivider from '../components/shared/SectionDivider';
 import TestimonialsSection from '../components/testimonials/TestimonialsSection';
+import BlogGrid from '../components/blog/BlogGrid';
+import StatsCard from '../components/shared/StatsCard';
 
 export default function Home() {
     const [currentRole, setCurrentRole] = useState('engineer');
@@ -32,7 +32,7 @@ export default function Home() {
             </section>
 
             {/* SkillsMarquee Section */}
-            <motion.section 
+            <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -44,7 +44,7 @@ export default function Home() {
             <SectionDivider delay={0.3} />
 
             {/* Projects Grid Section */}
-            <motion.section 
+            <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -69,8 +69,8 @@ export default function Home() {
                 </div>
 
                 <ProjectsGrid limit={3} currentRole={currentRole} />
-                
-                <motion.div 
+
+                <motion.div
                     className="mt-16 flex justify-center"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -98,7 +98,7 @@ export default function Home() {
             <SectionDivider delay={0.5} variant="minimal" />
 
             {/* Experience Section */}
-            <motion.section 
+            <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -128,7 +128,7 @@ export default function Home() {
             <SectionDivider delay={0.7} size="lg" />
 
             {/* Services Section */}
-            <motion.section 
+            <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
@@ -158,7 +158,7 @@ export default function Home() {
             <SectionDivider delay={0.9} variant="fancy" />
 
             {/* Testimonials Section */}
-            <motion.section 
+            <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
@@ -184,11 +184,86 @@ export default function Home() {
                 <TestimonialsSection />
             </motion.section>
 
+            {/* Blog Highlights Section */}
+            <motion.section
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+            >
+                <div className="text-center mb-16">
+                    <motion.h2
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark dark:text-primary-light mb-6"
+                    >
+                        Latest <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">Insights</span>
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
+                    >
+                        Sharing knowledge, tutorials, and industry perspectives
+                    </motion.p>
+                </div>
+
+                <BlogGrid limit={3} />
+
+                <motion.div
+                    className="mt-16 flex justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1.1 }}
+                >
+                    <Link href="/blog" passHref legacyBehavior>
+                        <motion.a
+                            whileHover={{ scale: 1.05, y: -2 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="font-general-medium flex items-center gap-3 px-8 py-4 rounded-2xl shadow-xl bg-gradient-to-r from-green-500 to-teal-600 text-white text-lg sm:text-xl hover:shadow-2xl transition-all duration-300 group"
+                        >
+                            <span>Read All Articles</span>
+                            <motion.span
+                                animate={{ x: [0, 5, 0] }}
+                                transition={{ duration: 1.5, repeat: Infinity }}
+                            >
+                                →
+                            </motion.span>
+                        </motion.a>
+                    </Link>
+                </motion.div>
+            </motion.section>
+
             {/* Divider 5 - After Testimonials */}
             <SectionDivider delay={1.1} variant="minimal" />
 
+            {/* Stats Section */}
+            <motion.section
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.1 }}
+            >
+                <div className="text-center mb-12">
+                    <motion.h3
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-2xl sm:text-3xl font-bold text-primary-dark dark:text-primary-light mb-8"
+                    >
+                        By The <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Numbers</span>
+                    </motion.h3>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <StatsCard number="50+" label="Projects Completed" delay={0.1} />
+                    <StatsCard number="3+" label="Years Experience" delay={0.2} />
+                    <StatsCard number="98%" label="Client Satisfaction" delay={0.3} />
+                    <StatsCard number="25+" label="Technologies" delay={0.4} />
+                </div>
+            </motion.section>
+
             {/* Final CTA Section */}
-            <motion.section 
+            <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
