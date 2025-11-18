@@ -39,6 +39,7 @@ import CustomAlert from './CustomAlert';
 import logoLight from '../../public/images/logo-light.png';
 import logoDark from '../../public/images/logo-dark.png';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
+import { HiOutlineNewspaper } from 'react-icons/hi';
 
 function AppHeader() {
   const [showMenu, setShowMenu] = useState(false);
