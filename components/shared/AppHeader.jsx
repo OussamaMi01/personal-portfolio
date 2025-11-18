@@ -140,6 +140,13 @@ function AppHeader() {
       color: 'from-orange-500 to-amber-500'
     },
     { 
+  name: 'Blog', 
+  path: '/blog', 
+  icon: <HiOutlineNewspaper size={24} />,
+  mobileIcon: <HiOutlineNewspaper size={26} />,
+  color: 'from-green-500 to-teal-500'
+},
+    { 
       name: 'About', 
       path: '/about', 
       icon: <HiOutlineUser size={24} />,
