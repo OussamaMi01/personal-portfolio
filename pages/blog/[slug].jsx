@@ -84,7 +84,7 @@ const blogPosts = {
 export default function BlogPost() {
     const router = useRouter();
     const { slug } = router.query;
-    
+
     const post = blogPosts[slug];
 
     if (!post) {
@@ -95,7 +95,7 @@ export default function BlogPost() {
                         Post Not Found
                     </h1>
                     <p className="text-gray-600 dark:text-gray-300">
-                        The blog post you're looking for doesn't exist.
+                        The blog post you&apos;re looking for doesn&apos;t exist.
                     </p>
                 </div>
             </div>
@@ -200,7 +200,7 @@ export default function BlogPost() {
                     transition={{ duration: 0.6, delay: 0.8 }}
                     className="prose prose-lg dark:prose-invert max-w-none"
                 >
-                    <div 
+                    <div
                         className="text-gray-700 dark:text-gray-300 leading-relaxed"
                         dangerouslySetInnerHTML={{ __html: post.content }}
                     />
@@ -242,7 +242,7 @@ export default function BlogPost() {
                         <span className="group-hover:-translate-x-1 transition-transform">←</span>
                         All Articles
                     </button>
-                    
+
                     <button
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors group"
