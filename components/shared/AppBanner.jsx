@@ -1,25 +1,23 @@
 // components/shared/AppBanner.jsx
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiCode, FiFeather, FiArrowRight, FiGithub, FiYoutube, FiInstagram, FiDownload } from 'react-icons/fi';
+import { FiCode, FiFeather, FiArrowRight, FiGithub, FiInstagram, FiDownload } from 'react-icons/fi';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
 import Image from 'next/image';
 import Link from 'next/link';
 
-function AppBanner({ currentRole, setCurrentRole }) {
+function AppBanner({ currentRole = 'developer', setCurrentRole }) {
   const [activeTheme] = useThemeSwitcher();
 
   const roles = {
-    engineer: {
-      title: "Full-Stack Engineer & Tech Innovator",
+    developer: {
+      title: "Full-Stack Developer & Tech Innovator",
       description: "Crafting scalable digital solutions with modern technologies and cutting-edge frameworks",
       icon: <FiCode className="text-xl" />,
       color: "indigo",
       cta: "View My Projects",
       social: [
-        { icon: <FiGithub />, label: "GitHub", href: "https://github.com" },
-        { icon: <FiYoutube />, label: "Tech Talks", href: "#" }
+        { icon: <FiGithub />, label: "GitHub", href: "https://github.com" }
       ],
-      tools: "React • Next.js • Node.js • Python • TypeScript",
       image: "/images/banner/developer.jpg"
     },
     creator: {
@@ -30,14 +28,14 @@ function AppBanner({ currentRole, setCurrentRole }) {
       cta: "See My Work",
       social: [
         { icon: <FiInstagram />, label: "Instagram", href: "#" },
-        { icon: <FiYoutube />, label: "Creative Channel", href: "#" }
       ],
-      tools: "Figma • Adobe Suite • Blender • After Effects • DaVinci Resolve",
       image: "/images/banner/digital_creator.jpg"
     }
   };
 
-  const currentRoleData = roles[currentRole];
+  // Ensure currentRole is valid, fallback to 'developer'
+  const validCurrentRole = roles[currentRole] ? currentRole : 'developer';
+  const currentRoleData = roles[validCurrentRole];
 
   return (
     <motion.section
@@ -46,7 +44,7 @@ function AppBanner({ currentRole, setCurrentRole }) {
       transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
       className="flex flex-col lg:flex-row items-center justify-between pt-24 md:pt-28 min-h-screen px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto gap-12 lg:gap-16"
     >
-      {/* Text Content - Improved spacing and layout */}
+      {/* Text Content */}
       <div className="w-full lg:w-1/2 text-center lg:text-left space-y-8">
         {/* Welcome Badge */}
         <motion.div
@@ -76,7 +74,7 @@ function AppBanner({ currentRole, setCurrentRole }) {
           {/* Animated Role Headline */}
           <AnimatePresence mode="wait">
             <motion.div
-              key={currentRole}
+              key={validCurrentRole}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
@@ -93,7 +91,7 @@ function AppBanner({ currentRole, setCurrentRole }) {
           </AnimatePresence>
         </motion.div>
 
-        {/* Enhanced Role Toggle with better spacing */}
+        {/* Enhanced Role Toggle */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -103,9 +101,9 @@ function AppBanner({ currentRole, setCurrentRole }) {
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <div className="flex bg-gray-100 dark:bg-ternary-dark rounded-full p-1 shadow-inner border border-gray-200 dark:border-gray-700">
               <motion.button
-                onClick={() => setCurrentRole('engineer')}
+                onClick={() => setCurrentRole('developer')}
                 className={`flex items-center px-6 py-3 rounded-full transition-all duration-300 ${
-                  currentRole === 'engineer'
+                  validCurrentRole === 'developer'
                     ? 'bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-lg'
                     : 'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-white/50 dark:hover:bg-gray-700/50'
                 }`}
@@ -113,12 +111,12 @@ function AppBanner({ currentRole, setCurrentRole }) {
                 whileTap={{ scale: 0.95 }}
               >
                 <FiCode className="mr-2 text-lg" />
-                <span className="font-medium">Engineer</span>
+                <span className="font-medium">Developer</span>
               </motion.button>
               <motion.button
                 onClick={() => setCurrentRole('creator')}
                 className={`flex items-center px-6 py-3 rounded-full transition-all duration-300 ${
-                  currentRole === 'creator'
+                  validCurrentRole === 'creator'
                     ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg'
                     : 'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-white/50 dark:hover:bg-gray-700/50'
                 }`}
@@ -151,7 +149,7 @@ function AppBanner({ currentRole, setCurrentRole }) {
             </div>
           </div>
 
-          {/* Call to Action Buttons - Improved spacing and layout */}
+          {/* Call to Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -177,7 +175,6 @@ function AppBanner({ currentRole, setCurrentRole }) {
               whileTap={{ scale: 0.95 }}
               className="group flex items-center justify-center px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-xl hover:border-indigo-400 dark:hover:border-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 font-medium min-w-[200px]"
               onClick={() => {
-                // Add download CV functionality here
                 console.log('Download CV');
               }}
             >
@@ -188,7 +185,7 @@ function AppBanner({ currentRole, setCurrentRole }) {
         </motion.div>
       </div>
 
-      {/* Enhanced Image Section with better spacing */}
+      {/* Enhanced Image Section */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -202,7 +199,7 @@ function AppBanner({ currentRole, setCurrentRole }) {
         <div className="relative h-80 sm:h-96 md:h-[450px] lg:h-[500px] xl:h-[550px] w-full max-w-2xl">
           <AnimatePresence mode="wait">
             <motion.div
-              key={currentRole}
+              key={validCurrentRole}
               initial={{ opacity: 0, x: 50, rotateY: 10 }}
               animate={{ opacity: 1, x: 0, rotateY: 0 }}
               exit={{ opacity: 0, x: -50, rotateY: -10 }}
@@ -212,7 +209,7 @@ function AppBanner({ currentRole, setCurrentRole }) {
               <div className="relative h-full w-full overflow-hidden rounded-3xl shadow-2xl group">
                 <Image
                   src={currentRoleData.image}
-                  alt={currentRole === 'engineer' ? "Developer working on code" : "Digital creator at work"}
+                  alt={validCurrentRole === 'developer' ? "Developer working on code" : "Digital creator at work"}
                   fill
                   className="object-cover transform transition-transform duration-700 group-hover:scale-105"
                   quality={95}
@@ -223,50 +220,18 @@ function AppBanner({ currentRole, setCurrentRole }) {
                 {/* Enhanced Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/30 dark:to-black/50"></div>
                 
-                {/* Floating Info Card */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                  className="absolute bottom-6 left-6 right-6"
-                >
-                  <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-2xl p-4 shadow-2xl border border-white/20 dark:border-gray-700/50">
-                    <div className="flex items-center justify-between">
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-gray-800 dark:text-white text-lg mb-2">
-                          {currentRole === 'engineer' ? '🛠 Tech Stack' : '🎨 Creative Tools'}
-                        </h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                          {currentRoleData.tools}
-                        </p>
-                      </div>
-                      <motion.div
-                        whileHover={{ rotate: 360, scale: 1.1 }}
-                        transition={{ duration: 0.5 }}
-                        className={`p-3 rounded-full ml-4 ${
-                          currentRole === 'engineer' 
-                            ? 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400' 
-                            : 'bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400'
-                        }`}
-                      >
-                        {currentRoleData.icon}
-                      </motion.div>
-                    </div>
-                  </div>
-                </motion.div>
-
                 {/* Role Badge */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1 }}
                   className={`absolute top-6 right-6 px-4 py-2 rounded-full backdrop-blur-sm border ${
-                    currentRole === 'engineer'
+                    validCurrentRole === 'developer'
                       ? 'bg-indigo-500/10 text-indigo-300 border-indigo-400/30'
                       : 'bg-purple-500/10 text-purple-300 border-purple-400/30'
                   }`}
                 >
-                  <span className="text-sm font-medium capitalize">{currentRole} Mode</span>
+                  <span className="text-sm font-medium capitalize">{validCurrentRole} Mode</span>
                 </motion.div>
               </div>
             </motion.div>

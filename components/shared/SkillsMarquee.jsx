@@ -37,7 +37,6 @@ const skillIconMap = {
     // Frontend Frameworks
     'React': { Icon: FaReact, color: 'text-cyan-500', bgColor: 'bg-cyan-50 dark:bg-cyan-900/20', category: 'frontend' },
     'Angular': { Icon: FaAngular, color: 'text-red-500', bgColor: 'bg-red-50 dark:bg-red-900/20', category: 'frontend' },
-    'Vue.js': { Icon: SiVuedotjs, color: 'text-emerald-500', bgColor: 'bg-emerald-50 dark:bg-emerald-900/20', category: 'frontend' },
     'Next.js': { Icon: SiNextdotjs, color: 'text-gray-800 dark:text-gray-200', bgColor: 'bg-gray-100 dark:bg-gray-800', category: 'frontend' },
     'Tailwind CSS': { Icon: SiTailwindcss, color: 'text-teal-500', bgColor: 'bg-teal-50 dark:bg-teal-900/20', category: 'frontend' },
     'HTML': { Icon: FaHtml5, color: 'text-orange-600', bgColor: 'bg-orange-50 dark:bg-orange-900/20', category: 'frontend' },
@@ -47,7 +46,6 @@ const skillIconMap = {
     'Node.js': { Icon: FaNodeJs, color: 'text-green-600', bgColor: 'bg-green-50 dark:bg-green-900/20', category: 'backend' },
     'Express.js': { Icon: SiExpress, color: 'text-gray-800 dark:text-gray-200', bgColor: 'bg-gray-100 dark:bg-gray-800', category: 'backend' },
     'Spring Boot': { Icon: SiSpring, color: 'text-green-600', bgColor: 'bg-green-50 dark:bg-green-900/20', category: 'backend' },
-    'Laravel': { Icon: SiLaravel, color: 'text-red-500', bgColor: 'bg-red-50 dark:bg-red-900/20', category: 'backend' },
     'MySQL': { Icon: SiMysql, color: 'text-blue-600', bgColor: 'bg-blue-50 dark:bg-blue-900/20', category: 'database' },
     'MongoDB': { Icon: SiMongodb, color: 'text-green-700', bgColor: 'bg-green-50 dark:bg-green-900/20', category: 'database' },
     'GraphQL': { Icon: GrGraphQl, color: 'text-pink-600', bgColor: 'bg-pink-50 dark:bg-pink-900/20', category: 'backend' },
@@ -97,8 +95,8 @@ const skillIconMap = {
 
 const allSkills = {
     engineer: [
-        'Java', 'Python', 'JavaScript', 'TypeScript', 'React', 'Angular', 'Vue.js',
-        'Node.js', 'Express.js', 'Next.js', 'Spring Boot', 'Laravel', 'MySQL', 'MongoDB',
+        'Java', 'Python', 'JavaScript', 'TypeScript', 'React', 'Angular',
+        'Node.js', 'Express.js', 'Next.js', 'Spring Boot', 'MySQL', 'MongoDB',
         'GraphQL', 'RESTful APIs', 'Docker', 'Kubernetes', 'AWS', 'Git', 'GitHub',
         'Linux', 'Tailwind CSS', 'HTML', 'CSS', 'Machine Learning', 'NLP', 'Scikit-learn',
         'PyTorch', 'TensorFlow', 'Jira'

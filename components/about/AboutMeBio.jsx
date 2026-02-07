@@ -7,7 +7,10 @@ import {
     personalInfo, 
     skillsBreakdown,
     careerPhilosophy,
-    getRandomFunFact 
+    getRandomFunFact,
+    getDevelopmentSkills,
+    getSecuritySkills,
+    getCombinedExpertise
 } from '../../data/aboutMeData';
 import { 
     FiGithub, 
@@ -16,11 +19,13 @@ import {
     FiMail,
     FiDownload,
     FiCode,
-    FiLayout,
+    FiShield,
     FiTrendingUp,
     FiUsers,
     FiAward,
-    FiTarget
+    FiTarget,
+    FiBook,
+    FiBriefcase
 } from 'react-icons/fi';
 
 function AboutMeBio() {
@@ -30,8 +35,9 @@ function AboutMeBio() {
     const tabContent = {
         overview: aboutMeSections.short,
         technical: aboutMeSections.technical,
-        creative: aboutMeSections.creative,
-        detailed: aboutMeData
+        cybersecurity: aboutMeSections.cybersecurity,
+        detailed: aboutMeData,
+        seeking: aboutMeSections.jobSeeking
     };
 
     const socialLinks = [
@@ -97,7 +103,7 @@ function AboutMeBio() {
                                     layout="fill"
                                     objectFit="cover"
                                     className="rounded-2xl group-hover:scale-110 transition-transform duration-500"
-                                    alt="Oussama Missaoui - Software Engineering Student & Digital Creator"
+                                    alt="Oussama Missaoui - Computer Science Graduate | Cybersecurity Master's Student"
                                     priority
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
@@ -123,6 +129,32 @@ function AboutMeBio() {
                             <p className="text-sm text-gray-500 dark:text-gray-400">
                                 {personalInfo.status}
                             </p>
+                        </div>
+
+                        {/* Education Info */}
+                        <div className="mb-6 p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl border border-indigo-100 dark:border-indigo-800">
+                            <h3 className="font-semibold text-primary-dark dark:text-primary-light mb-2 flex items-center gap-2">
+                                <FiBook className="text-indigo-500" />
+                                Education
+                            </h3>
+                            <div className="space-y-2">
+                                <div className="text-sm">
+                                    <p className="font-medium text-indigo-700 dark:text-indigo-300">
+                                        {personalInfo.education.bachelor}
+                                    </p>
+                                    <p className="text-gray-600 dark:text-gray-400">
+                                        {personalInfo.education.institution}
+                                    </p>
+                                </div>
+                                <div className="text-sm pt-2 border-t border-indigo-100 dark:border-indigo-800">
+                                    <p className="font-medium text-indigo-700 dark:text-indigo-300">
+                                        {personalInfo.education.master}
+                                    </p>
+                                    <p className="text-gray-600 dark:text-gray-400">
+                                        {personalInfo.education.institution} (Current)
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
                         {/* Focus Areas */}
@@ -194,6 +226,35 @@ function AboutMeBio() {
                             </div>
                         </div>
                     </motion.div>
+
+                    {/* Currently Learning Card */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.6 }}
+                        className="mt-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl shadow-lg p-4 border border-green-200 dark:border-green-800"
+                    >
+                        <div className="flex items-start gap-3">
+                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-white text-sm">📚</span>
+                            </div>
+                            <div>
+                                <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2">
+                                    Currently Learning
+                                </h4>
+                                <div className="flex flex-wrap gap-2">
+                                    {personalInfo.currentlyLearning.map((item, idx) => (
+                                        <span 
+                                            key={idx}
+                                            className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-lg text-xs"
+                                        >
+                                            {item}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </motion.div>
 
@@ -209,8 +270,9 @@ function AboutMeBio() {
                     <div className="flex flex-wrap gap-2 mb-8 border-b border-gray-200 dark:border-gray-700 pb-4">
                         {Object.entries({
                             overview: 'Overview',
-                            technical: 'Technical',
-                            creative: 'Creative',
+                            technical: 'Development',
+                            cybersecurity: 'Cybersecurity',
+                            seeking: 'Career Goals',
                             detailed: 'Full Story'
                         }).map(([key, label]) => (
                             <motion.button
@@ -269,10 +331,94 @@ function AboutMeBio() {
                                     </div>
                                 </motion.div>
                             ))}
+
+                            {/* Combined Expertise Section for Overview Tab */}
+                            {activeTab === 'overview' && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.5, delay: 0.5 }}
+                                    className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700"
+                                >
+                                    <div className="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/10 dark:to-blue-900/10 rounded-xl p-6 border border-indigo-200 dark:border-indigo-800">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <FiShield className="text-2xl text-indigo-500" />
+                                            <h3 className="text-xl font-bold text-indigo-700 dark:text-indigo-300">
+                                                My Unique Value Proposition
+                                            </h3>
+                                        </div>
+                                        <p className="text-gray-700 dark:text-gray-300 mb-4">
+                                            I bring a <span className="font-semibold text-indigo-600 dark:text-indigo-400">{getCombinedExpertise().strength}</span> - 
+                                            practical software development skills combined with formal cybersecurity education.
+                                        </p>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center gap-2">
+                                                    <FiCode className="text-indigo-500" />
+                                                    Development Skills
+                                                </h4>
+                                                <ul className="space-y-1">
+                                                    {getDevelopmentSkills().slice(0, 5).map((skill, idx) => (
+                                                        <li key={idx} className="text-sm text-gray-600 dark:text-gray-400">
+                                                            • {skill.name}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center gap-2">
+                                                    <FiShield className="text-indigo-500" />
+                                                    Cybersecurity Knowledge
+                                                </h4>
+                                                <ul className="space-y-1">
+                                                    {getSecuritySkills().slice(0, 5).map((skill, idx) => (
+                                                        <li key={idx} className="text-sm text-gray-600 dark:text-gray-400">
+                                                            • {skill.name}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+
+                            {/* Target Roles for Seeking Tab */}
+                            {activeTab === 'seeking' && careerPhilosophy.targetRoles && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.5, delay: 0.5 }}
+                                    className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700"
+                                >
+                                    <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4 flex items-center gap-2">
+                                        <FiBriefcase className="text-indigo-500" />
+                                        Target Roles
+                                    </h3>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {careerPhilosophy.targetRoles.map((role, idx) => (
+                                            <motion.div
+                                                key={idx}
+                                                whileHover={{ scale: 1.02, y: -2 }}
+                                                className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/10 dark:to-purple-900/10 rounded-xl p-4 border border-indigo-100 dark:border-indigo-800"
+                                            >
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center">
+                                                        <FiBriefcase className="text-indigo-600 dark:text-indigo-400" />
+                                                    </div>
+                                                    <span className="font-semibold text-indigo-700 dark:text-indigo-300">
+                                                        {role}
+                                                    </span>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            )}
                         </motion.div>
                     </AnimatePresence>
 
-                    {/* Career Philosophy */}
+                    {/* Career Philosophy - Updated for security focus */}
                     {activeTab === 'overview' && (
                         <motion.div
                             initial={{ opacity: 0 }}
@@ -282,7 +428,7 @@ function AboutMeBio() {
                         >
                             <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4 flex items-center gap-2">
                                 <FiAward className="text-indigo-500" />
-                                My Philosophy
+                                My Security Philosophy
                             </h3>
                             <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                                 {careerPhilosophy.mission}
@@ -309,7 +455,7 @@ function AboutMeBio() {
                         </motion.div>
                     )}
 
-                    {/* CTA Section */}
+                    {/* CTA Section - Updated for security roles */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -318,10 +464,10 @@ function AboutMeBio() {
                     >
                         <div>
                             <h4 className="font-semibold text-primary-dark dark:text-primary-light mb-2">
-                                Ready to collaborate?
+                                Looking for security-focused developers?
                             </h4>
                             <p className="text-gray-600 dark:text-gray-400 text-sm">
-                                Let&apos;s discuss how we can bring your ideas to life
+                                Let&apos;s discuss how my unique skill set can enhance your team&apos;s security posture
                             </p>
                         </div>
                         <div className="flex gap-3">
