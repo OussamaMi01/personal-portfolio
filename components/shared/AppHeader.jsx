@@ -364,7 +364,7 @@ function AppHeader() {
           </div>
         </div>
 
-        {/* FIXED MOBILE MENU - SCROLLABLE WITH ALL ITEMS */}
+        {/* FIXED MOBILE MENU - WITH PROPER BACKGROUNDS */}
         <AnimatePresence>
           {showMenu && (
             <>
@@ -377,7 +377,7 @@ function AppHeader() {
                 className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-xl z-40"
               />
               
-              {/* Menu Container - Fixed height with proper positioning */}
+              {/* Menu Container */}
               <motion.div
                 initial={{ opacity: 0, y: -20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -385,47 +385,49 @@ function AppHeader() {
                 transition={{ type: "spring", damping: 30, stiffness: 300 }}
                 className="lg:hidden fixed top-[80px] left-4 right-4 bottom-4 z-50 flex flex-col"
               >
-                <div className="bg-white dark:bg-ternary-dark rounded-3xl shadow-3xl border-2 border-gray-200/50 dark:border-gray-700/50 flex flex-col h-full max-h-full">
+                <div className="bg-white dark:bg-ternary-dark rounded-3xl shadow-3xl border-2 border-gray-200/50 dark:border-gray-700/50 flex flex-col h-full max-h-full overflow-hidden">
                   
-                  {/* Scrollable Content Area */}
-                  <div className="flex-1 overflow-y-auto scrollbar-hide">
+                  {/* Scrollable Content Area - WITH PROPER BACKGROUND */}
+                  <div className="flex-1 overflow-y-auto overflow-x-hidden bg-white dark:bg-ternary-dark">
                     
-                    {/* Profile Section */}
-                    <div className="p-6 border-b border-gray-100 dark:border-gray-700 sticky top-0 bg-white dark:bg-ternary-dark z-10">
-                      <div className="flex items-center space-x-4">
-                        <div className="relative w-16 h-16 flex-shrink-0">
-                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-0.5">
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 blur-sm opacity-50" />
+                    {/* Profile Section - WITH FIXED BACKGROUND */}
+                    <div className="sticky top-0 z-20 bg-white dark:bg-ternary-dark border-b border-gray-100 dark:border-gray-700 shadow-sm">
+                      <div className="p-6">
+                        <div className="flex items-center space-x-4">
+                          <div className="relative w-16 h-16 flex-shrink-0">
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-0.5">
+                              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 blur-sm opacity-50" />
+                            </div>
+                            
+                            <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white dark:border-gray-800 shadow-lg">
+                              <Image
+                                src={profilePic}
+                                alt="Oussama Missaoui"
+                                fill
+                                sizes="64px"
+                                className="object-cover"
+                              />
+                            </div>
+                            
+                            <div className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full border-2 border-white dark:border-gray-800" />
                           </div>
-                          
-                          <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white dark:border-gray-800 shadow-lg">
-                            <Image
-                              src={profilePic}
-                              alt="Oussama Missaoui"
-                              fill
-                              sizes="64px"
-                              className="object-cover"
-                            />
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-lg font-bold text-gray-800 dark:text-white truncate">
+                              Oussama Missaoui
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                              Full-Stack Developer
+                            </p>
+                            <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                              Available for work
+                            </p>
                           </div>
-                          
-                          <div className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full border-2 border-white dark:border-gray-800" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="text-lg font-bold text-gray-800 dark:text-white truncate">
-                            Oussama Missaoui
-                          </h3>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                            Full-Stack Developer
-                          </p>
-                          <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
-                            Available for work
-                          </p>
                         </div>
                       </div>
                     </div>
 
-                    {/* Navigation Links */}
-                    <div className="p-6 space-y-2">
+                    {/* Navigation Links - WITH SOLID BACKGROUND */}
+                    <div className="p-6 space-y-2 bg-white dark:bg-ternary-dark">
                       {navLinks.map((link, index) => (
                         <Link key={link.name} href={link.path}>
                           <motion.div
@@ -485,8 +487,8 @@ function AppHeader() {
                     </div>
                   </div>
 
-                  {/* Fixed Hire Me Button at Bottom */}
-                  <div className="p-6 border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-ternary-dark sticky bottom-0">
+                  {/* Fixed Hire Me Button at Bottom - WITH SOLID BACKGROUND */}
+                  <div className="sticky bottom-0 z-20 p-6 border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-ternary-dark shadow-lg">
                     <motion.button
                       whileTap={{ scale: 0.98 }}
                       onClick={() => {

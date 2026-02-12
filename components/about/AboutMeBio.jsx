@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-    aboutMeData, 
-    aboutMeSections, 
-    personalInfo, 
+import {
+    aboutMeData,
+    aboutMeSections,
+    personalInfo,
     skillsBreakdown,
     careerPhilosophy,
     getRandomFunFact,
@@ -12,10 +12,10 @@ import {
     getSecuritySkills,
     getCombinedExpertise
 } from '../../data/aboutMeData';
-import { 
-    FiGithub, 
-    FiLinkedin, 
-    FiInstagram, 
+import {
+    FiGithub,
+    FiLinkedin,
+    FiInstagram,
     FiMail,
     FiDownload,
     FiCode,
@@ -100,17 +100,17 @@ function AboutMeBio() {
                             <div className="relative w-48 h-48 mx-auto rounded-2xl overflow-hidden border-4 border-white shadow-2xl dark:border-gray-800">
                                 <Image
                                     src="/images/about/Oussama_profile_pic.jpg"
-                                    layout="fill"
-                                    objectFit="cover"
-                                    className="rounded-2xl group-hover:scale-110 transition-transform duration-500"
+                                    fill
+                                    className="rounded-2xl group-hover:scale-110 transition-transform duration-500 object-cover"
                                     alt="Oussama Missaoui - Computer Science Graduate | Cybersecurity Master's Student"
                                     priority
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                                     <p className="text-white font-semibold text-lg">{personalInfo.name}</p>
                                 </div>
                             </div>
-                            
+
                             {/* Status Indicator */}
                             <div className="absolute top-4 right-4 w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-lg"></div>
                         </div>
@@ -165,7 +165,7 @@ function AboutMeBio() {
                             </h3>
                             <div className="flex flex-wrap gap-2">
                                 {personalInfo.focusAreas.map((area, idx) => (
-                                    <span 
+                                    <span
                                         key={idx}
                                         className="px-3 py-1 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium border border-indigo-200 dark:border-indigo-800"
                                     >
@@ -244,7 +244,7 @@ function AboutMeBio() {
                                 </h4>
                                 <div className="flex flex-wrap gap-2">
                                     {personalInfo.currentlyLearning.map((item, idx) => (
-                                        <span 
+                                        <span
                                             key={idx}
                                             className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-lg text-xs"
                                         >
@@ -280,11 +280,10 @@ function AboutMeBio() {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => setActiveTab(key)}
-                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                                    activeTab === key
+                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${activeTab === key
                                         ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg'
                                         : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-600'
-                                }`}
+                                    }`}
                             >
                                 {label}
                             </motion.button>
@@ -319,7 +318,7 @@ function AboutMeBio() {
                                         {bio.technologies && (
                                             <div className="flex flex-wrap gap-2 mt-3">
                                                 {bio.technologies.map((tech, idx) => (
-                                                    <span 
+                                                    <span
                                                         key={idx}
                                                         className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium"
                                                     >
@@ -348,7 +347,7 @@ function AboutMeBio() {
                                             </h3>
                                         </div>
                                         <p className="text-gray-700 dark:text-gray-300 mb-4">
-                                            I bring a <span className="font-semibold text-indigo-600 dark:text-indigo-400">{getCombinedExpertise().strength}</span> - 
+                                            I bring a <span className="font-semibold text-indigo-600 dark:text-indigo-400">{getCombinedExpertise().strength}</span> -
                                             practical software development skills combined with formal cybersecurity education.
                                         </p>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

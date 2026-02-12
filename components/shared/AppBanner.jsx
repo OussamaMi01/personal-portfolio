@@ -220,19 +220,7 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
                 {/* Enhanced Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/30 dark:to-black/50"></div>
                 
-                {/* Role Badge */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1 }}
-                  className={`absolute top-6 right-6 px-4 py-2 rounded-full backdrop-blur-sm border ${
-                    validCurrentRole === 'developer'
-                      ? 'bg-indigo-500/10 text-indigo-300 border-indigo-400/30'
-                      : 'bg-purple-500/10 text-purple-300 border-purple-400/30'
-                  }`}
-                >
-                  <span className="text-sm font-medium capitalize">{validCurrentRole} Mode</span>
-                </motion.div>
+              
               </div>
             </motion.div>
           </AnimatePresence>
