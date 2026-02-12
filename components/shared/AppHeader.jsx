@@ -20,7 +20,7 @@ import {
 } from 'react-icons/hi';
 import HireMeModal from '../HireMeModal';
 import CustomAlert from './CustomAlert'; 
-import profilePic from '../../public/images/profile.jpg'; // Changed from logo.jpg to profile.jpg
+import profilePic from '../../public/images/profile.jpg';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
 import { HiOutlineNewspaper } from 'react-icons/hi';
 
@@ -38,13 +38,12 @@ function AppHeader() {
   // Set mounted to true after client-side hydration
   useEffect(() => {
     setMounted(true);
-    // Set active link based on current path
     if (typeof window !== 'undefined') {
       setActiveLink(window.location.pathname);
     }
   }, []);
 
-  // Enhanced scroll handling with throttle
+  // Scroll handling
   useEffect(() => {
     let ticking = false;
     
@@ -62,7 +61,6 @@ function AppHeader() {
 
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', handleScroll, { passive: true });
-      // Initialize scroll state
       handleScroll();
     }
     
@@ -72,6 +70,19 @@ function AppHeader() {
       }
     };
   }, []);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (showMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showMenu]);
 
   function toggleMenu() {
     setShowMenu(!showMenu);
@@ -101,49 +112,49 @@ function AppHeader() {
       name: 'Home', 
       path: '/', 
       icon: <HiOutlineHome size={24} />,
-      mobileIcon: <HiOutlineHome size={26} />,
+      mobileIcon: <HiOutlineHome size={24} />,
       color: 'from-blue-500 to-cyan-500'
     },
     { 
       name: 'Projects', 
       path: '/projects', 
       icon: <HiOutlineCode size={24} />,
-      mobileIcon: <HiOutlineCode size={26} />,
+      mobileIcon: <HiOutlineCode size={24} />,
       color: 'from-green-500 to-emerald-500'
     },
     { 
       name: 'Experience', 
       path: '/experience', 
       icon: <HiOutlineAcademicCap size={24} />,
-      mobileIcon: <HiOutlineAcademicCap size={26} />,
+      mobileIcon: <HiOutlineAcademicCap size={24} />,
       color: 'from-purple-500 to-pink-500'
     },
     { 
       name: 'Services', 
       path: '/services', 
       icon: <HiOutlineLightningBolt size={24} />,
-      mobileIcon: <HiOutlineLightningBolt size={26} />,
+      mobileIcon: <HiOutlineLightningBolt size={24} />,
       color: 'from-orange-500 to-amber-500'
     },
     { 
       name: 'Blog', 
       path: '/blog', 
       icon: <HiOutlineNewspaper size={24} />,
-      mobileIcon: <HiOutlineNewspaper size={26} />,
+      mobileIcon: <HiOutlineNewspaper size={24} />,
       color: 'from-green-500 to-teal-500'
     },
     { 
       name: 'About', 
       path: '/about', 
       icon: <HiOutlineUser size={24} />,
-      mobileIcon: <HiOutlineUser size={26} />,
+      mobileIcon: <HiOutlineUser size={24} />,
       color: 'from-indigo-500 to-blue-500'
     },
     { 
       name: 'Contact', 
       path: '/contact', 
       icon: <HiOutlineChat size={24} />,
-      mobileIcon: <HiOutlineChat size={26} />,
+      mobileIcon: <HiOutlineChat size={24} />,
       color: 'from-teal-500 to-cyan-500'
     },
   ];
@@ -180,14 +191,11 @@ function AppHeader() {
                       whileHover={{ rotate: 5 }}
                       transition={{ duration: 0.3 }}
                     >
-                      {/* Profile Picture Container with Ring */}
                       <div className="relative w-14 h-14 md:w-16 md:h-16">
-                        {/* Outer Gradient Ring */}
                         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-0.5 animate-gradient-xy">
                           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 blur-sm opacity-50" />
                         </div>
                         
-                        {/* Profile Picture */}
                         <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white dark:border-gray-800 shadow-xl group-hover:shadow-2xl transition-all duration-500">
                           <Image
                             src={profilePic}
@@ -197,12 +205,9 @@ function AppHeader() {
                             className="object-cover transition-transform duration-700 group-hover:scale-110"
                             priority
                           />
-                          
-                          {/* Dark Overlay on Hover */}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         </div>
                         
-                        {/* Online Status Dot */}
                         <motion.div
                           className="absolute bottom-1 right-1 w-3 h-3 md:w-3.5 md:h-3.5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full border-2 border-white dark:border-gray-800 shadow-lg"
                           animate={{ scale: [1, 1.2, 1] }}
@@ -211,14 +216,13 @@ function AppHeader() {
                       </div>
                     </motion.div>
                   ) : (
-                    // Loading Skeleton
                     <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 animate-pulse" />
                   )}
                 </div>
               </Link>
             </motion.div>
 
-            {/* Enhanced Desktop Navigation with Larger Icons */}
+            {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center justify-center flex-1 max-w-3xl">
               <div className="flex items-center space-x-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl px-4 py-3 border-2 border-gray-100/60 dark:border-gray-700/60 shadow-2xl">
                 {navLinks.map((link, index) => (
@@ -242,7 +246,6 @@ function AppHeader() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.15, type: "spring" }}
                     >
-                      {/* Enhanced Active/Hover Background */}
                       {(isLinkActive(link.path) || hoveredLink === link.path) && (
                         <motion.div
                           className={`absolute inset-0 bg-gradient-to-r ${link.color} rounded-xl`}
@@ -252,7 +255,6 @@ function AppHeader() {
                         />
                       )}
                       
-                      {/* Enhanced Icon Container */}
                       <motion.span 
                         className={`relative z-10 mr-3 flex-shrink-0 transition-all duration-500 ${
                           isLinkActive(link.path) 
@@ -267,12 +269,10 @@ function AppHeader() {
                         {link.icon}
                       </motion.span>
                       
-                      {/* Enhanced Text */}
                       <span className="relative z-10 font-semibold tracking-wide">
                         {link.name}
                       </span>
 
-                      {/* Enhanced Active Indicator */}
                       {isLinkActive(link.path) && (
                         <motion.div
                           className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-6 h-1 bg-white rounded-full"
@@ -287,9 +287,8 @@ function AppHeader() {
               </div>
             </nav>
 
-            {/* Enhanced Right Buttons with Better Icons */}
+            {/* Right Buttons */}
             <div className="flex items-center space-x-4">
-              {/* Enhanced Theme Switcher */}
               {mounted ? (
                 <motion.button
                   whileHover={{ 
@@ -313,7 +312,6 @@ function AppHeader() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 animate-pulse" />
               )}
 
-              {/* Enhanced Hire Me Button with Sparkle Effect */}
               <motion.button
                 whileHover={{ 
                   scale: 1.08,
@@ -325,21 +323,17 @@ function AppHeader() {
                 className="hidden md:flex items-center px-8 py-4 text-base font-semibold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 group relative overflow-hidden"
                 aria-label="Hire Me Button"
               >
-                {/* Animated Background */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   initial={false}
                 />
                 
-                {/* Sparkle Icon */}
                 <HiOutlineSparkles size={22} className="relative z-10 mr-3 group-hover:rotate-180 transition-transform duration-700" />
                 
-                {/* Text */}
                 <span className="relative z-10 bg-gradient-to-r from-white to-gray-100 bg-clip-text text-transparent">
                   Hire Me
                 </span>
 
-                {/* Shine Effect */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12"
                   initial={{ x: '-100%' }}
@@ -348,7 +342,6 @@ function AppHeader() {
                 />
               </motion.button>
 
-              {/* Enhanced Mobile Menu Button */}
               <motion.button
                 whileHover={{ 
                   scale: 1.1, 
@@ -371,11 +364,11 @@ function AppHeader() {
           </div>
         </div>
 
-        {/* Enhanced Mobile Menu with Larger Icons */}
+        {/* FIXED MOBILE MENU - SCROLLABLE WITH ALL ITEMS */}
         <AnimatePresence>
           {showMenu && (
             <>
-              {/* Enhanced Backdrop with Blur */}
+              {/* Backdrop */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -384,136 +377,135 @@ function AppHeader() {
                 className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-xl z-40"
               />
               
-              {/* Enhanced Menu Content with Profile Section */}
+              {/* Menu Container - Fixed height with proper positioning */}
               <motion.div
-                initial={{ opacity: 0, y: -30, scale: 0.9 }}
+                initial={{ opacity: 0, y: -20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -30, scale: 0.9 }}
+                exit={{ opacity: 0, y: -20, scale: 0.95 }}
                 transition={{ type: "spring", damping: 30, stiffness: 300 }}
-                className="lg:hidden absolute top-full left-4 right-4 mx-auto bg-white dark:bg-ternary-dark rounded-3xl shadow-3xl z-50 overflow-hidden border-2 border-gray-200/50 dark:border-gray-700/50"
+                className="lg:hidden fixed top-[80px] left-4 right-4 bottom-4 z-50 flex flex-col"
               >
-                {/* Profile Section in Mobile Menu */}
-                <div className="p-6 border-b border-gray-100 dark:border-gray-700">
-                  <div className="flex items-center space-x-4">
-                    <div className="relative w-16 h-16">
-                      {/* Profile Picture Container with Ring */}
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-0.5">
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 blur-sm opacity-50" />
+                <div className="bg-white dark:bg-ternary-dark rounded-3xl shadow-3xl border-2 border-gray-200/50 dark:border-gray-700/50 flex flex-col h-full max-h-full">
+                  
+                  {/* Scrollable Content Area */}
+                  <div className="flex-1 overflow-y-auto scrollbar-hide">
+                    
+                    {/* Profile Section */}
+                    <div className="p-6 border-b border-gray-100 dark:border-gray-700 sticky top-0 bg-white dark:bg-ternary-dark z-10">
+                      <div className="flex items-center space-x-4">
+                        <div className="relative w-16 h-16 flex-shrink-0">
+                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-0.5">
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 blur-sm opacity-50" />
+                          </div>
+                          
+                          <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white dark:border-gray-800 shadow-lg">
+                            <Image
+                              src={profilePic}
+                              alt="Oussama Missaoui"
+                              fill
+                              sizes="64px"
+                              className="object-cover"
+                            />
+                          </div>
+                          
+                          <div className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full border-2 border-white dark:border-gray-800" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-lg font-bold text-gray-800 dark:text-white truncate">
+                            Oussama Missaoui
+                          </h3>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                            Full-Stack Developer
+                          </p>
+                          <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                            Available for work
+                          </p>
+                        </div>
                       </div>
-                      
-                      <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white dark:border-gray-800 shadow-lg">
-                        <Image
-                          src={profilePic}
-                          alt="Oussama Missaoui"
-                          fill
-                          sizes="64px"
-                          className="object-cover"
-                        />
-                      </div>
-                      
-                      {/* Online Status Dot */}
-                      <div className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full border-2 border-white dark:border-gray-800" />
                     </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-800 dark:text-white">
-                        Oussama Missaoui
-                      </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                        Full-Stack Developer
-                      </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
-                        Available for work
-                      </p>
+
+                    {/* Navigation Links */}
+                    <div className="p-6 space-y-2">
+                      {navLinks.map((link, index) => (
+                        <Link key={link.name} href={link.path}>
+                          <motion.div
+                            whileTap={{ scale: 0.98 }}
+                            onHoverStart={() => setHoveredLink(link.path)}
+                            onHoverEnd={() => setHoveredLink(null)}
+                            onClick={() => {
+                              setActiveLink(link.path);
+                              setShowMenu(false);
+                            }}
+                            className={`flex items-center px-5 py-4 text-base font-semibold rounded-xl transition-all duration-300 group relative overflow-hidden ${
+                              isLinkActive(link.path)
+                                ? `text-white bg-gradient-to-r ${link.color} shadow-lg`
+                                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+                            }`}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.05 }}
+                          >
+                            {(isLinkActive(link.path) || hoveredLink === link.path) && (
+                              <motion.div
+                                className={`absolute inset-0 bg-gradient-to-r ${link.color} rounded-xl`}
+                                layoutId="mobileNavBackground"
+                                initial={false}
+                                transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                              />
+                            )}
+
+                            <motion.span 
+                              className={`relative z-10 mr-4 p-2.5 rounded-xl transition-all duration-300 ${
+                                isLinkActive(link.path)
+                                  ? 'bg-white/20 text-white'
+                                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'
+                              }`}
+                              whileHover={{ 
+                                scale: isLinkActive(link.path) ? 1 : 1.1,
+                              }}
+                            >
+                              {link.mobileIcon}
+                            </motion.span>
+                            
+                            <span className="relative z-10 font-medium">
+                              {link.name}
+                            </span>
+                            
+                            {isLinkActive(link.path) && (
+                              <motion.div
+                                className="ml-auto w-2 h-2 bg-white rounded-full shadow-lg"
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ delay: index * 0.05 + 0.1, type: "spring" }}
+                              />
+                            )}
+                          </motion.div>
+                        </Link>
+                      ))}
                     </div>
                   </div>
-                </div>
 
-                <div className="p-6 space-y-4">
-                  {navLinks.map((link, index) => (
-                    <Link key={link.name} href={link.path}>
+                  {/* Fixed Hire Me Button at Bottom */}
+                  <div className="p-6 border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-ternary-dark sticky bottom-0">
+                    <motion.button
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => {
+                        showHireMeModal();
+                        setShowMenu(false);
+                      }}
+                      className="w-full px-6 py-4 text-base font-semibold text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group relative overflow-hidden"
+                    >
                       <motion.div
-                        whileTap={{ scale: 0.98 }}
-                        onHoverStart={() => setHoveredLink(link.path)}
-                        onHoverEnd={() => setHoveredLink(null)}
-                        onClick={() => {
-                          setActiveLink(link.path);
-                          setShowMenu(false);
-                        }}
-                        className={`flex items-center px-6 py-5 text-lg font-semibold rounded-2xl transition-all duration-500 group relative overflow-hidden ${
-                          isLinkActive(link.path)
-                            ? `text-white bg-gradient-to-r ${link.color} shadow-lg`
-                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-700/80'
-                        }`}
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                      >
-                        {/* Mobile Background Effect */}
-                        {(isLinkActive(link.path) || hoveredLink === link.path) && (
-                          <motion.div
-                            className={`absolute inset-0 bg-gradient-to-r ${link.color} rounded-2xl`}
-                            layoutId="mobileNavBackground"
-                            initial={false}
-                            transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                          />
-                        )}
-
-                        {/* Enhanced Mobile Icon */}
-                        <motion.span 
-                          className={`relative z-10 mr-5 p-3 rounded-xl transition-all duration-500 ${
-                            isLinkActive(link.path)
-                              ? 'bg-white/20 text-white'
-                              : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 group-hover:scale-110 group-hover:rotate-12'
-                          }`}
-                          whileHover={{ 
-                            scale: isLinkActive(link.path) ? 1 : 1.1,
-                            rotate: isLinkActive(link.path) ? 0 : 12
-                          }}
-                        >
-                          {link.mobileIcon}
-                        </motion.span>
-                        
-                        {/* Enhanced Mobile Text */}
-                        <span className="relative z-10 font-semibold tracking-wide">
-                          {link.name}
-                        </span>
-                        
-                        {/* Enhanced Active Indicator for Mobile */}
-                        {isLinkActive(link.path) && (
-                          <motion.div
-                            className="ml-auto w-3 h-3 bg-white rounded-full shadow-lg"
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
-                          />
-                        )}
-                      </motion.div>
-                    </Link>
-                  ))}
-                  
-                  {/* Enhanced Mobile Hire Me Button */}
-                  <motion.button
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => {
-                      showHireMeModal();
-                      setShowMenu(false);
-                    }}
-                    className="w-full mt-6 px-6 py-5 text-lg font-semibold text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 flex items-center justify-center group relative overflow-hidden"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: navLinks.length * 0.1 }}
-                  >
-                    {/* Animated Background */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      initial={false}
-                    />
-                    
-                    <HiOutlineSparkles size={24} className="relative z-10 mr-4 group-hover:rotate-180 transition-transform duration-700" />
-                    <span className="relative z-10 bg-gradient-to-r from-white to-gray-100 bg-clip-text text-transparent">
-                      Hire Me
-                    </span>
-                  </motion.button>
+                        className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        initial={false}
+                      />
+                      
+                      <HiOutlineSparkles size={22} className="relative z-10 mr-3 group-hover:rotate-180 transition-transform duration-700" />
+                      <span className="relative z-10 font-semibold">
+                        Hire Me
+                      </span>
+                    </motion.button>
+                  </div>
                 </div>
               </motion.div>
             </>

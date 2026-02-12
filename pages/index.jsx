@@ -49,26 +49,11 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
             >
-                <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark dark:text-primary-light mb-6"
-                    >
-                        Featured <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
-                    >
-                        Showcasing my latest work and creative solutions that drive real results
-                    </motion.p>
-                </div>
+               
+                  <ProjectsGrid limit={3} currentRole={currentRole} />
+                
 
-                <ProjectsGrid limit={3} currentRole={currentRole} />
+                
 
                 <motion.div
                     className="mt-16 flex justify-center"
@@ -93,6 +78,7 @@ export default function Home() {
                     </Link>
                 </motion.div>
             </motion.section>
+            
 
             {/* Divider 2 - After Projects */}
             <SectionDivider delay={0.5} variant="minimal" />
@@ -103,24 +89,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
             >
-                <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark dark:text-primary-light mb-6"
-                    >
-                        Professional <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Journey</span>
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
-                    >
-                        My career path blending technical expertise and creative innovation
-                    </motion.p>
-                </div>
+             
                 <Experience currentRole={currentRole} />
             </motion.section>
 
@@ -133,24 +102,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
             >
-                <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark dark:text-primary-light mb-6"
-                    >
-                        Comprehensive <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Services</span>
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
-                    >
-                        End-to-end solutions blending technical expertise and creative innovation
-                    </motion.p>
-                </div>
+              
                 <Service currentRole={currentRole} />
             </motion.section>
 
@@ -163,24 +115,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
             >
-                <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark dark:text-primary-light mb-6"
-                    >
-                        Client <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Testimonials</span>
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
-                    >
-                        What clients and collaborators say about working with me
-                    </motion.p>
-                </div>
+               
                 <TestimonialsSection />
             </motion.section>
 
@@ -197,7 +132,7 @@ export default function Home() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark dark:text-primary-light mb-6"
                     >
-                        Latest <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">Insights</span>
+                        Latest <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Insights</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -221,7 +156,7 @@ export default function Home() {
                         <motion.a
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
-                            className="font-general-medium flex items-center gap-3 px-8 py-4 rounded-2xl shadow-xl bg-gradient-to-r from-green-500 to-teal-600 text-white text-lg sm:text-xl hover:shadow-2xl transition-all duration-300 group"
+                           className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold text-lg"
                         >
                             <span>Read All Articles</span>
                             <motion.span
@@ -255,9 +190,9 @@ export default function Home() {
                     </motion.h3>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                    <StatsCard number="50+" label="Projects Completed" delay={0.1} />
+                    <StatsCard number="20+" label="Projects Completed" delay={0.1} />
                     <StatsCard number="3+" label="Years Experience" delay={0.2} />
-                    <StatsCard number="98%" label="Client Satisfaction" delay={0.3} />
+                    <StatsCard number="10+" label="Satisfied Clients" delay={0.3} />
                     <StatsCard number="25+" label="Technologies" delay={0.4} />
                 </div>
             </motion.section>

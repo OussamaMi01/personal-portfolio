@@ -30,7 +30,8 @@ const ContactDetails = () => {
             content: "oussama.missaoui.it@gmail.com",
             icon: <FiMail className="text-2xl" />,
             color: "from-green-500 to-emerald-500",
-            bgColor: "from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20"
+            bgColor: "from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20",
+            href: "mailto:oussama.missaoui.it@gmail.com"
         },
         {
             id: 3,
@@ -38,7 +39,8 @@ const ContactDetails = () => {
             content: "+216 23 257 784",
             icon: <FiPhone className="text-2xl" />,
             color: "from-purple-500 to-pink-500",
-            bgColor: "from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20"
+            bgColor: "from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20",
+            href: "tel:+21623257784"
         },
         {
             id: 4,
@@ -76,6 +78,17 @@ const ContactDetails = () => {
             url: 'https://t.me/Oussema_missaoui'
         }
     ];
+
+    // Helper function to truncate email if needed
+    const formatEmailContent = (contact) => {
+        if (contact.title === "Email Address" && contact.content.length > 30) {
+            return {
+                full: contact.content,
+                truncated: `${contact.content.substring(0, 24)}...`
+            };
+        }
+        return { full: contact.content, truncated: contact.content };
+    };
 
     return (
         <motion.div
@@ -133,50 +146,98 @@ const ContactDetails = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* Enhanced Contact Cards Grid */}
+                {/* Enhanced Contact Cards Grid - FIXED EMAIL CARD */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
                 >
-                    {contacts.map((contact, index) => (
-                        <motion.div
-                            key={contact.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                            whileHover={{ 
-                                y: -8, 
-                                scale: 1.03,
-                                transition: { type: "spring", stiffness: 400 }
-                            }}
-                            className="group relative bg-gradient-to-br from-white to-gray-50 dark:from-ternary-dark dark:to-gray-800 rounded-2xl p-6 border-2 border-gray-100 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-500"
-                        >
-                            {/* Background Gradient Effect */}
-                            <div className={`absolute inset-0 bg-gradient-to-br ${contact.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500`} />
-                            
-                            {/* Icon Container */}
-                            <motion.div
-                                whileHover={{ rotate: 360 }}
-                                transition={{ duration: 0.6, ease: "easeInOut" }}
-                                className={`w-14 h-14 rounded-xl bg-gradient-to-br ${contact.color} flex items-center justify-center text-white shadow-lg mb-4`}
+                    {contacts.map((contact, index) => {
+                        const emailInfo = formatEmailContent(contact);
+                        const CardWrapper = contact.href ? motion.a : motion.div;
+                        
+                        return (
+                            <CardWrapper
+                                key={contact.id}
+                                href={contact.href}
+                                target={contact.href?.startsWith('http') ? '_blank' : undefined}
+                                rel={contact.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                                whileHover={{ 
+                                    y: -8, 
+                                    scale: 1.03,
+                                    transition: { type: "spring", stiffness: 400 }
+                                }}
+                                className={`group relative bg-gradient-to-br from-white to-gray-50 dark:from-ternary-dark dark:to-gray-800 rounded-2xl p-6 border-2 border-gray-100 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-500 ${
+                                    contact.href ? 'cursor-pointer' : ''
+                                }`}
                             >
-                                {contact.icon}
-                            </motion.div>
-                            
-                            {/* Content */}
-                            <h3 className="text-lg font-semibold text-primary-dark dark:text-primary-light mb-2">
-                                {contact.title}
-                            </h3>
-                            <p className="text-gray-700 dark:text-gray-300 font-medium">
-                                {contact.content}
-                            </p>
+                                {/* Background Gradient Effect */}
+                                <div className={`absolute inset-0 bg-gradient-to-br ${contact.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500`} />
+                                
+                                {/* Icon Container */}
+                                <motion.div
+                                    whileHover={{ rotate: 360 }}
+                                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${contact.color} flex items-center justify-center text-white shadow-lg mb-4 flex-shrink-0`}
+                                >
+                                    {contact.icon}
+                                </motion.div>
+                                
+                                {/* Content - FIXED FLEXIBLE LAYOUT */}
+                                <div className="flex flex-col h-full">
+                                    <h3 className="text-lg font-semibold text-primary-dark dark:text-primary-light mb-2">
+                                        {contact.title}
+                                    </h3>
+                                    
+                                    {/* Email Card - Flexible Container */}
+                                    {contact.title === "Email Address" ? (
+                                        <div className="flex flex-col gap-2">
+                                            {/* Desktop: Full email, Mobile: Truncated */}
+                                            <div className="hidden sm:block">
+                                                <p className="text-gray-700 dark:text-gray-300 font-medium break-all hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                                    {emailInfo.full}
+                                                </p>
+                                            </div>
+                                            <div className="sm:hidden">
+                                                <p className="text-gray-700 dark:text-gray-300 font-medium break-all hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                                    {emailInfo.truncated}
+                                                </p>
+                                            </div>
+                                            
+                                            {/* Copy Button - Optional Enhancement */}
+                                            {contact.href && (
+                                                <div className="mt-2 inline-flex items-center gap-2">
+                                                    <span className="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-full">
+                                                        Click to email
+                                                    </span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        <p className="text-gray-700 dark:text-gray-300 font-medium break-words">
+                                            {contact.content}
+                                        </p>
+                                    )}
+                                </div>
 
-                            {/* Hover Border Effect */}
-                            <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-indigo-200 dark:group-hover:border-indigo-800 transition-all duration-500 pointer-events-none" />
-                        </motion.div>
-                    ))}
+                                {/* Hover Border Effect */}
+                                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-indigo-200 dark:group-hover:border-indigo-800 transition-all duration-500 pointer-events-none" />
+                                
+                                {/* Click Indicator for Interactive Cards */}
+                                {contact.href && (
+                                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center">
+                                            <FiMail className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                                        </div>
+                                    </div>
+                                )}
+                            </CardWrapper>
+                        );
+                    })}
                 </motion.div>
 
                 {/* Enhanced Social Connections */}
@@ -220,7 +281,7 @@ const ContactDetails = () => {
                                 {platform.icon}
                                 
                                 {/* Tooltip */}
-                                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
                                     {platform.name}
                                     <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
                                 </div>

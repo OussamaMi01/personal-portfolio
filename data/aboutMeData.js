@@ -85,8 +85,9 @@ export const personalInfo = {
     status: "Actively seeking security-focused development roles",
     education: {
         bachelor: "Bachelor of Science in Computer Science",
+        institution1:"ISSAT Kasserine",
         master: "Master's in Cybersecurity (Current Student)",
-        institution: "FSEG Sfax"
+        institution2: "FSEG Sfax"
     },
     focusAreas: [
         "Application Security",

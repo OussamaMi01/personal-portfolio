@@ -143,7 +143,7 @@ function AboutMeBio() {
                                         {personalInfo.education.bachelor}
                                     </p>
                                     <p className="text-gray-600 dark:text-gray-400">
-                                        {personalInfo.education.institution}
+                                        {personalInfo.education.institution1}
                                     </p>
                                 </div>
                                 <div className="text-sm pt-2 border-t border-indigo-100 dark:border-indigo-800">
@@ -151,7 +151,7 @@ function AboutMeBio() {
                                         {personalInfo.education.master}
                                     </p>
                                     <p className="text-gray-600 dark:text-gray-400">
-                                        {personalInfo.education.institution} (Current)
+                                        {personalInfo.education.institution2} (Current)
                                     </p>
                                 </div>
                             </div>
