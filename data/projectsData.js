@@ -1031,7 +1031,7 @@ export const projectsData = [
             {
                 id: uuidv4(),
                 title: 'AWS Cloud Security Main Image',
-                img: '/images/projects/aws-cloud.jpg',
+                img: '/images/projects/aws-cloud.png',
             },
         ],
         ProjectInfo: {
@@ -1142,7 +1142,7 @@ export const projectsData = [
         isBehanceProject: false,
         behanceUrl: null,
         ProjectHeader: {
-            title: 'Implémentation de processus ITIL v3',
+            title: 'Implémentation de processus ITIL',
             publishDate: 'March 2026',
             tags: ['ITIL', 'Service Management', 'SLA', 'IT Processes'],
         },
@@ -1150,14 +1150,14 @@ export const projectsData = [
             {
                 id: uuidv4(),
                 title: 'ITIL Implementation Main Image',
-                img: '/images/projects/itil.jpg',
+                img: '/images/projects/itil.png',
             },
         ],
         ProjectInfo: {
             ClientHeading: 'Project Overview',
             CompanyInfo: [],
             ObjectivesHeading: 'Objective',
-            ObjectivesDetails: 'Studied and documented the implementation of key ITIL v3 processes including Service Level Management, Availability Management, and Security Management.',
+            ObjectivesDetails: 'Studied and documented the implementation of key ITIL processes including Service Level Management, Availability Management, and Security Management.',
             Technologies: [
                 {
                     title: 'Processes Covered',
