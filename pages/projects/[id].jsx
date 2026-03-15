@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
-import { FiClock, FiTag, FiArrowLeft, FiExternalLink, FiPhone, FiGlobe, FiPlayCircle,FiCalendar,FiCheckCircle,FiAward,FiZap } from 'react-icons/fi'; // Import FiPlayCircle
+import { FiClock, FiTag, FiArrowLeft, FiExternalLink, FiPhone, FiGlobe, FiPlayCircle,FiCalendar,FiCheckCircle,FiAward,FiZap,FiAlertCircle } from 'react-icons/fi'; // Import FiPlayCircle
 import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresence
 import PagesMetaHead from '../../components/PagesMetaHead';
 import { projectsData } from '../../data/projectsData';
