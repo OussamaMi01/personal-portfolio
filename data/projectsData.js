@@ -1017,7 +1017,7 @@ export const projectsData = [
         title: 'Sécurisation d\'infrastructure Cloud AWS',
         url: 'aws-cloud-security',
         category: 'Cloud Computing',
-        img: '/images/projects/aws-cloud.jpg', // À créer
+        img: '/images/projects/aws-cloud.png', // À créer
         role: ['engineer'],
         status: 'in-progress', // 🟡 En cours
         isBehanceProject: false,
@@ -1133,10 +1133,10 @@ export const projectsData = [
     // Optionnel : tu peux l'ajouter si tu veux montrer ta capacité à apprendre des frameworks IT
     {
         id: 'itil-process-implementation',
-        title: 'Implémentation de processus ITIL v3',
+        title: 'Implémentation de processus ITIL ',
         url: 'itil-process-implementation',
         category: 'IT Service Management',
-        img: '/images/projects/itil.jpg', // À créer
+        img: '/images/projects/itil.png', // À créer
         role: ['engineer'],
         status: 'done', // ✅ Terminé (projet du cours)
         isBehanceProject: false,
