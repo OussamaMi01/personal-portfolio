@@ -8,6 +8,7 @@ export const projectsData = [
         category: 'Distributed Systems',
         img: '/images/projects/dfs.jpg',
         role: ['engineer'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: false,
         behanceUrl: null,
         ProjectHeader: {
@@ -61,6 +62,7 @@ export const projectsData = [
         category: 'Distributed Systems',
         img: '/images/projects/corba.jpg',
         role: ['engineer'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: false,
         behanceUrl: null,
         ProjectHeader: {
@@ -114,6 +116,7 @@ export const projectsData = [
         category: 'Mobile Application',
         img: '/images/projects/contact-app.jpg',
         role: ['engineer'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: false,
         behanceUrl: null,
         ProjectHeader: {
@@ -167,6 +170,7 @@ export const projectsData = [
         category: 'Web Application',
         img: '/images/projects/ichri.jpg',
         role: ['engineer'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: false,
         behanceUrl: null,
         ProjectHeader: {
@@ -220,6 +224,7 @@ export const projectsData = [
         category: 'AI & Data Science',
         img: '/images/projects/fraud-detection.jpg',
         role: ['engineer'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: false,
         behanceUrl: null,
         ProjectHeader: {
@@ -273,6 +278,7 @@ export const projectsData = [
         category: 'AI & Data Science',
         img: '/images/projects/ner-spacy.jpg',
         role: ['engineer'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: false,
         behanceUrl: null,
         ProjectHeader: {
@@ -326,6 +332,7 @@ export const projectsData = [
         category: 'AI & Data Science',
         img: '/images/projects/car-price-analysis.jpg',
         role: ['engineer'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: false,
         behanceUrl: null,
         ProjectHeader: {
@@ -377,8 +384,9 @@ export const projectsData = [
         title: 'We Are Siliana-Kasserine: Collaborative Digital Art',
         url: null,
         category: 'Digital Art',
-        img: '/images/projects/behance/behance_project1.jpg', // Cover image
+        img: '/images/projects/behance/behance_project1.jpg',
         role: ['creator'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: true,
         behanceUrl: 'https://www.behance.net/gallery/203025723/We-Are-Siliana-Kasserine-Collaborative-Digital-Art',
         ProjectHeader: {
@@ -386,9 +394,8 @@ export const projectsData = [
             publishDate: 'May 2024',
             tags: ['Digital Art', 'Collaboration', 'Community Project', 'Photoshop'],
         },
-        ProjectImages: [ // Images for detail page
+        ProjectImages: [
             { id: uuidv4(), title: 'Siliana-Kasserine Image 1', img: '/images/projects/behance/behance_project1.jpg' },
-            // Add more images for this project's gallery if needed
         ],
         ProjectInfo: {
             ClientHeading: 'Project Overview',
@@ -422,8 +429,9 @@ export const projectsData = [
         title: 'We Are Tunis-Kasserine: Collaborative Digital Art 1',
         url: null,
         category: 'Digital Art',
-        img: '/images/projects/behance/behance_project2.jpg', // Cover image
+        img: '/images/projects/behance/behance_project2.jpg',
         role: ['creator'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: true,
         behanceUrl: 'https://www.behance.net/gallery/203025239/We-Are-Tunis-Kasserine-Collaborative-Digital-Art',
         ProjectHeader: {
@@ -431,15 +439,14 @@ export const projectsData = [
             publishDate: 'January 2024',
             tags: ['Digital Art', 'Collaboration', 'Community Project', 'Photoshop'],
         },
-        ProjectImages: [ // Images for detail page
+        ProjectImages: [
             { id: uuidv4(), title: 'Tunis-Kasserine Image 1', img: '/images/projects/behance/behance_project2.jpg' },
-            // Add more images for this project's gallery if needed
         ],
         ProjectInfo: {
             ClientHeading: 'Project Overview',
             CompanyInfo: [],
             ObjectivesHeading: 'Objective',
-            ObjectivesDetails: 'A unique digital art collaboration project focusing on the cultural essence of Siliana and Kasserine, promoting local heritage through digital mediums.',
+            ObjectivesDetails: 'A unique digital art collaboration project focusing on the cultural essence of Tunis and Kasserine, promoting local heritage through digital mediums.',
             Technologies: [
                 {
                     title: 'Tools Used',
@@ -467,8 +474,9 @@ export const projectsData = [
         title: 'We Are Tunis-Kasserine: Collaborative Digital Art 2',
         url: null,
         category: 'Digital Art',
-        img: '/images/projects/behance/behance_project3.jpg', // Cover image
+        img: '/images/projects/behance/behance_project3.jpg',
         role: ['creator'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: true,
         behanceUrl: 'https://www.behance.net/gallery/202751727/We-Are-Tunis-Kasserine-Collaborative-Digital-Art',
         ProjectHeader: {
@@ -476,7 +484,7 @@ export const projectsData = [
             publishDate: 'January 2023',
             tags: ['Digital Art', 'Collaboration', 'Community Project', 'Photoshop'],
         },
-        ProjectImages: [ // Images for detail page
+        ProjectImages: [
             { id: uuidv4(), title: 'Tunis-Kasserine Image 2', img: '/images/projects/behance/behance_project3.jpg' },
         ],
         ProjectInfo: {
@@ -511,16 +519,17 @@ export const projectsData = [
         title: 'We are Kasserine: Thème N°12 - Nature',
         url: null,
         category: 'Digital Art',
-        img: '/images/projects/behance/behance_project4.jpg', // Cover image
+        img: '/images/projects/behance/behance_project4.jpg',
         role: ['creator'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: true,
         behanceUrl: 'https://www.behance.net/gallery/201257041/We-are-Kasserine-Theme-N12-Nature',
         ProjectHeader: {
-            title: 'We are Kasserine: Thème N°12 - Nature', // Corrected title
+            title: 'We are Kasserine: Thème N°12 - Nature',
             publishDate: 'January 2023',
             tags: ['Digital Art', 'Collaboration', 'Community Project', 'Photoshop'],
         },
-        ProjectImages: [ // Images for detail page
+        ProjectImages: [
             { id: uuidv4(), title: 'Kasserine Nature Image', img: '/images/projects/behance/behance_project4.jpg' },
         ],
         ProjectInfo: {
@@ -555,16 +564,17 @@ export const projectsData = [
         title: 'Radio Talk: We are Kasserine (mandat 22/23)',
         url: null,
         category: 'Digital Art',
-        img: '/images/projects/behance/behance_project5.jpg', 
+        img: '/images/projects/behance/behance_project5.jpg',
         role: ['creator'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: true,
         behanceUrl: 'https://www.behance.net/gallery/203027843/Passage-Radio-We-are-Kasserine-(mandat-2223)',
         ProjectHeader: {
-            title: 'Radio Talk: We are Kasserine (mandat 22/23)', 
+            title: 'Radio Talk: We are Kasserine (mandat 22/23)',
             publishDate: 'May 2023',
             tags: ['Digital Art', 'Collaboration', 'Community Project', 'Photoshop', 'Illustrator'],
         },
-        ProjectImages: [ // Images for detail page
+        ProjectImages: [
             { id: uuidv4(), title: 'Radio Talk Image 1', img: '/images/projects/behance/behance_project5.jpg' },
             { id: uuidv4(), title: 'Radio Talk Image 2', img: '/images/projects/behance/behance_project6.jpg' },
         ],
@@ -595,24 +605,23 @@ export const projectsData = [
             },
         },
     },
-
     {
         id: 'spiderman-samy-chaffai-artwork-behance', 
         title: 'Spider-man X Samy Chaffai',
         url: null,
         category: 'Digital Art',
-        img: '/images/projects/artwork/artwork1.jpg', 
+        img: '/images/projects/artwork/artwork1.jpg',
         role: ['creator'],
+        status: 'done', // ✅ Statut ajouté
         isBehanceProject: true,
         behanceUrl: 'https://www.behance.net/gallery/203027843/Passage-Radio-We-are-Kasserine-(mandat-2223)',
         ProjectHeader: {
-            title: 'Spider-man X Samy Chaffai', 
+            title: 'Spider-man X Samy Chaffai',
             publishDate: 'June 2023',
-            tags: ['Digital Art' , 'Photoshop', 'Illustrator'],
+            tags: ['Digital Art', 'Photoshop', 'Illustrator'],
         },
-        ProjectImages: [ // Images for detail page
+        ProjectImages: [
             { id: uuidv4(), title: 'Samy Chaffai Artwork', img: '/images/projects/artwork/artwork1.jpg' }
-           
         ],
         ProjectInfo: {
             ClientHeading: 'Project Overview',
@@ -629,7 +638,7 @@ export const projectsData = [
             ProjectDetails: [
                 {
                     id: uuidv4(),
-                    details: 'Explore the creative process  of this  art work initiative. Click the link below to view the detailed case study and all artworks on Behance for a comprehensive understanding.',
+                    details: 'Explore the creative process of this art work initiative. Click the link below to view the detailed case study and all artworks on Behance for a comprehensive understanding.',
                 },
             ],
             SocialSharingHeading: null,
@@ -641,264 +650,538 @@ export const projectsData = [
             },
         },
     },
-
-{
-    id: 'editing-challenge', // Unique ID for this video project
-    title: 'Video Editor Challenge',
-    url: 'editing-challenge', // Internal Next.js page slug
-    category: 'Video Production',
-    img: '/images/projects/cover/video_cover1.jpg', 
-    role: ['creator'],
-    isBehanceProject: false,
-    behanceUrl: null,
-    ProjectHeader: {
+    {
+        id: 'editing-challenge',
         title: 'Video Editor Challenge',
-        publishDate: 'July 2024',
-        tags: ['Video Production', 'Editing', 'Motion Graphics'],
-    },
-    ProjectImages: null, // Set to null if this project is primarily video-based and has no static images in its gallery
-    ProjectVideos: [ // NEW: Array to hold video information
-        
-        {
-            id: uuidv4(),
-            title: 'My edit video',
-            thumbnail: '/images/projects/cover/video_cover1.jpg', // Local thumbnail for this video
-            driveEmbedUrl: 'https://drive.google.com/file/d/1Ac9o2Vpn1B-fiagdmwxFyCJfTQYjUgG0/preview', // <--- REPLACE WITH ACTUAL GOOGLE DRIVE EMBED URL
+        url: 'editing-challenge',
+        category: 'Video Production',
+        img: '/images/projects/cover/video_cover1.jpg',
+        role: ['creator'],
+        status: 'done', // ✅ Statut ajouté
+        isBehanceProject: false,
+        behanceUrl: null,
+        ProjectHeader: {
+            title: 'Video Editor Challenge',
+            publishDate: 'July 2024',
+            tags: ['Video Production', 'Editing', 'Motion Graphics'],
         },
-        // Add more video objects as needed
-    ],
-    ProjectInfo: {
-        ClientHeading: 'Project Overview',
-        CompanyInfo: [],
-        ObjectivesHeading: 'Objective',
-       
-        Technologies: [
-            {
-                title: 'Tools Used',
-                techs: ['Adobe Premiere Pro', 'CapCut'],
-            },
-        ],
-        ProjectDetailsHeading: 'Video Gallery',
-        ProjectDetails: [
+        ProjectImages: null,
+        ProjectVideos: [
             {
                 id: uuidv4(),
-                details: 'This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video.',
+                title: 'My edit video',
+                thumbnail: '/images/projects/cover/video_cover1.jpg',
+                driveEmbedUrl: 'https://drive.google.com/file/d/1Ac9o2Vpn1B-fiagdmwxFyCJfTQYjUgG0/preview',
             },
         ],
-        SocialSharingHeading: null,
-        SocialSharing: [],
-        SocialLinks: {
-            github: null,
-            website: null,
-            behance: null, 
+        ProjectInfo: {
+            ClientHeading: 'Project Overview',
+            CompanyInfo: [],
+            ObjectivesHeading: 'Objective',
+            Technologies: [
+                {
+                    title: 'Tools Used',
+                    techs: ['Adobe Premiere Pro', 'CapCut'],
+                },
+            ],
+            ProjectDetailsHeading: 'Video Gallery',
+            ProjectDetails: [
+                {
+                    id: uuidv4(),
+                    details: 'This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video.',
+                },
+            ],
+            SocialSharingHeading: null,
+            SocialSharing: [],
+            SocialLinks: {
+                github: null,
+                website: null,
+                behance: null,
+            },
         },
     },
-},
-{
-    id: 'carry-trading', // Unique ID for this video project
-    title: 'Carry Trading',
-    url: 'carry-trading', // Internal Next.js page slug
-    category: 'Video Production',
-    img: '/images/projects/cover/video_cover2.jpg', // Cover image for the project card
-    role: ['creator'],
-    isBehanceProject: false,
-    behanceUrl: null,
-    ProjectHeader: {
+    {
+        id: 'carry-trading',
         title: 'Carry Trading',
-        publishDate: 'August 2024',
-        tags: ['Video Production', 'Editing', 'Motion Graphics'],
-    },
-    ProjectImages: null, // Set to null if this project is primarily video-based and has no static images in its gallery
-    ProjectVideos: [ // NEW: Array to hold video information
-        
-        {
-            id: uuidv4(),
+        url: 'carry-trading',
+        category: 'Video Production',
+        img: '/images/projects/cover/video_cover2.jpg',
+        role: ['creator'],
+        status: 'done', // ✅ Statut ajouté
+        isBehanceProject: false,
+        behanceUrl: null,
+        ProjectHeader: {
             title: 'Carry Trading',
-            thumbnail: '/images/projects/cover/video_cover2.jpg', // Local thumbnail for this video
-            driveEmbedUrl: 'https://drive.google.com/file/d/19nEujBnbxFcMrN0_8mtS_D_dJg1y83qS/preview',
+            publishDate: 'August 2024',
+            tags: ['Video Production', 'Editing', 'Motion Graphics'],
         },
-        // Add more video objects as needed
-    ],
-    ProjectInfo: {
-        ClientHeading: 'Project Overview',
-        CompanyInfo: [],
-        ObjectivesHeading: 'Objective',
-       
-        Technologies: [
-            {
-                title: 'Tools Used',
-                techs: ['Adobe Premiere Pro', 'CapCut'],
-            },
-        ],
-        ProjectDetailsHeading: 'Video Gallery',
-        ProjectDetails: [
+        ProjectImages: null,
+        ProjectVideos: [
             {
                 id: uuidv4(),
-                details: 'This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video.',
+                title: 'Carry Trading',
+                thumbnail: '/images/projects/cover/video_cover2.jpg',
+                driveEmbedUrl: 'https://drive.google.com/file/d/19nEujBnbxFcMrN0_8mtS_D_dJg1y83qS/preview',
             },
         ],
-        SocialSharingHeading: null,
-        SocialSharing: [],
-        SocialLinks: {
-            github: null,
-            website: null,
-            behance: null, 
+        ProjectInfo: {
+            ClientHeading: 'Project Overview',
+            CompanyInfo: [],
+            ObjectivesHeading: 'Objective',
+            Technologies: [
+                {
+                    title: 'Tools Used',
+                    techs: ['Adobe Premiere Pro', 'CapCut'],
+                },
+            ],
+            ProjectDetailsHeading: 'Video Gallery',
+            ProjectDetails: [
+                {
+                    id: uuidv4(),
+                    details: 'This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video.',
+                },
+            ],
+            SocialSharingHeading: null,
+            SocialSharing: [],
+            SocialLinks: {
+                github: null,
+                website: null,
+                behance: null,
+            },
         },
     },
-},
-{
-    id: 'digital-marketing-with-rabii', 
-    title: 'Optimize your SEO Keywords',
-    url: 'digital-marketing-with-rabii', 
-    category: 'Video Production',
-    img: '/images/projects/cover/video_cover5.jpg', // Cover image for the project card
-    role: ['creator'],
-    isBehanceProject: false,
-    behanceUrl: null,
-    ProjectHeader: {
+    {
+        id: 'digital-marketing-with-rabii',
         title: 'Optimize your SEO Keywords',
-        publishDate: 'August 2024',
-        tags: ['Video Production', 'Editing'],
-    },
-    ProjectImages: null, // Set to null if this project is primarily video-based and has no static images in its gallery
-    ProjectVideos: [ // NEW: Array to hold video information
-        
-        {
-            id: uuidv4(),
-            title: 'Optimize your SEO Keywords (Arabic Version)',
-            thumbnail: '/images/projects/cover/video_cover5.jpg', // Local thumbnail for this video
-            driveEmbedUrl: 'https://drive.google.com/file/d/1AHH9RW1Nulrg_zbvtInV2K4eSBNvpUei/preview',
+        url: 'digital-marketing-with-rabii',
+        category: 'Video Production',
+        img: '/images/projects/cover/video_cover5.jpg',
+        role: ['creator'],
+        status: 'done', // ✅ Statut ajouté
+        isBehanceProject: false,
+        behanceUrl: null,
+        ProjectHeader: {
+            title: 'Optimize your SEO Keywords',
+            publishDate: 'August 2024',
+            tags: ['Video Production', 'Editing'],
         },
-        
-    ],
-    ProjectInfo: {
-        ClientHeading: 'Project Overview',
-        CompanyInfo: [],
-        ObjectivesHeading: 'Objective',
-       
-        Technologies: [
-            {
-                title: 'Tools Used',
-                techs: [ 'CapCut'],
-            },
-        ],
-        ProjectDetailsHeading: 'Video Gallery',
-        ProjectDetails: [
+        ProjectImages: null,
+        ProjectVideos: [
             {
                 id: uuidv4(),
-                details: 'This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video.',
+                title: 'Optimize your SEO Keywords (Arabic Version)',
+                thumbnail: '/images/projects/cover/video_cover5.jpg',
+                driveEmbedUrl: 'https://drive.google.com/file/d/1AHH9RW1Nulrg_zbvtInV2K4eSBNvpUei/preview',
             },
         ],
-        SocialSharingHeading: null,
-        SocialSharing: [],
-        SocialLinks: {
-            github: null,
-            website: null,
-            behance: null, 
+        ProjectInfo: {
+            ClientHeading: 'Project Overview',
+            CompanyInfo: [],
+            ObjectivesHeading: 'Objective',
+            Technologies: [
+                {
+                    title: 'Tools Used',
+                    techs: ['CapCut'],
+                },
+            ],
+            ProjectDetailsHeading: 'Video Gallery',
+            ProjectDetails: [
+                {
+                    id: uuidv4(),
+                    details: 'This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video.',
+                },
+            ],
+            SocialSharingHeading: null,
+            SocialSharing: [],
+            SocialLinks: {
+                github: null,
+                website: null,
+                behance: null,
+            },
         },
     },
-},
-
-{
-    id: 'e-book-promo-video', // Unique ID for this video project
-    title: 'E-book Promo',
-    url: 'carry-trading', 
-    category: 'Video Production',
-    img: '/images/projects/cover/video_cover4.jpg', // Cover image for the project card
-    role: ['creator'],
-    isBehanceProject: false,
-    behanceUrl: null,
-    ProjectHeader: {
+    {
+        id: 'e-book-promo-video',
         title: 'E-book Promo',
-        publishDate: 'August 2024',
-        tags: ['Video Production', 'Editing', 'Motion Graphics'],
-    },
-    ProjectImages: null, // Set to null if this project is primarily video-based and has no static images in its gallery
-    ProjectVideos: [ // NEW: Array to hold video information
-        
-        {
-            id: uuidv4(),
+        url: 'e-book-promo',
+        category: 'Video Production',
+        img: '/images/projects/cover/video_cover4.jpg',
+        role: ['creator'],
+        status: 'done', // ✅ Statut ajouté
+        isBehanceProject: false,
+        behanceUrl: null,
+        ProjectHeader: {
             title: 'E-book Promo',
-            thumbnail: '/images/projects/cover/video_cover3.jpg', 
-            driveEmbedUrl: 'https://drive.google.com/file/d/19vhL9Tb6F6dS_VQfM8-gOTE5Xtt6T3_t/preview',
+            publishDate: 'August 2024',
+            tags: ['Video Production', 'Editing', 'Motion Graphics'],
         },
-        // Add more video objects as needed
-    ],
-    ProjectInfo: {
-        ClientHeading: 'Project Overview',
-        CompanyInfo: [],
-        ObjectivesHeading: 'Objective',
-       
-        Technologies: [
-            {
-                title: 'Tools Used',
-                techs: ['Adobe Premiere Pro', 'CapCut'],
-            },
-        ],
-        ProjectDetailsHeading: 'Video Gallery',
-        ProjectDetails: [
+        ProjectImages: null,
+        ProjectVideos: [
             {
                 id: uuidv4(),
-                details: 'This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video.',
+                title: 'E-book Promo',
+                thumbnail: '/images/projects/cover/video_cover3.jpg',
+                driveEmbedUrl: 'https://drive.google.com/file/d/19vhL9Tb6F6dS_VQfM8-gOTE5Xtt6T3_t/preview',
             },
         ],
-        SocialSharingHeading: null,
-        SocialSharing: [],
-        SocialLinks: {
-            github: null,
-            website: null,
-            behance: null, 
+        ProjectInfo: {
+            ClientHeading: 'Project Overview',
+            CompanyInfo: [],
+            ObjectivesHeading: 'Objective',
+            Technologies: [
+                {
+                    title: 'Tools Used',
+                    techs: ['Adobe Premiere Pro', 'CapCut'],
+                },
+            ],
+            ProjectDetailsHeading: 'Video Gallery',
+            ProjectDetails: [
+                {
+                    id: uuidv4(),
+                    details: 'This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video.',
+                },
+            ],
+            SocialSharingHeading: null,
+            SocialSharing: [],
+            SocialLinks: {
+                github: null,
+                website: null,
+                behance: null,
+            },
         },
     },
-},
-
-{
-    id: 'youtube-thumbnail', 
-    title: 'Youtube Thumbnail',
-    url: null,
-    category: 'Digital Art',
-    img: '/images/projects/behance/behance_project7.png', 
-    role: ['creator'],
-    isBehanceProject: true,
-    behanceUrl: 'https://www.behance.net/gallery/230308875/Youtube-Thumbnail',
-    ProjectHeader: {
-        title: 'Youtube Thumbnail', 
-        publishDate: 'Sep 2024',
-        tags: ['Thumbnail' , 'Photoshop', 'Picsart', 'Digital Art'],
-    },
-    ProjectImages: [ // Images for detail page
-        { id: uuidv4(), title: 'Youtube Thumbnail', img: '/images/projects/behance/behance_project7.png' }
-       
-    ],
-    ProjectInfo: {
-        ClientHeading: 'Project Overview',
-        CompanyInfo: [],
-        ObjectivesHeading: 'Objective',
-        ObjectivesDetails: 'This Youtube thumbnail is designed to highlight the creative process and final artworks of this collaborative digital art initiative with a content creator .',
-        Technologies: [
-            {
-                title: 'Tools Used',
-                techs: ['Adobe Photoshop', 'Picsart'],
-            },
+    {
+        id: 'youtube-thumbnail',
+        title: 'Youtube Thumbnail',
+        url: null,
+        category: 'Digital Art',
+        img: '/images/projects/behance/behance_project7.png',
+        role: ['creator'],
+        status: 'done', // ✅ Statut ajouté
+        isBehanceProject: true,
+        behanceUrl: 'https://www.behance.net/gallery/230308875/Youtube-Thumbnail',
+        ProjectHeader: {
+            title: 'Youtube Thumbnail',
+            publishDate: 'Sep 2024',
+            tags: ['Thumbnail', 'Photoshop', 'Picsart', 'Digital Art'],
+        },
+        ProjectImages: [
+            { id: uuidv4(), title: 'Youtube Thumbnail', img: '/images/projects/behance/behance_project7.png' }
         ],
-        ProjectDetailsHeading: 'Project Details',
-        ProjectDetails: [
+        ProjectInfo: {
+            ClientHeading: 'Project Overview',
+            CompanyInfo: [],
+            ObjectivesHeading: 'Objective',
+            ObjectivesDetails: 'This Youtube thumbnail is designed to highlight the creative process and final artworks of this collaborative digital art initiative with a content creator.',
+            Technologies: [
+                {
+                    title: 'Tools Used',
+                    techs: ['Adobe Photoshop', 'Picsart'],
+                },
+            ],
+            ProjectDetailsHeading: 'Project Details',
+            ProjectDetails: [
+                {
+                    id: uuidv4(),
+                    details: 'Explore the creative process of this art work initiative. Click the link below to view the detailed case study and all artworks on Behance for a comprehensive understanding.',
+                },
+            ],
+            SocialSharingHeading: null,
+            SocialSharing: [],
+            SocialLinks: {
+                github: null,
+                website: null,
+                behance: 'https://www.behance.net/gallery/230308875/Youtube-Thumbnail',
+            },
+        },
+    },
+    // ==================== NOUVEAUX PROJETS À AJOUTER ====================
+
+    // 1. Audit de sécurité d'application web (OWASP ASVS)
+    {
+        id: 'web-security-audit-owasp',
+        title: 'Audit de sécurité OWASP ASVS',
+        url: 'web-security-audit-owasp',
+        category: 'Cybersecurity',
+        img: '/images/projects/security-audit.jpg', // À créer
+        role: ['engineer'],
+        status: 'done', // ✅ Terminé (projet de l'examen d'audit)
+        isBehanceProject: false,
+        behanceUrl: null,
+        ProjectHeader: {
+            title: 'Audit de sécurité selon OWASP ASVS',
+            publishDate: 'March 2026',
+            tags: ['Cybersecurity', 'OWASP', 'Security Audit', 'Risk Assessment'],
+        },
+        ProjectImages: [
             {
                 id: uuidv4(),
-                details: 'Explore the creative process  of this  art work initiative. Click the link below to view the detailed case study and all artworks on Behance for a comprehensive understanding.',
+                title: 'Security Audit Main Image',
+                img: '/images/projects/security-audit.jpg',
             },
         ],
-        SocialSharingHeading: null,
-        SocialSharing: [],
-        SocialLinks: {
-            github: null,
-            website: null,
-            behance: 'https://www.behance.net/gallery/230308875/Youtube-Thumbnail',
+        ProjectInfo: {
+            ClientHeading: 'Project Overview',
+            CompanyInfo: [],
+            ObjectivesHeading: 'Objective',
+            ObjectivesDetails: 'Conducted a comprehensive security audit of a web application following the OWASP ASVS (Application Security Verification Standard) methodology. The audit covered authentication, session management, access control, input validation, and cryptographic controls.',
+            Technologies: [
+                {
+                    title: 'Tools & Technologies',
+                    techs: ['OWASP ASVS', 'Nmap', 'Burp Suite', 'OWASP ZAP', 'Security Testing'],
+                },
+            ],
+            ProjectDetailsHeading: 'Key Achievements',
+            ProjectDetails: [
+                {
+                    id: uuidv4(),
+                    details: 'Identified 15+ security vulnerabilities including SQL injection, XSS, and misconfigured security headers, with criticality assessment and remediation recommendations.',
+                },
+                {
+                    id: uuidv4(),
+                    details: 'Delivered a complete security audit report with executive summary, findings, risk assessment matrix, and prioritized remediation plan.',
+                },
+            ],
+            SocialSharingHeading: null,
+            SocialSharing: [],
+            SocialLinks: {
+                github: null,
+                website: null,
+                behance: null,
+            },
         },
     },
-},
 
+    // 2. LPIC-2 (auto-apprentissage - concepts clés)
+    {
+        id: 'lpic2-self-study',
+        title: 'LPIC-2 - Administration système avancée',
+        url: 'lpic2-self-study',
+        category: 'System Administration',
+        img: '/images/projects/lpic2.jpg', // À créer
+        role: ['engineer'],
+        status: 'in-progress', // 🟡 En cours
+        isBehanceProject: false,
+        behanceUrl: null,
+        ProjectHeader: {
+            title: 'LPIC-2 - Administration système avancée',
+            publishDate: 'March 2026',
+            tags: ['Linux', 'System Administration', 'Kernel', 'DNS', 'Filesystems'],
+        },
+        ProjectImages: [
+            {
+                id: uuidv4(),
+                title: 'LPIC-2 Main Image',
+                img: '/images/projects/lpic2.jpg',
+            },
+        ],
+        ProjectInfo: {
+            ClientHeading: 'Project Overview',
+            CompanyInfo: [],
+            ObjectivesHeading: 'Objective',
+            ObjectivesDetails: 'Self-study and hands-on practice for LPIC-2 certification (Linux Professional Institute Certification Level 2). Focused on kernel management, filesystem administration, and DNS/BIND configuration.',
+            Technologies: [
+                {
+                    title: 'Topics Covered',
+                    techs: ['Linux Kernel (modules, compilation)', 'Filesystems (ext4, XFS, LVM, RAID)', 'DNS (BIND9, zones, records)', 'System Performance', 'Network Configuration'],
+                },
+            ],
+            ProjectDetailsHeading: 'Key Achievements',
+            ProjectDetails: [
+                {
+                    id: uuidv4(),
+                    details: 'Mastered kernel module management, compilation, and troubleshooting through hands-on labs.',
+                },
+                {
+                    id: uuidv4(),
+                    details: 'Configured and secured DNS servers with BIND9, including forward/reverse zones and security best practices.',
+                },
+                {
+                    id: uuidv4(),
+                    details: 'Implemented advanced filesystem management including LVM, software RAID, and filesystem repair techniques.',
+                },
+            ],
+            SocialSharingHeading: null,
+            SocialSharing: [],
+            SocialLinks: {
+                github: null,
+                website: null,
+                behance: null,
+            },
+        },
+    },
 
+    // 3. Projet Cloud (AWS Academy / Virtualisation)
+    {
+        id: 'aws-cloud-security',
+        title: 'Sécurisation d\'infrastructure Cloud AWS',
+        url: 'aws-cloud-security',
+        category: 'Cloud Computing',
+        img: '/images/projects/aws-cloud.jpg', // À créer
+        role: ['engineer'],
+        status: 'in-progress', // 🟡 En cours
+        isBehanceProject: false,
+        behanceUrl: null,
+        ProjectHeader: {
+            title: 'Sécurisation d\'infrastructure Cloud AWS',
+            publishDate: 'March 2026',
+            tags: ['AWS', 'Cloud Security', 'DevSecOps', 'Virtualization'],
+        },
+        ProjectImages: [
+            {
+                id: uuidv4(),
+                title: 'AWS Cloud Security Main Image',
+                img: '/images/projects/aws-cloud.jpg',
+            },
+        ],
+        ProjectInfo: {
+            ClientHeading: 'Project Overview',
+            CompanyInfo: [],
+            ObjectivesHeading: 'Objective',
+            ObjectivesDetails: 'Deployed and secured a cloud infrastructure on AWS following best practices. Implemented network security, identity management, and data protection for a multi-tier web application.',
+            Technologies: [
+                {
+                    title: 'Tools & Technologies',
+                    techs: ['AWS (EC2, S3, VPC, IAM, WAF)', 'Security Groups', 'TLS/SSL', 'Cloud Security Best Practices'],
+                },
+            ],
+            ProjectDetailsHeading: 'Key Achievements',
+            ProjectDetails: [
+                {
+                    id: uuidv4(),
+                    details: 'Designed and implemented a secure VPC with public/private subnets, NAT gateways, and security groups following least-privilege principles.',
+                },
+                {
+                    id: uuidv4(),
+                    details: 'Configured IAM roles and policies for fine-grained access control, implemented MFA, and set up CloudTrail for audit logging.',
+                },
+                {
+                    id: uuidv4(),
+                    details: 'Deployed a web application with HTTPS termination using Application Load Balancer and AWS Certificate Manager.',
+                },
+            ],
+            SocialSharingHeading: null,
+            SocialSharing: [],
+            SocialLinks: {
+                github: null,
+                website: null,
+                behance: null,
+            },
+        },
+    },
 
-    
+    // 4. IAM - Contrôle d'accès (projet de la fiche)
+    {
+        id: 'iam-access-control',
+        title: 'Système d\'authentification avec IAM et MFA',
+        url: 'iam-access-control',
+        category: 'Cybersecurity',
+        img: '/images/projects/iam.jpg', // À créer
+        role: ['engineer'],
+        status: 'done', // ✅ Terminé (projet de la fiche)
+        isBehanceProject: false,
+        behanceUrl: null,
+        ProjectHeader: {
+            title: 'Système d\'authentification avec IAM et MFA',
+            publishDate: 'March 2026',
+            tags: ['IAM', 'Authentication', 'MFA', 'Cybersecurity', 'RBAC'],
+        },
+        ProjectImages: [
+            {
+                id: uuidv4(),
+                title: 'IAM System Main Image',
+                img: '/images/projects/iam.jpg',
+            },
+        ],
+        ProjectInfo: {
+            ClientHeading: 'Project Overview',
+            CompanyInfo: [],
+            ObjectivesHeading: 'Objective',
+            ObjectivesDetails: 'Built a complete identity and access management system with role-based access control (RBAC), multi-factor authentication (MFA), and secure session management.',
+            Technologies: [
+                {
+                    title: 'Tools & Technologies',
+                    techs: ['JWT', 'OAuth2', 'MFA (TOTP)', 'RBAC', 'Password Hashing (bcrypt)'],
+                },
+            ],
+            ProjectDetailsHeading: 'Key Achievements',
+            ProjectDetails: [
+                {
+                    id: uuidv4(),
+                    details: 'Implemented role-based access control with granular permissions for admin, manager, and user roles.',
+                },
+                {
+                    id: uuidv4(),
+                    details: 'Integrated time-based one-time password (TOTP) for MFA using Google Authenticator.',
+                },
+                {
+                    id: uuidv4(),
+                    details: 'Designed secure session management with JWT tokens, including proper expiration and refresh mechanisms.',
+                },
+            ],
+            SocialSharingHeading: null,
+            SocialSharing: [],
+            SocialLinks: {
+                github: null,
+                website: null,
+                behance: null,
+            },
+        },
+    },
+
+    // 5. Projet ITIL v3 (pour l'examen - mais pas à mettre en avant)
+    // Optionnel : tu peux l'ajouter si tu veux montrer ta capacité à apprendre des frameworks IT
+    {
+        id: 'itil-process-implementation',
+        title: 'Implémentation de processus ITIL v3',
+        url: 'itil-process-implementation',
+        category: 'IT Service Management',
+        img: '/images/projects/itil.jpg', // À créer
+        role: ['engineer'],
+        status: 'done', // ✅ Terminé (projet du cours)
+        isBehanceProject: false,
+        behanceUrl: null,
+        ProjectHeader: {
+            title: 'Implémentation de processus ITIL v3',
+            publishDate: 'March 2026',
+            tags: ['ITIL', 'Service Management', 'SLA', 'IT Processes'],
+        },
+        ProjectImages: [
+            {
+                id: uuidv4(),
+                title: 'ITIL Implementation Main Image',
+                img: '/images/projects/itil.jpg',
+            },
+        ],
+        ProjectInfo: {
+            ClientHeading: 'Project Overview',
+            CompanyInfo: [],
+            ObjectivesHeading: 'Objective',
+            ObjectivesDetails: 'Studied and documented the implementation of key ITIL v3 processes including Service Level Management, Availability Management, and Security Management.',
+            Technologies: [
+                {
+                    title: 'Processes Covered',
+                    techs: ['SLA/SLR/OLA/UC', 'MTBF/MTRS', 'CIA (Confidentiality, Integrity, Availability)', 'RACI Matrix'],
+                },
+            ],
+            ProjectDetailsHeading: 'Key Achievements',
+            ProjectDetails: [
+                {
+                    id: uuidv4(),
+                    details: 'Designed SLA templates and monitoring charts for service level agreements.',
+                },
+                {
+                    id: uuidv4(),
+                    details: 'Applied ITIL concepts to real-world scenarios through case studies and exercises.',
+                },
+            ],
+            SocialSharingHeading: null,
+            SocialSharing: [],
+            SocialLinks: {
+                github: null,
+                website: null,
+                behance: null,
+            },
+        },
+    },
 ];

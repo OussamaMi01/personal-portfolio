@@ -11,6 +11,11 @@ const selectOptions = [
   'Branding',
   'Digital Art',
   'Video Production',
+  'AI & Data Science',
+  'Cybersecurity',
+  'Cloud Computing',
+  'System Administration',
+  'IT Service Management',
   'Software Engineering'
 ];
 

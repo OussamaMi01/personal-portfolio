@@ -4,6 +4,8 @@ import { FiCode, FiFeather, FiArrowRight, FiGithub, FiInstagram, FiDownload } fr
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
 import Image from 'next/image';
 import Link from 'next/link';
+import { AiFillTikTok } from 'react-icons/ai';
+import { FaTiktok } from 'react-icons/fa';
 
 function AppBanner({ currentRole = 'developer', setCurrentRole }) {
   const [activeTheme] = useThemeSwitcher();
@@ -16,7 +18,7 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
       color: "indigo",
       cta: "View My Projects",
       social: [
-        { icon: <FiGithub />, label: "GitHub", href: "https://github.com" }
+        { icon: <FiGithub />, label: "GitHub", href: "https://github.com/OussamaMi01/" }
       ],
       image: "/images/banner/developer.jpg"
     },
@@ -27,7 +29,7 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
       color: "purple",
       cta: "See My Work",
       social: [
-        { icon: <FiInstagram />, label: "Instagram", href: "#" },
+        { icon: <FaTiktok />, label: "TikTok", href: "https://www.tiktok.com/@os_design.tn" },
       ],
       image: "/images/banner/digital_creator.jpg"
     }

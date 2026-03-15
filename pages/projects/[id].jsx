@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import { useState} from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { FiClock, FiTag, FiArrowLeft, FiExternalLink, FiPhone, FiGlobe, FiPlayCircle } from 'react-icons/fi'; // Import FiPlayCircle
+import { FiClock, FiTag, FiArrowLeft, FiExternalLink, FiPhone, FiGlobe, FiPlayCircle,FiCalendar,FiCheckCircle,FiAward,FiZap } from 'react-icons/fi'; // Import FiPlayCircle
 import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresence
 import PagesMetaHead from '../../components/PagesMetaHead';
 import { projectsData } from '../../data/projectsData';
 import RelatedProjects from '../../components/projects/RelatedProjects';
-import VideoPlayerModal from '../../components/shared/VideoPlayerModal'; 
+import VideoPlayerModal from '../../components/shared/VideoPlayerModal';
 
 function ProjectSingle(props) {
     const project = props.project;
@@ -55,27 +55,142 @@ function ProjectSingle(props) {
                     {project.ProjectHeader.title}
                 </h1>
 
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-6">
+                {/* Status and Meta Info */}
+                <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
+                    {/* Status Badge */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: 0.1 }}
+                        className={`flex items-center px-4 py-2 rounded-full text-sm font-semibold shadow-lg ${project.status === 'done'
+                                ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
+                                : project.status === 'in-progress'
+                                    ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white'
+                                    : 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
+                            }`}
+                    >
+                        {project.status === 'done' ? (
+                            <FiCheckCircle className="mr-2" />
+                        ) : project.status === 'in-progress' ? (
+                            <FiClock className="mr-2 animate-spin-slow" />
+                        ) : (
+                            <FiAlertCircle className="mr-2" />
+                        )}
+                        <span>
+                            {project.status === 'done'
+                                ? 'Completed'
+                                : project.status === 'in-progress'
+                                    ? 'In Progress'
+                                    : 'Planned'}
+                        </span>
+                    </motion.div>
+
+                    {/* Publish Date */}
                     {project.ProjectHeader.publishDate && (
-                        <div className="flex items-center bg-gray-100 dark:bg-ternary-dark px-3 py-1 rounded-full">
-                            <FiClock className="text-lg text-ternary-dark dark:text-ternary-light mr-2" />
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.3, delay: 0.15 }}
+                            className="flex items-center bg-gray-100 dark:bg-ternary-dark px-4 py-2 rounded-full shadow-md"
+                        >
+                            <FiCalendar className="text-lg text-ternary-dark dark:text-ternary-light mr-2" />
                             <span className="font-general-medium text-primary-dark dark:text-primary-light">
                                 {project.ProjectHeader.publishDate}
                             </span>
-                        </div>
-                    )}
-                    {project.ProjectHeader.tags && (
-                         <div className="flex items-center bg-gray-100 dark:bg-ternary-dark px-3 py-1 rounded-full">
-                            <FiTag className="text-lg text-ternary-dark dark:text-ternary-light mr-2" />
-                            <span className="font-general-medium text-primary-dark dark:text-primary-light">
-                                {Array.isArray(project.ProjectHeader.tags) ? project.ProjectHeader.tags.join(', ') : project.ProjectHeader.tags}
-                            </span>
-                        </div>
+                        </motion.div>
                     )}
                 </div>
+
+                {/* Tags Section */}
+                {project.ProjectHeader.tags && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                        className="mb-6"
+                    >
+                        <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+                            {Array.isArray(project.ProjectHeader.tags) ? (
+                                project.ProjectHeader.tags.map((tag, index) => (
+                                    <motion.span
+                                        key={index}
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.3, delay: 0.25 + index * 0.05 }}
+                                        whileHover={{
+                                            y: -2,
+                                            scale: 1.05,
+                                            boxShadow: "0 10px 25px -5px rgba(79, 70, 229, 0.3)"
+                                        }}
+                                        className="group relative px-4 py-2 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium border border-indigo-200 dark:border-indigo-800 shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-2"
+                                    >
+                                        <FiTag className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform duration-300" />
+                                        {tag}
+                                    </motion.span>
+                                ))
+                            ) : (
+                                <motion.span
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    whileHover={{ y: -2, scale: 1.05 }}
+                                    className="px-4 py-2 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium border border-indigo-200 dark:border-indigo-800 shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-2"
+                                >
+                                    <FiTag className="w-3.5 h-3.5" />
+                                    {project.ProjectHeader.tags}
+                                </motion.span>
+                            )}
+                        </div>
+                    </motion.div>
+                )}
+
+                {/* Progress Bar for In-Progress Projects */}
+                {project.status === 'in-progress' && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.3 }}
+                        className="mb-6 max-w-md mx-auto lg:mx-0"
+                    >
+                        <div className="flex items-center justify-between mb-2">
+                            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-2">
+                                <FiZap className="text-amber-500" />
+                                Project Progress
+                            </span>
+                            <span className="text-sm font-semibold text-amber-600 dark:text-amber-400">
+                                75%
+                            </span>
+                        </div>
+                        <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <motion.div
+                                initial={{ width: 0 }}
+                                animate={{ width: "75%" }}
+                                transition={{ duration: 1, delay: 0.5 }}
+                                className="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"
+                            />
+                        </div>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                            Estimated completion: Q2 2026
+                        </p>
+                    </motion.div>
+                )}
+
+                {/* Completion Badge for Done Projects */}
+                {project.status === 'done' && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.4, delay: 0.3 }}
+                        className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-full border border-green-200 dark:border-green-800"
+                    >
+                        <FiAward className="text-green-600 dark:text-green-400" />
+                        <span className="text-sm font-medium text-green-700 dark:text-green-300">
+                            Successfully completed
+                        </span>
+                    </motion.div>
+                )}
+
                 <div className="border-b border-gray-200 dark:border-gray-700 mb-8"></div>
             </motion.div>
-
             {/* Gallery (for images) */}
             {project.ProjectImages && project.ProjectImages.length > 0 && (
                 <motion.div
