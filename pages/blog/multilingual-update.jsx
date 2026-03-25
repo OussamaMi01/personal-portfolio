@@ -7,7 +7,6 @@ import { FiCalendar, FiClock, FiGlobe, FiCode, FiCheck, FiArrowRight, FiGithub }
 import PagesMetaHead from '../../components/PagesMetaHead';
 
 export default function MultilingualUpdate() {
-  const { t } = useTranslation('blog');
 
   return (
     <motion.div
