@@ -1,5 +1,4 @@
 // pages/blog/multilingual-update.jsx
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
