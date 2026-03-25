@@ -72,7 +72,7 @@ export default function MultilingualUpdate() {
         {/* Introduction */}
         <div className="prose prose-lg dark:prose-invert max-w-none">
           <p className="text-xl text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
-            I'm excited to announce that my portfolio is getting a major upgrade! Starting April 2026, 
+            I&apos;m excited to announce that my portfolio is getting a major upgrade! Starting April 2026, 
             the website will be fully available in both English and French, making it accessible to a 
             broader audience across Tunisia, France, Belgium, Switzerland, and the global tech community.
           </p>
@@ -108,7 +108,7 @@ export default function MultilingualUpdate() {
         {/* What's Coming */}
         <section className="my-12">
           <h2 className="text-3xl font-bold text-primary-dark dark:text-primary-light mb-6">
-            ✨ What's Coming
+            ✨ What&apos;s Coming
           </h2>
           
           <div className="space-y-4">
