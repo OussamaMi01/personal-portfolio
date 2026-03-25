@@ -5,11 +5,30 @@ import PagesMetaHead from '../PagesMetaHead';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowUp, FiMenu, FiX } from 'react-icons/fi';
+import { useRouter } from 'next/router';
+import AnnouncementBanner from '../shared/AnnouncementBanner';
 
 const DefaultLayout = ({ children }) => {
+  const router = useRouter();
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [language, setLanguage] = useState('en');
+  const [bannerVisible, setBannerVisible] = useState(true);
+
+  // Get current language from router
+  useEffect(() => {
+    const currentLang = router.locale || 'en';
+    setLanguage(currentLang);
+  }, [router.locale]);
+
+  // Check if banner is dismissed
+  useEffect(() => {
+    const dismissed = localStorage.getItem('update-banner-dismissed');
+    if (dismissed) {
+      setBannerVisible(false);
+    }
+  }, []);
 
   // Handle scroll events for progress and scroll-to-top button
   useEffect(() => {
@@ -22,16 +41,12 @@ const DefaultLayout = ({ children }) => {
       setShowScrollTop(scrollTop > 400);
     };
 
-    // Add scroll event listener
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Initial calculation
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle scroll to top
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -42,11 +57,9 @@ const DefaultLayout = ({ children }) => {
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Escape key closes mobile menu
       if (e.key === 'Escape' && isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
       }
-      // Home key scrolls to top
       if (e.key === 'Home') {
         e.preventDefault();
         scrollToTop();
@@ -90,23 +103,33 @@ const DefaultLayout = ({ children }) => {
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: scrollProgress / 100 }}
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 z-[60] transform-origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 z-[70] transform-origin-left"
         style={{ transform: `scaleX(${scrollProgress / 100})` }}
       />
 
-      {/* Fixed Header */}
+      {/* Fixed Header Container - Both banner and header are fixed together */}
       <div className="fixed top-0 left-0 right-0 z-50">
+        {/* Announcement Banner */}
+        <AnnouncementBanner 
+          language={language} 
+          onDismiss={() => setBannerVisible(false)}
+        />
+        
+        {/* Main Header */}
         <AppHeader />
       </div>
 
-      {/* Main Content Area */}
+      {/* Main Content Area - Push down by banner height if visible */}
       <motion.main
         initial="initial"
         animate="in"
         exit="out"
         variants={pageVariants}
         transition={pageTransition}
-        className="min-h-screen pt-28 lg:pt-32 bg-white dark:bg-ternary-dark"
+        className="min-h-screen bg-white dark:bg-ternary-dark"
+        style={{ 
+          paddingTop: bannerVisible ? 'calc(52px + 80px)' : '80px' 
+        }}
       >
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white/50 dark:from-gray-900/50 dark:to-ternary-dark/50 pointer-events-none" />
@@ -167,7 +190,7 @@ const DefaultLayout = ({ children }) => {
         )}
       </AnimatePresence>
 
-      {/* Mobile Menu Overlay (for additional mobile features) */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
@@ -187,7 +210,7 @@ const DefaultLayout = ({ children }) => {
             >
               <div className="flex justify-between items-center mb-8">
                 <h3 className="text-lg font-semibold text-primary-dark dark:text-primary-light">
-                  Quick Navigation
+                  {language === 'fr' ? 'Navigation Rapide' : 'Quick Navigation'}
                 </h3>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -197,13 +220,12 @@ const DefaultLayout = ({ children }) => {
                 </button>
               </div>
               
-              {/* Additional mobile navigation can go here */}
               <nav className="space-y-4">
                 <button
                   onClick={scrollToTop}
                   className="w-full text-left p-3 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
                 >
-                  Back to Top
+                  {language === 'fr' ? 'Retour en haut' : 'Back to Top'}
                 </button>
               </nav>
             </motion.div>
@@ -216,13 +238,13 @@ const DefaultLayout = ({ children }) => {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 transform focus:scale-105"
       >
-        Skip to main content
+        {language === 'fr' ? 'Passer au contenu principal' : 'Skip to main content'}
       </a>
 
       {/* Add main content ID for skip link */}
       <div id="main-content" className="sr-only">Main Content</div>
 
-      {/* Print Styles (Optional) */}
+      {/* Print Styles */}
       <style jsx global>{`
         @media print {
           .fixed {
@@ -237,7 +259,6 @@ const DefaultLayout = ({ children }) => {
   );
 };
 
-// Add display name for better debugging
 DefaultLayout.displayName = 'DefaultLayout';
 
 export default DefaultLayout;
