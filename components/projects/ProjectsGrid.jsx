@@ -66,7 +66,7 @@ function ProjectsGrid({ limit, currentRole }) {
                         <span className="text-sm font-medium">Projects</span>
                     </div>
                     <h2 className="text-4xl sm:text-5xl font-bold text-primary-dark dark:text-primary-light mb-4">
-                       t('title', 'Featured')
+                       {t('title', 'Featured')}
                         <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                             {t('projects', 'Projects')}
                         </span>
