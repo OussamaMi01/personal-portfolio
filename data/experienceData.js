@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const experienceData = [
     {
-        id: uuidv4(),
+        id: 'exp-alidhafa-2025',
         title: 'Software Developer Intern',
         company: 'AL Idhafa Company',
         location: 'Kasserine, Tunisia',
@@ -25,7 +25,7 @@ export const experienceData = [
         ]
     },
     {
-        id: uuidv4(),
+        id: 'exp-upwork-2024',
         title: 'Web Developer',
         company: 'Upwork',
         location: 'Remote',
@@ -47,7 +47,7 @@ export const experienceData = [
         ]
     },
     {
-        id: uuidv4(),
+        id: 'exp-we-are-kasserine-2022',
         title: 'Marketing Manager',
         company: 'We Are Kasserine - Tunivisions Foundation',
         location: 'Kasserine, Tunisia',
@@ -69,7 +69,7 @@ export const experienceData = [
         ]
     },
     {
-        id: uuidv4(),
+        id: 'exp-freelance-graphic-designer-2020',
         title: 'Freelance Graphic Designer',
         company: 'Social Media Platforms',
         location: 'Remote',
@@ -91,7 +91,7 @@ export const experienceData = [
         ]
     },
     {
-        id: uuidv4(),
+        id: 'exp-digital-content-creator-2019',
         title: 'Digital Content Creator',
         company: 'Independent Projects',
         location: 'Online',

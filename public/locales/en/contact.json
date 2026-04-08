@@ -1,0 +1,75 @@
+{
+  "page": {
+    "title": "Contact Me",
+    "subtitle": "Let's start a conversation about your project"
+  },
+  "badge": "Get In Touch",
+  "section": {
+    "title": "Let's Start a",
+    "titleHighlight": "Conversation",
+    "description": "Ready to bring your ideas to life? Whether you have a project in mind or just want to explore possibilities, I'm here to help you succeed."
+  },
+  "quickResponse": {
+    "title": "Quick Response Guarantee",
+    "description": "I typically respond to all messages within <strong>24 hours</strong>. Your project deserves immediate attention!"
+  },
+  "contactCards": {
+    "location": "Location",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "availability": "Availability",
+    "clickToEmail": "Click to email"
+  },
+  "social": {
+    "title": "Connect With Me",
+    "subtitle": "Follow my work and reach out through your preferred platform"
+  },
+  "trust": {
+    "title": "Trusted Professional",
+    "description": "Committed to delivering exceptional quality and outstanding client experiences"
+  },
+  "form": {
+    "badge": "Start Your Project",
+    "title": "Start Your",
+    "titleHighlight": "Project",
+    "subtitle": "Let's discuss your ideas and bring them to life together",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone (Optional)",
+      "service": "Service Interest",
+      "message": "Your Project Details"
+    },
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "phone": "+216 55 555 555",
+      "service": "Select a service",
+      "message": "Tell me about your project goals, timeline, and any specific requirements..."
+    },
+    "services": {
+      "webDevelopment": "Web Development",
+      "mobileDevelopment": "Mobile App Development",
+      "aiSolutions": "AI Solutions",
+      "uiuxDesign": "UI/UX Design",
+      "digitalMarketing": "Digital Marketing",
+      "consulting": "Consulting",
+      "other": "Other"
+    },
+    "buttons": {
+      "submit": "Send Message",
+      "sending": "Sending Your Message..."
+    },
+    "alerts": {
+      "success": "🎉 Your message has been sent successfully! I'll get back to you within 24 hours.",
+      "error": "❌ Failed to send message. Please try again or contact me directly.",
+      "networkError": "🌐 Network error occurred. Please check your connection and try again."
+    }
+  },
+  "socialPlatforms": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram"
+  }
+}

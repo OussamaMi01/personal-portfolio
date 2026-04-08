@@ -1,0 +1,72 @@
+{
+  "ui": {
+    "badge": "Professional Journey",
+    "title": "My Experience",
+    "titleHighlight": "",
+    "subtitle": "My career path blending technical expertise and creative innovation"
+  },
+
+  "items": {
+    "software-developer-intern": {
+      "title": "Software Developer Intern",
+      "type": "Internship",
+      "location": "Kasserine, Tunisia",
+      "description": [
+        "Developing key features for a job portal and smart recruitment platform",
+        "Implementing AI-powered resume screening and automated candidate matching",
+        "Building real-time job recommendation algorithms to enhance user experience",
+        "Designing an intuitive employer dashboard for streamlined hiring processes",
+        "Optimizing search algorithms to improve job-candidate matching efficiency",
+        "Collaborating with cross-functional teams to develop scalable solutions"
+      ]
+    },
+    "web-developer-upwork": {
+      "title": "Web Developer",
+      "type": "Freelance",
+      "location": "Remote",
+      "description": [
+        "Developing scalable e-commerce platforms using Angular and Node.js",
+        "Implementing responsive front-ends improving user accessibility by 40%",
+        "Building secure payment gateways with 90% transaction reliability",
+        "Designing MongoDB databases for product and order management",
+        "Optimizing application performance for high-traffic scenarios"
+      ]
+    },
+    "marketing-manager": {
+      "title": "Marketing Manager",
+      "type": "Part-time",
+      "location": "Kasserine, Tunisia",
+      "description": [
+        "Created 10+ digital campaigns achieving 30% brand visibility growth",
+        "Boosted social media engagement by 20% through targeted strategies",
+        "Designed marketing plans aligned with organizational objectives",
+        "Managed content creation and distribution across multiple platforms",
+        "Analyzed campaign performance metrics to optimize future initiatives"
+      ]
+    },
+    "freelance-graphic-designer": {
+      "title": "Freelance Graphic Designer",
+      "type": "Freelance",
+      "location": "Remote",
+      "description": [
+        "Delivered 20+ successful design projects for diverse clients",
+        "Achieved 70% client retention through effective collaboration",
+        "Developed brand identities increasing recognition by 50%",
+        "Created marketing materials across digital and print media",
+        "Maintained 80% first-draft approval rate through client communication"
+      ]
+    },
+    "digital-content-creator": {
+      "title": "Digital Content Creator",
+      "type": "Freelance",
+      "location": "Online",
+      "description": [
+        "Produced engaging content across multiple digital platforms",
+        "Grew audience engagement by 20% through strategic content planning",
+        "Developed video content with 500k+ combined views",
+        "Created social media campaigns boosting brand visibility by 30%",
+        "Collaborated with brands to create sponsored content"
+      ]
+    }
+  }
+}

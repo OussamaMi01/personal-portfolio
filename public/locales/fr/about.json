@@ -1,0 +1,250 @@
+{
+  "page": {
+    "title": "À propos de moi",
+    "subtitle": "Découvrez la personne derrière le code"
+  },
+  "titles": {
+    "myJourneyInNumbers": "Mon Parcours en Chiffres",
+    "quantifyingGrowth": "Quantifier ma croissance en tant que développeur et créateur à travers des réalisations mesurables",
+    "yearsOfExperience": "Années d'expérience",
+    "combinedExperience": "Combiné professionnel et freelance",
+    "projectsCompleted": "Projets réalisés",
+    "softwareSolutions": "Solutions logicielles & design",
+    "clientSatisfaction": "Satisfaction client",
+    "positiveFeedback": "Taux de retour positif",
+    "continuousLearning": "Apprentissage continu",
+    "hoursOfDevelopment": "Heures de développement de compétences"
+  },
+  "sections": {
+    "intro": {
+      "bio": "SALUT ! Je suis Oussama Missaoui – un diplômé en Informatique passionné et étudiant en Master Cybersécurité, qui fait le pont entre le développement logiciel et l'ingénierie de la sécurité. Avec une expertise couvrant le développement full-stack, la sécurité des applications et les principes de cybersécurité, je construis des solutions numériques résilientes, à la fois innovantes et sécurisées par conception.",
+      "emoji": "👋",
+      "highlight": "fait le pont entre le développement logiciel et l'ingénierie de la sécurité"
+    },
+    "technical": {
+      "bio": "En tant que diplômé en Informatique, je me spécialise dans la création d'applications web responsives avec des technologies modernes comme React, Next.js, Node.js et MongoDB. Mon attention s'est déplacée vers la mise en œuvre des meilleures pratiques de sécurité, des normes de codage sécurisé et la construction d'applications avec la sécurité intégrée dès le départ.",
+      "emoji": "💻",
+      "technologies": ["React", "Next.js", "Node.js", "MongoDB", "Meilleures pratiques de sécurité"],
+      "highlight": "mise en œuvre des meilleures pratiques de sécurité et des normes de codage sécurisé"
+    },
+    "cybersecurity": {
+      "bio": "Actuellement en Master Cybersécurité, j'approfondis la sécurité réseau, le hacking éthique, la cryptographie et l'analyse des menaces. Ce parcours académique complète mes compétences en développement en fournissant l'état d'esprit sécuritaire nécessaire au paysage numérique d'aujourd'hui.",
+      "emoji": "🛡️",
+      "technologies": ["Sécurité Réseau", "Hacking Éthique", "Cryptographie", "Analyse des Menaces"],
+      "highlight": "l'état d'esprit sécuritaire nécessaire au paysage numérique d'aujourd'hui"
+    },
+    "mobile": {
+      "bio": "Mes fondations techniques incluent le développement mobile avec React Native et Android Studio, désormais envisagé sous l'angle de la sécurité mobile, de l'authentification sécurisée et de la protection des données sur les plateformes mobiles.",
+      "emoji": "📱",
+      "technologies": ["React Native", "Android Studio", "Sécurité Mobile"],
+      "highlight": "sécurité mobile, authentification sécurisée et protection des données"
+    },
+    "data-security": {
+      "bio": "J'utilise Python pour le scripting de sécurité, l'automatisation et l'analyse de données. Mes compétences en science des données sont maintenant appliquées à l'analyse de sécurité, l'analyse de logs et l'identification de motifs dans les données liées à la sécurité.",
+      "emoji": "🔐",
+      "technologies": ["Python", "Scripting de Sécurité", "Analyse de Sécurité", "Analyse de Logs"],
+      "highlight": "l'analyse de sécurité et l'identification de motifs dans les données liées à la sécurité"
+    },
+    "unique-value": {
+      "bio": "Ce qui me distingue est ma combinaison unique d'expérience pratique en développement logiciel avec une formation formelle en cybersécurité. Je ne construis pas seulement des applications – je construis des systèmes sécurisés et résilients qui considèrent les modèles de menace, implémentent des contrôles appropriés et maintiennent la sécurité tout au long du cycle de vie du développement.",
+      "emoji": "🚀",
+      "highlight": "combinaison unique de développement logiciel avec une formation formelle en cybersécurité"
+    },
+    "devsecops": {
+      "bio": "Je suis passionné par DevSecOps et l'intégration de la sécurité dans chaque phase du processus de développement. Je m'épanouis dans des environnements où je peux appliquer à la fois mes compétences en développement et mes connaissances en sécurité pour créer des produits non seulement fonctionnels mais aussi fiables et sécurisés.",
+      "emoji": "🔧",
+      "highlight": "l'intégration de la sécurité dans chaque phase du processus de développement"
+    },
+    "career-goals": {
+      "bio": "Je recherche activement des opportunités où je peux contribuer avec ma double expertise en développement et en sécurité. Que ce soit en tant que Développeur orienté sécurité, Ingénieur en Sécurité des Applications, ou dans un rôle qui fait le pont entre les équipes de développement et de sécurité, je suis enthousiaste à l'idée de relever les défis de sécurité dans les systèmes logiciels modernes.",
+      "emoji": "🎯",
+      "highlight": "double expertise en développement et en sécurité"
+    }
+  },
+  "aboutMe": [
+    {
+      "bio": "SALUT ! Je suis Oussama Missaoui – un diplômé en Informatique passionné et étudiant en Master Cybersécurité, qui fait le pont entre le développement logiciel et l'ingénierie de la sécurité.",
+      "type": "intro",
+      "emoji": "👋",
+      "highlight": "fait le pont entre le développement logiciel et l'ingénierie de la sécurité"
+    },
+    {
+      "bio": "En tant que diplômé en Informatique, je me spécialise dans la création d'applications web responsives avec des technologies modernes comme React, Next.js, Node.js et MongoDB.",
+      "type": "technical",
+      "emoji": "💻",
+      "technologies": ["React", "Next.js", "Node.js", "MongoDB", "Meilleures pratiques de sécurité"],
+      "highlight": "mise en œuvre des meilleures pratiques de sécurité"
+    },
+    {
+      "bio": "Actuellement en Master Cybersécurité, j'approfondis la sécurité réseau, le hacking éthique, la cryptographie et l'analyse des menaces.",
+      "type": "cybersecurity",
+      "emoji": "🛡️",
+      "technologies": ["Sécurité Réseau", "Hacking Éthique", "Cryptographie", "Analyse des Menaces"],
+      "highlight": "l'état d'esprit sécuritaire"
+    },
+    {
+      "bio": "Mes fondations techniques incluent le développement mobile avec React Native et Android Studio.",
+      "type": "mobile",
+      "emoji": "📱",
+      "technologies": ["React Native", "Android Studio", "Sécurité Mobile"],
+      "highlight": "sécurité mobile"
+    },
+    {
+      "bio": "J'utilise Python pour le scripting de sécurité, l'automatisation et l'analyse de données.",
+      "type": "data-security",
+      "emoji": "🔐",
+      "technologies": ["Python", "Scripting de Sécurité", "Analyse de Sécurité", "Analyse de Logs"],
+      "highlight": "analyse de sécurité"
+    },
+    {
+      "bio": "Ce qui me distingue est ma combinaison unique d'expérience pratique en développement logiciel avec une formation formelle en cybersécurité.",
+      "type": "unique-value",
+      "emoji": "🚀",
+      "highlight": "combinaison unique"
+    },
+    {
+      "bio": "Je suis passionné par DevSecOps et l'intégration de la sécurité dans chaque phase du processus de développement.",
+      "type": "devsecops",
+      "emoji": "🔧",
+      "highlight": "intégration de la sécurité"
+    },
+    {
+      "bio": "Je recherche activement des opportunités où je peux contribuer avec ma double expertise en développement et en sécurité.",
+      "type": "career-goals",
+      "emoji": "🎯",
+      "highlight": "double expertise"
+    }
+  ],
+  "personalInfo": {
+    "name": "Oussama Missaoui",
+    "title": "Diplômé en Informatique | Étudiant Master Cybersécurité",
+    "location": "Sfax, Tunisie",
+    "email": "oussama.missaoui.it@gmail.com",
+    "phone": "+216 23 257 784",
+    "status": "À la recherche de rôles de développement orientés sécurité",
+    "experience": 3,
+    "education": {
+      "bachelor": "Licence en Informatique",
+      "institution1": "ISSAT Kasserine",
+      "master": "Master en Cybersécurité (En cours)",
+      "institution2": "FSEG Sfax"
+    },
+    "focusAreas": [
+      "Sécurité des Applications",
+      "Développement Logiciel Sécurisé",
+      "Développement Full-Stack",
+      "Sécurité Réseau",
+      "DevSecOps"
+    ],
+    "currentlyLearning": [
+      "Concepts avancés de Cybersécurité",
+      "Méthodologies de Test d'Intrusion",
+      "Sécurité Cloud (AWS/Azure)",
+      "Conformité et Normes de Sécurité"
+    ],
+    "certifications": [
+      "En projet: Security+, Network+, CySA+",
+      "Futur: OSCP, CISSP"
+    ],
+    "funFacts": [
+      "Peut analyser le code pour détecter des vulnérabilités tout en l'écrivant",
+      "Croit que la sécurité devrait être une fonctionnalité, pas une réflexion après coup",
+      "Aime participer aux compétitions CTF",
+      "Passionné par la sensibilisation et l'éducation à la sécurité",
+      "Aime casser les choses pour comprendre comment les construire mieux"
+    ]
+  },
+  "skillsBreakdown": {
+    "development": {
+      "title": "Compétences en Développement",
+      "items": [
+        { "name": "JavaScript/TypeScript", "level": 90 },
+        { "name": "React/Next.js", "level": 88 },
+        { "name": "Node.js/Express", "level": 85 },
+        { "name": "Python", "level": 82 },
+        { "name": "MongoDB/PostgreSQL", "level": 80 },
+        { "name": "React Native", "level": 78 },
+        { "name": "Docker", "level": 75 },
+        { "name": "Git/GitHub", "level": 90 }
+      ]
+    },
+    "cybersecurity": {
+      "title": "Compétences en Cybersécurité",
+      "items": [
+        { "name": "Pratiques de Codage Sécurisé", "level": 85 },
+        { "name": "Sécurité Réseau", "level": 80 },
+        { "name": "Modélisation des Menaces", "level": 75 },
+        { "name": "Évaluation des Vulnérabilités", "level": 78 },
+        { "name": "Bases de Cryptographie", "level": 70 },
+        { "name": "Outils de Sécurité (Wireshark, Nmap)", "level": 72 },
+        { "name": "OWASP Top 10", "level": 85 },
+        { "name": "Conformité Sécurité", "level": 68 }
+      ]
+    },
+    "soft": {
+      "title": "Compétences Professionnelles",
+      "items": [
+        { "name": "Résolution de Problèmes", "level": 92 },
+        { "name": "État d'Esprit Sécurité", "level": 88 },
+        { "name": "Communication", "level": 85 },
+        { "name": "Collaboration d'Équipe", "level": 90 },
+        { "name": "Adaptabilité", "level": 95 },
+        { "name": "Apprentissage Continu", "level": 95 }
+      ]
+    }
+  },
+  "careerPhilosophy": {
+    "mission": "Développer des systèmes logiciels sécurisés et résilients en intégrant les principes de cybersécurité tout au long du cycle de vie du développement, protégeant les actifs numériques tout en permettant l'innovation.",
+    "values": [
+      {
+        "title": "Sécurité par Conception",
+        "description": "Croyance que la sécurité devrait être intégrée dès la phase de conception initiale, pas ajoutée à la fin.",
+        "icon": "🛡️"
+      },
+      {
+        "title": "Apprentissage Continu",
+        "description": "Mise à jour constante des compétences en développement et en sécurité dans notre domaine en évolution rapide.",
+        "icon": "📚"
+      },
+      {
+        "title": "Application Pratique",
+        "description": "Application des connaissances académiques en cybersécurité aux défis de développement réels.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Collaboration",
+        "description": "Travail avec les équipes de développement et de sécurité pour créer des produits meilleurs et plus sécurisés.",
+        "icon": "🤝"
+      }
+    ],
+    "goals": [
+      "Devenir un pont entre les équipes de développement et de sécurité",
+      "Maîtriser la sécurité des applications et les pratiques de codage sécurisé",
+      "Contribuer aux projets open-source de sécurité",
+      "Obtenir des certifications de sécurité pertinentes (Security+, OSCP)",
+      "Aider les organisations à construire des systèmes logiciels plus sécurisés"
+    ],
+    "targetRoles": [
+      "Développeur orienté Sécurité",
+      "Ingénieur en Sécurité des Applications",
+      "Ingénieur DevSecOps",
+      "Analyste Sécurité avec expérience en Développement",
+      "Consultant Cybersécurité avec compétences d'implémentation technique"
+    ]
+  },
+  "aboutMeSections": {
+    "short": { "indices": [0, 5, 7] },
+    "technical": { "types": ["technical", "mobile", "data-security"] },
+    "cybersecurity": { "types": ["cybersecurity", "devsecops", "unique-value"] },
+    "jobSeeking": { "types": ["intro", "unique-value", "career-goals"] }
+  },
+  "combinedExpertise": {
+    "strength": "Développement + Formation en Sécurité",
+    "description": "Compétences pratiques en codage combinées à une formation formelle en cybersécurité",
+    "idealFor": [
+      "Rôles nécessitant une compréhension du développement et de la sécurité",
+      "Intégrer la sécurité dans les applications dès le départ",
+      "Traduire les exigences de sécurité en code fonctionnel"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "ui": {
+    "badge": "Client Stories",
+    "title": "What People",
+    "titleHighlight": "Say",
+    "subtitle": "Feedback from clients and collaborators who trust my work",
+    "of": "of"
+  },
+  "items": {
+    "al-idhafa": {
+      
+      "company": "Al Idhafa Tech",
+      "quote": "Oussama brings a rare combination of technical innovation and creative vision to the project. His ability to solve complex problems while maintaining coherence makes him a valuable collaborator.",
+      "rating": 5,
+      "image": "/images/testimonials/al-idhafa.jpg"
+    },
+    "we-are-kasserine": {
+      
+      
+      "company": "We Are Kasserine",
+      "quote": "Working with Oussama was a fantastic experience. His attention to details and ability to deliver stunning content significantly elevated our marketing strategy.",
+      "rating": 5,
+      "image": "/images/testimonials/we-are-kasserine.jpg"
+    },
+    "bariq-rifki": {
+      "name": "Bariq Rifki",
+      "title": "Content Creator",
+      "company": "Digital Creator",
+      "quote": "Oussama's creative skills in video editing are top-notch. He transformed my ideas into visually captivating videos that captivated my audience.",
+      "rating": 5,
+      "image": "/images/testimonials/client1.jpg"
+    },
+    "amine-chebbi": {
+      "name": "Amine Chebbi",
+      "title": "Content Creator & CEO",
+      "company": "Chebbi Trading",
+      "quote": "The collaboration with Oussama was truly inspiring. His creativity helped me to explain complex topics in a clear and engaging way.",
+      "rating": 5,
+      "image": "/images/testimonials/client2.jpg"
+    }
+  }
+}

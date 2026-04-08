@@ -1,4 +1,7 @@
+// components/shared/AppFooter.jsx
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 import {
     FiGithub,
     FiLinkedin,
@@ -6,7 +9,10 @@ import {
     FiMail,
     FiMessageCircle,
     FiArrowUp,
-    FiHeart
+    FiHeart,
+    FiMapPin,
+    FiPhone,
+    FiClock
 } from 'react-icons/fi';
 import { FaBehance, FaDribbble } from 'react-icons/fa';
 import AppFooterCopyright from './AppFooterCopyright';
@@ -17,8 +23,8 @@ const socialLinks = [
     {
         id: 1,
         icon: FiGlobe,
-        url: '#',
-        name: 'Portfolio',
+        url: '/',
+        name: 'portfolio',
         color: 'text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300',
         bgColor: 'bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30'
     },
@@ -26,15 +32,15 @@ const socialLinks = [
         id: 2,
         icon: FiGithub,
         url: 'https://github.com/OussamaMi01',
-        name: 'GitHub',
+        name: 'github',
         color: 'text-gray-800 hover:text-black dark:text-gray-300 dark:hover:text-white',
-        bgColor: 'bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600'
+        bgColor: 'bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700'
     },
     {
         id: 3,
         icon: FaBehance,
         url: 'https://www.behance.net/missaououssama',
-        name: 'Behance',
+        name: 'behance',
         color: 'text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300',
         bgColor: 'bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30'
     },
@@ -42,24 +48,36 @@ const socialLinks = [
         id: 4,
         icon: FiLinkedin,
         url: 'https://www.linkedin.com/in/oussama-missaoui-a48589246/',
-        name: 'LinkedIn',
+        name: 'linkedin',
         color: 'text-blue-700 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300',
         bgColor: 'bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30'
     },
     {
         id: 5,
         icon: FiMail,
-        url: 'mailto:oussama@example.com',
-        name: 'Email',
+        url: 'mailto:oussama.missaoui.it@gmail.com',
+        name: 'email',
         color: 'text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300',
         bgColor: 'bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/30'
     }
 ];
 
+const quickLinks = [
+    { name: 'home', path: '/' },
+    { name: 'projects', path: '/projects' },
+    { name: 'experience', path: '/experience' },
+    { name: 'services', path: '/services' },
+    { name: 'blog', path: '/blog' },
+    { name: 'about', path: '/about' },
+    { name: 'contact', path: '/contact' }
+];
+
 function AppFooter() {
+    const { t } = useTranslation('common');
     const [activeTheme] = useThemeSwitcher();
     const [showScrollTop, setShowScrollTop] = useState(false);
     const [hoveredLink, setHoveredLink] = useState(null);
+    const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
     // Scroll to top functionality
     const scrollToTop = () => {
@@ -111,7 +129,7 @@ function AppFooter() {
             className="relative mt-20 sm:mt-24"
         >
             {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-50 dark:to-gray-900/50 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-100/50 dark:to-gray-900/50 pointer-events-none" />
             
             {/* Main Footer Content */}
             <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,110 +138,117 @@ function AppFooter() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
                     className="pt-16 sm:pt-20 pb-8 rounded-t-3xl 
-                               bg-white/80 dark:bg-ternary-dark/80 
-                               backdrop-blur-sm border-t border-l border-r 
-                               border-gray-200/50 dark:border-gray-700/50
+                               bg-white dark:bg-ternary-dark 
+                               border-t border-l border-r 
+                               border-gray-200 dark:border-gray-700
                                shadow-2xl"
                 >
-                    {/* Connect Section */}
-                    <div className="font-general-regular flex flex-col justify-center items-center mb-12 sm:mb-16">
-                        {/* Heading */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3 }}
-                            className="text-center mb-8"
-                        >
-                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-dark dark:text-primary-light mb-4">
-                                Let&apos;s Connect
-                            </h2>
-                            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-md mx-auto">
-                                Feel free to reach out for collaborations or just a friendly hello
+                    {/* Footer Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 px-4">
+                        
+                        {/* About Section */}
+                        <div className="text-center md:text-left">
+                            <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
+                                Oussama Missaoui
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                {t('footer.about', 'Full-Stack Developer & Digital Creator passionate about building innovative solutions and creative digital experiences.')}
                             </p>
-                        </motion.div>
+                        </div>
+
+                        {/* Quick Links */}
+                        <div className="text-center md:text-left">
+                            <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
+                                {t('footer.quickLinks', 'Quick Links')}
+                            </h3>
+                            <ul className="space-y-2">
+                                {quickLinks.map((link) => (
+                                    <li key={link.name}>
+                                        <Link
+                                            href={link.path}
+                                            className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 text-sm"
+                                        >
+                                            {t(`navigation.${link.name}`, link.name)}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Contact Info */}
+                        <div className="text-center md:text-left">
+                            <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
+                                {t('footer.contactInfo', 'Contact Info')}
+                            </h3>
+                            <ul className="space-y-3">
+                                <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
+                                    <FiMapPin className="text-indigo-500 flex-shrink-0" />
+                                    <span>Sfax, Tunisia</span>
+                                </li>
+                                <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
+                                    <FiMail className="text-indigo-500 flex-shrink-0" />
+                                    <a href="mailto:oussama.missaoui.it@gmail.com" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        oussama.missaoui.it@gmail.com
+                                    </a>
+                                </li>
+                                <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
+                                    <FiPhone className="text-indigo-500 flex-shrink-0" />
+                                    <a href="tel:+21623257784" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        +216 23 257 784
+                                    </a>
+                                </li>
+                                <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
+                                    <FiClock className="text-indigo-500 flex-shrink-0" />
+                                    <span>Mon-Fri: 9am-6pm (GMT+1)</span>
+                                </li>
+                            </ul>
+                        </div>
 
                         {/* Social Links */}
-                        <motion.ul
-                            variants={containerVariants}
-                            initial="hidden"
-                            animate="visible"
-                            className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8"
-                        >
-                            {socialLinks.map((link, index) => (
-                                <motion.li
-                                    key={link.id}
-                                    variants={itemVariants}
-                                    className="relative"
-                                >
-                                    <motion.a
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`
-                                            cursor-pointer rounded-2xl shadow-lg 
-                                            p-4 duration-300 flex items-center justify-center
-                                            transform transition-all duration-300
-                                            hover:scale-110 hover:shadow-xl
-                                            ${link.bgColor} ${link.color}
-                                            border border-gray-200/50 dark:border-gray-600/50
-                                        `}
-                                        whileHover={{ 
-                                            y: -5,
-                                            transition: { type: "spring", stiffness: 400 }
-                                        }}
-                                        whileTap={{ scale: 0.95 }}
-                                        onHoverStart={() => setHoveredLink(link.id)}
-                                        onHoverEnd={() => setHoveredLink(null)}
-                                    >
-                                        <link.icon className="text-2xl sm:text-3xl" />
-                                        
-                                        {/* Tooltip */}
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ 
-                                                opacity: hoveredLink === link.id ? 1 : 0,
-                                                y: hoveredLink === link.id ? 0 : 10
-                                            }}
-                                            className="absolute -top-12 left-1/2 transform -translate-x-1/2 
-                                                       bg-gray-900 dark:bg-gray-700 text-white text-sm 
-                                                       px-3 py-1 rounded-lg whitespace-nowrap"
+                        <div className="text-center md:text-left">
+                            <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
+                                {t('footer.followMe', 'Follow Me')}
+                            </h3>
+                            <div className="flex justify-center md:justify-start gap-3">
+                                {socialLinks.map((link) => {
+                                    const Icon = link.icon;
+                                    return (
+                                        <motion.a
+                                            key={link.id}
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            whileHover={{ y: -3, scale: 1.1 }}
+                                            whileTap={{ scale: 0.95 }}
+                                            className={`p-2 rounded-xl transition-all duration-300 ${link.bgColor} ${link.color}`}
+                                            aria-label={t(`social.${link.name}`, link.name)}
                                         >
-                                            {link.name}
-                                            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-gray-900 dark:bg-gray-700" />
-                                        </motion.div>
-                                    </motion.a>
-                                </motion.li>
-                            ))}
-                        </motion.ul>
-
-                        {/* Call to Action */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.8 }}
-                            className="text-center"
-                        >
-                            <p className="text-gray-600 dark:text-gray-400 mb-4">
-                                Ready to start your next project?
-                            </p>
-                            <motion.a
-                                href="mailto:oussama@example.com"
-                                className="inline-flex items-center gap-2 px-6 py-3 
-                                           bg-gradient-to-r from-indigo-500 to-purple-600 
-                                           text-white rounded-xl shadow-lg 
-                                           hover:shadow-xl transition-all duration-300
-                                           font-medium"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <FiMessageCircle className="text-lg" />
-                                Get In Touch
-                            </motion.a>
-                        </motion.div>
+                                            <Icon className="text-xl" />
+                                        </motion.a>
+                                    );
+                                })}
+                            </div>
+                            
+                            {/* Tech Stack Badge */}
+                            <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <p className="text-xs text-gray-500 dark:text-gray-400">
+                                    {t('footer.builtWith', 'Built with')}{' '}
+                                    <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+                                        Next.js
+                                    </span>{' '}
+                                    &{' '}
+                                    <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+                                        Tailwind CSS
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Copyright */}
-                    <AppFooterCopyright />
+                    <div className="border-t border-gray-200 dark:border-gray-700 pt-8">
+                        <AppFooterCopyright />
+                    </div>
                 </motion.div>
             </div>
 
@@ -242,7 +267,7 @@ function AppFooter() {
                                    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         whileHover={{ scale: 1.1, y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        aria-label="Scroll to top"
+                        aria-label={t('actions.backToTop', 'Scroll to top')}
                     >
                         <FiArrowUp className="text-xl" />
                     </motion.button>
@@ -251,8 +276,8 @@ function AppFooter() {
 
             {/* Decorative Elements */}
             <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none">
-                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-200 dark:bg-indigo-800 rounded-full opacity-20 blur-xl" />
-                <div className="absolute -bottom-32 -right-24 w-48 h-48 bg-purple-200 dark:bg-purple-800 rounded-full opacity-20 blur-xl" />
+                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-200 dark:bg-indigo-900 rounded-full opacity-20 blur-xl" />
+                <div className="absolute -bottom-32 -right-24 w-48 h-48 bg-purple-200 dark:bg-purple-900 rounded-full opacity-20 blur-xl" />
             </div>
         </motion.footer>
     );

@@ -1,0 +1,28 @@
+{
+  "ui": {
+    "badge": "Knowledge Hub",
+    "title": "My",
+    "titleHighlight": "Blog",
+    "subtitle": "Thoughts, tutorials, and insights on tech and creativity"
+  },
+  "title": "Blog",
+  "subtitle": "Thoughts, tutorials, and insights on tech and creativity",
+  "readMore": "Read article",
+  "readTime": "min read",
+  "publishedOn": "Published on",
+  "relatedPosts": "Related Posts",
+  "categories": {
+    "react": "React & Next.js",
+    "typescript": "TypeScript",
+    "node": "Node.js",
+    "python": "Python",
+    "database": "Database",
+    "mobile": "Mobile",
+    "trends": "Industry Trends"
+  },
+  "platform": {
+    "preview": "Preview",
+    "fullArticle": "Read full article on",
+    "moreArticles": "More articles available on my blog platform"
+  }
+}

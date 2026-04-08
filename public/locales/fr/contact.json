@@ -1,0 +1,75 @@
+{
+  "page": {
+    "title": "Contactez-moi",
+    "subtitle": "Commençons une conversation sur votre projet"
+  },
+  "badge": "Entrez en contact",
+  "section": {
+    "title": "Commençons une",
+    "titleHighlight": "Conversation",
+    "description": "Prêt à donner vie à vos idées ? Que vous ayez un projet en tête ou que vous souhaitiez explorer les possibilités, je suis là pour vous aider à réussir."
+  },
+  "quickResponse": {
+    "title": "Garantie de réponse rapide",
+    "description": "Je réponds généralement à tous les messages dans les <strong>24 heures</strong>. Votre projet mérite une attention immédiate !"
+  },
+  "contactCards": {
+    "location": "Localisation",
+    "email": "Adresse Email",
+    "phone": "Numéro de Téléphone",
+    "availability": "Disponibilité",
+    "clickToEmail": "Cliquer pour envoyer un email"
+  },
+  "social": {
+    "title": "Connectez-vous avec moi",
+    "subtitle": "Suivez mon travail et contactez-moi via votre plateforme préférée"
+  },
+  "trust": {
+    "title": "Professionnel de confiance",
+    "description": "Engagé à fournir une qualité exceptionnelle et des expériences client remarquables"
+  },
+  "form": {
+    "badge": "Démarrez votre projet",
+    "title": "Démarrez votre",
+    "titleHighlight": "Projet",
+    "subtitle": "Discutons de vos idées et donnons-leur vie ensemble",
+    "fields": {
+      "name": "Nom complet",
+      "email": "Adresse Email",
+      "phone": "Téléphone (Optionnel)",
+      "service": "Service qui vous intéresse",
+      "message": "Détails de votre projet"
+    },
+    "placeholders": {
+      "name": "Jean Dupont",
+      "email": "jean@exemple.com",
+      "phone": "+216 55 555 555",
+      "service": "Sélectionnez un service",
+      "message": "Parlez-moi des objectifs de votre projet, du calendrier et de toute exigence spécifique..."
+    },
+    "services": {
+      "webDevelopment": "Développement Web",
+      "mobileDevelopment": "Développement Mobile",
+      "aiSolutions": "Solutions IA",
+      "uiuxDesign": "Design UI/UX",
+      "digitalMarketing": "Marketing Digital",
+      "consulting": "Consultation",
+      "other": "Autre"
+    },
+    "buttons": {
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours..."
+    },
+    "alerts": {
+      "success": "🎉 Votre message a été envoyé avec succès ! Je vous répondrai dans les 24 heures.",
+      "error": "❌ Échec de l'envoi du message. Veuillez réessayer ou me contacter directement.",
+      "networkError": "🌐 Une erreur réseau s'est produite. Veuillez vérifier votre connexion et réessayer."
+    }
+  },
+  "socialPlatforms": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram"
+  }
+}

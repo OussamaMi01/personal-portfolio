@@ -1,0 +1,71 @@
+{
+  "ui": {
+    "badge": "Parcours Professionnel",
+    "title": "Mon",
+    "titleHighlight": "Expérience",
+    "subtitle": "Mon parcours professionnel alliant expertise technique et innovation créative"
+  },
+  "items": {
+    "software-developer-intern": {
+      "title": "Développeur Logiciel Stagiaire",
+      "type": "Stage",
+      "location": "Kasserine, Tunisie",
+      "description": [
+        "Développement de fonctionnalités clés pour un portail d'emploi et une plateforme de recrutement intelligente",
+        "Mise en œuvre du tri de CV par IA et de la mise en correspondance automatisée des candidats",
+        "Construction d'algorithmes de recommandation d'emploi en temps réel pour améliorer l'expérience utilisateur",
+        "Conception d'un tableau de bord employeur intuitif pour rationaliser les processus de recrutement",
+        "Optimisation des algorithmes de recherche pour améliorer l'efficacité du matching emploi-candidat",
+        "Collaboration avec des équipes pluridisciplinaires pour développer des solutions évolutives"
+      ]
+    },
+    "web-developer-upwork": {
+      "title": "Développeur Web",
+      "type": "Freelance",
+      "location": "À distance",
+      "description": [
+        "Développement de plateformes e-commerce évolutives avec Angular et Node.js",
+        "Implémentation de fronts-ends responsifs améliorant l'accessibilité utilisateur de 40%",
+        "Construction de passerelles de paiement sécurisées avec 90% de fiabilité des transactions",
+        "Conception de bases de données MongoDB pour la gestion des produits et des commandes",
+        "Optimisation des performances des applications pour les scénarios à fort trafic"
+      ]
+    },
+    "marketing-manager": {
+      "title": "Responsable Marketing",
+      "type": "Temps partiel",
+      "location": "Kasserine, Tunisie",
+      "description": [
+        "Création de 10+ campagnes numériques atteignant une croissance de visibilité de marque de 30%",
+        "Augmentation de l'engagement sur les réseaux sociaux de 20% grâce à des stratégies ciblées",
+        "Conception de plans marketing alignés sur les objectifs organisationnels",
+        "Gestion de la création et distribution de contenu sur plusieurs plateformes",
+        "Analyse des métriques de performance des campagnes pour optimiser les initiatives futures"
+      ]
+    },
+    "freelance-graphic-designer": {
+      "title": "Graphiste Freelance",
+      "type": "Freelance",
+      "location": "À distance",
+      "description": [
+        "Livraison de 20+ projets de design réussis pour des clients diversifiés",
+        "Atteinte de 70% de fidélisation client grâce à une collaboration efficace",
+        "Développement d'identités de marque augmentant la notoriété de 50%",
+        "Création de supports marketing pour les médias numériques et imprimés",
+        "Maintien d'un taux d'approbation du premier brouillon de 80% grâce à la communication client"
+      ]
+    },
+    "digital-content-creator": {
+      "title": "Créateur de Contenu Digital",
+      "type": "Freelance",
+      "location": "En ligne",
+      "description": [
+        "Production de contenu engageant sur plusieurs plateformes numériques",
+        "Croissance de l'engagement de l'audience de 20% grâce à une planification de contenu stratégique",
+        "Développement de contenu vidéo avec 500k+ vues combinées",
+        "Création de campagnes sur les réseaux sociaux augmentant la visibilité de marque de 30%",
+        "Collaboration avec des marques pour créer du contenu sponsorisé"
+      ]
+    }
+  }
+}

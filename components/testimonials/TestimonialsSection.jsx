@@ -1,160 +1,102 @@
-// components/testimonials/TestimonialsSection.jsx
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-    FiArrowLeft, 
-    FiArrowRight, 
-    FiStar,
-    FiAward
-} from 'react-icons/fi';
+import { useTranslation } from 'next-i18next';
+import { FiArrowLeft, FiArrowRight, FiAward } from 'react-icons/fi';
 import TestimonialCard from './TestimonialCard';
-import { testimonialsData } from '../../data/testimonialsData';
+import { useTestimonialsData } from '../../hooks/useTestimonialsData'; 
 
 const TestimonialsSection = () => {
-    const [testimonials] = useState(testimonialsData);
+    const { t } = useTranslation('testimonials');
+    const testimonials = useTestimonialsData(); // ✅ translated hook
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(0);
     const xDown = useRef(null);
 
-    // Animation variants
     const variants = {
-        enter: (direction) => ({
-            x: direction > 0 ? 300 : -300,
-            opacity: 0,
-        }),
-        center: {
-            x: 0,
-            opacity: 1,
-        },
-        exit: (direction) => ({
-            x: direction < 0 ? 300 : -300,
-            opacity: 0,
-        }),
+        enter: (dir) => ({ x: dir > 0 ? 300 : -300, opacity: 0 }),
+        center: { x: 0, opacity: 1 },
+        exit: (dir) => ({ x: dir < 0 ? 300 : -300, opacity: 0 }),
     };
 
-    // Auto-play functionality - moved paginate logic inside useEffect
     useEffect(() => {
+        if (!testimonials.length) return;
         const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => {
-                const nextIndex = prevIndex + 1;
-                setDirection(1);
-                return nextIndex >= testimonials.length ? 0 : nextIndex;
-            });
+            setDirection(1);
+            setCurrentIndex(prev => (prev + 1 >= testimonials.length ? 0 : prev + 1));
         }, 5000);
-
         return () => clearInterval(interval);
-    }, [testimonials.length]); // Only depend on testimonials.length
+    }, [testimonials.length]);
 
-    // Separate paginate function for manual navigation
     const paginate = (newDirection) => {
         setDirection(newDirection);
-        setCurrentIndex((prevIndex) => {
-            const nextIndex = prevIndex + newDirection;
-            if (nextIndex < 0) return testimonials.length - 1;
-            if (nextIndex >= testimonials.length) return 0;
-            return nextIndex;
+        setCurrentIndex(prev => {
+            const next = prev + newDirection;
+            if (next < 0) return testimonials.length - 1;
+            if (next >= testimonials.length) return 0;
+            return next;
         });
     };
 
-    // Touch handlers
-    const handleTouchStart = (evt) => {
-        const firstTouch = evt.touches[0];
-        xDown.current = firstTouch.clientX;
-    };
-
+    const handleTouchStart = (evt) => { xDown.current = evt.touches[0].clientX; };
     const handleTouchMove = (evt) => {
         if (!xDown.current) return;
-
-        const xUp = evt.touches[0].clientX;
-        const xDiff = xDown.current - xUp;
-
-        if (Math.abs(xDiff) > 50) {
-            if (xDiff > 0) {
-                paginate(1);
-            } else {
-                paginate(-1);
-            }
+        const diff = xDown.current - evt.touches[0].clientX;
+        if (Math.abs(diff) > 50) {
+            paginate(diff > 0 ? 1 : -1);
             xDown.current = null;
         }
     };
 
+    if (!testimonials.length) return null;
+
     return (
         <section className="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-ternary-dark">
             <div className="container mx-auto px-4">
-                {/* Header - Similar to other sections */}
+                {/* Header */}
                 <div className="text-center mb-12">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 mb-6"
-                    >
+                    <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}
+                        className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 mb-6">
                         <FiAward className="w-4 h-4 mr-2" />
-                        <span className="text-sm font-medium">Testimonials</span>
+                        <span className="text-sm font-medium">{t('ui.badge')}</span>
                     </motion.div>
-
                     <h2 className="text-4xl sm:text-5xl font-bold text-primary-dark dark:text-primary-light mb-4">
-                        What Clients Say
+                        {t('ui.title')} <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">{t('ui.titleHighlight')}</span>
                     </h2>
                     <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                        Hear directly from those I&apos;ve collaborated with
+                        {t('ui.subtitle')}
                     </p>
                 </div>
 
-                {/* Carousel Container */}
+                {/* Carousel */}
                 <div className="relative flex items-center justify-center min-h-[400px]"
-                    onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
-                >
+                    onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
                     <AnimatePresence initial={false} custom={direction}>
-                        <motion.div
-                            key={currentIndex}
-                            custom={direction}
-                            variants={variants}
-                            initial="enter"
-                            animate="center"
-                            exit="exit"
-                            transition={{
-                                x: { type: 'spring', stiffness: 300, damping: 30 },
-                                opacity: { duration: 0.2 },
-                            }}
-                            className="absolute w-full max-w-2xl px-4"
-                        >
+                        <motion.div key={currentIndex} custom={direction}
+                            variants={variants} initial="enter" animate="center" exit="exit"
+                            transition={{ x: { type: 'spring', stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
+                            className="absolute w-full max-w-2xl px-4">
                             <TestimonialCard testimonial={testimonials[currentIndex]} />
                         </motion.div>
                     </AnimatePresence>
 
-                    {/* Navigation Buttons */}
-                    <button
-                        onClick={() => paginate(-1)}
+                    <button onClick={() => paginate(-1)}
                         className="absolute left-0 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow text-primary-dark dark:text-primary-light focus:outline-none"
-                        aria-label="Previous testimonial"
-                    >
+                        aria-label="Previous testimonial">
                         <FiArrowLeft className="text-2xl" />
                     </button>
-                    
-                    <button
-                        onClick={() => paginate(1)}
+                    <button onClick={() => paginate(1)}
                         className="absolute right-0 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow text-primary-dark dark:text-primary-light focus:outline-none"
-                        aria-label="Next testimonial"
-                    >
+                        aria-label="Next testimonial">
                         <FiArrowRight className="text-2xl" />
                     </button>
                 </div>
 
-                {/* Progress Dots */}
+                {/* Dots */}
                 <div className="flex items-center justify-center gap-2 mt-8">
                     {testimonials.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => {
-                                setDirection(index > currentIndex ? 1 : -1);
-                                setCurrentIndex(index);
-                            }}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                index === currentIndex 
-                                    ? 'bg-indigo-500 scale-125' 
-                                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-indigo-300'
-                            }`}
+                        <button key={index}
+                            onClick={() => { setDirection(index > currentIndex ? 1 : -1); setCurrentIndex(index); }}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-indigo-500 scale-125' : 'bg-gray-300 dark:bg-gray-600 hover:bg-indigo-300'}`}
                         />
                     ))}
                 </div>
@@ -162,13 +104,9 @@ const TestimonialsSection = () => {
                 {/* Counter */}
                 <div className="text-center mt-4">
                     <p className="text-gray-600 dark:text-gray-400">
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold">
-                            {currentIndex + 1}
-                        </span>
-                        <span className="mx-2">of</span>
-                        <span className="font-semibold">
-                            {testimonials.length}
-                        </span>
+                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold">{currentIndex + 1}</span>
+                        <span className="mx-2">{t('ui.of')}</span>
+                        <span className="font-semibold">{testimonials.length}</span>
                     </p>
                 </div>
             </div>

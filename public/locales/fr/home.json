@@ -1,0 +1,156 @@
+{
+  "page": {
+    "title": "Accueil"
+  },
+  "projects": {
+    "viewAll": "Voir tous les projets"
+  },
+  "blog": {
+    "latest": "Derniers",
+    "insights": "Articles",
+    "subtitle": "Partage de connaissances, tutoriels et perspectives du secteur",
+    "readAll": "Lire tous les articles"
+  },
+  "stats": {
+    "byTheNumbers": "En",
+    "numbers": "Chiffres",
+    "projectsCompleted": "Projets réalisés",
+    "yearsExperience": "Années d'expérience",
+    "satisfiedClients": "Clients satisfaits",
+    "technologies": "Technologies"
+  },
+  "cta": {
+    "ready": "Prêt à lancer votre",
+    "project": "Projet",
+    "subtitle": "Collaborons pour donner vie à vos idées avec des solutions innovantes et une expertise créative.",
+    "getInTouch": "Contactez-moi",
+    "viewWork": "Voir mon travail"
+  },
+  "banner": {
+    "welcome": "Bienvenue sur mon portfolio",
+    "greeting": "Bonjour, je suis",
+    "name": "Oussama",
+    "roles": {
+      "developer": "Développeur",
+      "creator": "Créateur"
+    },
+    "downloadCv": "Télécharger le CV",
+    "developer": {
+      "title": "Développeur Full-Stack & Innovateur Tech",
+      "description": "Création de solutions numériques évolutives avec des technologies modernes et des frameworks de pointe",
+      "cta": "Voir mes projets"
+    },
+    "creator": {
+      "title": "Créateur Digital & Conteur Visuel",
+      "description": "Transformer les idées en expériences visuelles captivantes qui inspirent et fascinent les audiences",
+      "cta": "Voir mon travail"
+    },
+    "imageAlt": {
+      "developer": "Développeur travaillant sur du code",
+      "creator": "Créateur numérique au travail"
+    }
+  },
+  "services": {
+    "badge": "Services professionnels",
+    "title": "Services",
+    "titleHighlight": "Complets",
+    "subtitle": "Des solutions de bout en bout alliant expertise technique et innovation créative",
+    "keyBenefits": "Avantages clés",
+    "keyFeatures": "Fonctionnalités clés",
+    "technologiesTools": "Technologies & Outils",
+    "empty": "Aucun service trouvé",
+    "emptyHint": "Essayez de changer votre rôle professionnel pour découvrir les offres de services pertinentes.",
+    "showLess": "Voir moins",
+    "readMore": "Lire plus",
+    "getStarted": "Commencer",
+    "ctaTitle": "Prêt à démarrer votre projet ?",
+    "ctaSubtitle": "Discutons de vos besoins et créons une solution personnalisée qui génère de vrais résultats pour votre entreprise.",
+    "getInTouch": "Contactez-moi",
+    "viewWork": "Voir mon travail"
+  },
+  "experience": {
+    "badge": "Parcours professionnel",
+    "title": "Expérience",
+    "titleHighlight": "Professionnelle",
+    "subtitle": "Ma progression de carrière illustrant mon expertise technique et ma croissance professionnelle à travers des rôles et secteurs variés",
+    "responsibilities": "Responsabilités clés",
+    "achievements": "Réalisations clés",
+    "technologies": "Technologies & Compétences",
+    "showLessTech": "Voir moins de technologies",
+    "showAllTech": "Voir toutes les {{count}} technologies",
+    "empty": "Aucune expérience trouvée",
+    "emptyHint": "Essayez de changer votre rôle professionnel pour découvrir les expériences pertinentes.",
+    "showLess": "Voir moins",
+    "readMore": "Lire plus",
+    "ctaTitle": "Envie de collaborer ?",
+    "ctaSubtitle": "Discutons de la façon dont mon expérience et mes compétences peuvent contribuer au succès de votre équipe.",
+    "getInTouch": "Contactez-moi",
+    "downloadResume": "Télécharger le CV"
+  },
+  "testimonials": {
+    "title": "Témoignages clients",
+    "subtitle": "Ce que les clients et collaborateurs disent de mon travail"
+  },
+  "skills": {
+    "title": "Compétences & Expertise",
+    "subtitle": "Technologies et outils avec lesquels je travaille",
+    "engineerTitle": "Stack Technique & Expertise",
+    "engineerSubtitle": "Technologies que j'utilise pour créer des expériences numériques exceptionnelles",
+    "creatorTitle": "Outils Créatifs & Compétences",
+    "creatorSubtitle": "Outils et compétences que j'utilise pour créer des histoires visuelles captivantes",
+    "categories": {
+      "language": "Langages de programmation",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Bases de données",
+      "devops": "DevOps",
+      "cloud": "Cloud",
+      "tool": "Outils",
+      "ai": "IA & ML",
+      "marketing": "Marketing",
+      "content": "Contenu",
+      "design": "Design",
+      "creative": "Créatif",
+      "communication": "Communication",
+      "platform": "Plateformes"
+    },
+    "stats": {
+      "skillsCount": "+ Compétences",
+      "learning": "Apprentissage continu"
+    }
+  },
+  "featuredProjects": {
+    "title": "Projets phares",
+    "subtitle": "Présentation de mes derniers travaux et solutions créatives qui génèrent des résultats concrets"
+  },
+  "section": {
+    "skills": {
+      "title": "Compétences & Expertise",
+      "subtitle": "Technologies et outils avec lesquels je travaille"
+    },
+    "featuredProjects": {
+      "title": "Projets phares",
+      "subtitle": "Présentation de mes derniers travaux et solutions créatives"
+    },
+    "experience": {
+      "title": "Expérience professionnelle",
+      "subtitle": "Mon parcours professionnel et mes réalisations"
+    },
+    "services": {
+      "title": "Ce que je propose",
+      "subtitle": "Des solutions complètes adaptées à vos besoins"
+    },
+    "testimonials": {
+      "title": "Ce qu'ils disent",
+      "subtitle": "Retours de clients et collaborateurs"
+    },
+    "blog": {
+      "title": "Derniers articles",
+      "subtitle": "Réflexions, tutoriels et perspectives du secteur"
+    },
+    "stats": {
+      "title": "En chiffres",
+      "subtitle": "Quantifier mon impact et mon expérience"
+    }
+  }
+}

@@ -11,8 +11,33 @@ import {
     FiCheckCircle
 } from 'react-icons/fi';
 import CustomAlert from '../shared/CustomAlert';
+import useContactTranslations from '../../hooks/useContactTranslations';
 
 function ContactForm() {
+      const { 
+        t,
+        getServicesList,
+        formNameLabel,
+        formEmailLabel,
+        formPhoneLabel,
+        formServiceLabel,
+        formMessageLabel,
+        formNamePlaceholder,
+        formEmailPlaceholder,
+        formPhonePlaceholder,
+        formServicePlaceholder,
+        formMessagePlaceholder,
+        formSubmitButton,
+        formSendingButton,
+        formBadge,
+        formTitle,
+        formTitleHighlight,
+        formSubtitle
+    } = useContactTranslations();
+    
+    
+    const services = getServicesList();
+    
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -51,36 +76,26 @@ function ContactForm() {
             if (response.ok) {
                 setShowAlert({ 
                     type: 'success', 
-                    message: '🎉 Your message has been sent successfully! I\'ll get back to you within 24 hours.' 
+                    message: t('form.alerts.success') 
                 });
                 setFormData({ name: '', email: '', phone: '', service: '', message: '' });
                 setIsSubmitted(true);
             } else {
                 setShowAlert({ 
                     type: 'error', 
-                    message: data.error || '❌ Failed to send message. Please try again or contact me directly.' 
+                    message: data.error || t('form.alerts.error')
                 });
             }
         } catch (error) {
             console.error('Error submitting contact form:', error);
             setShowAlert({ 
                 type: 'error', 
-                message: '🌐 Network error occurred. Please check your connection and try again.' 
+                message: t('form.alerts.networkError')
             });
         } finally {
             setLoading(false);
         }
     };
-
-    const services = [
-        'Web Development',
-        'Mobile App Development',
-        'AI Solutions',
-        'UI/UX Design',
-        'Digital Marketing',
-        'Consulting',
-        'Other'
-    ];
 
     return (
         <motion.div
@@ -110,10 +125,10 @@ function ContactForm() {
                             <FiMessageSquare className="text-4xl text-indigo-600 dark:text-indigo-400" />
                         </motion.div>
                         <h2 className="text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mb-3">
-                            Start Your <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Project</span>
+                            {formBadge} <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">{formTitleHighlight}</span>
                         </h2>
                         <p className="text-gray-600 dark:text-gray-300 text-lg">
-                            Let&apos;s discuss your ideas and bring them to life together
+                            {formSubtitle}
                         </p>
                     </div>
 
@@ -127,14 +142,14 @@ function ContactForm() {
                         >
                             <label className="block text-lg font-semibold text-primary-dark dark:text-primary-light mb-3 flex items-center">
                                 <FiUser className="mr-3 text-indigo-500" /> 
-                                Full Name <span className="text-red-500 ml-1">*</span>
+                                {formNameLabel} <span className="text-red-500 ml-1">*</span>
                             </label>
                             <div className="relative">
                                 <input
                                     type="text"
                                     id="name"
                                     name="name"
-                                    placeholder="John Doe"
+                                    placeholder={formNamePlaceholder}
                                     className="w-full pl-14 pr-6 py-5 border-2 border-gray-200 dark:border-gray-600 rounded-2xl bg-white dark:bg-ternary-dark text-primary-dark dark:text-secondary-light focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300 placeholder-gray-400"
                                     value={formData.name}
                                     onChange={handleChange}
@@ -155,14 +170,14 @@ function ContactForm() {
                         >
                             <label className="block text-lg font-semibold text-primary-dark dark:text-primary-light mb-3 flex items-center">
                                 <FiMail className="mr-3 text-green-500" /> 
-                                Email Address <span className="text-red-500 ml-1">*</span>
+                                {formEmailLabel} <span className="text-red-500 ml-1">*</span>
                             </label>
                             <div className="relative">
                                 <input
                                     type="email"
                                     id="email"
                                     name="email"
-                                    placeholder="john@example.com"
+                                    placeholder={formEmailPlaceholder}
                                     className="w-full pl-14 pr-6 py-5 border-2 border-gray-200 dark:border-gray-600 rounded-2xl bg-white dark:bg-ternary-dark text-primary-dark dark:text-secondary-light focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300 placeholder-gray-400"
                                     value={formData.email}
                                     onChange={handleChange}
@@ -183,14 +198,14 @@ function ContactForm() {
                         >
                             <label className="block text-lg font-semibold text-primary-dark dark:text-primary-light mb-3 flex items-center">
                                 <FiPhone className="mr-3 text-purple-500" /> 
-                                Phone (Optional)
+                                {formPhoneLabel}
                             </label>
                             <div className="relative">
                                 <input
                                     type="tel"
                                     id="phone"
                                     name="phone"
-                                    placeholder="+216 55 555 555"
+                                    placeholder={formPhonePlaceholder}
                                     className="w-full pl-14 pr-6 py-5 border-2 border-gray-200 dark:border-gray-600 rounded-2xl bg-white dark:bg-ternary-dark text-primary-dark dark:text-secondary-light focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300 placeholder-gray-400"
                                     value={formData.phone}
                                     onChange={handleChange}
@@ -209,7 +224,7 @@ function ContactForm() {
                         >
                             <label className="block text-lg font-semibold text-primary-dark dark:text-primary-light mb-3 flex items-center">
                                 <FiBriefcase className="mr-3 text-orange-500" /> 
-                                Service Interest
+                                {formServiceLabel}
                             </label>
                             <div className="relative">
                                 <select
@@ -219,7 +234,7 @@ function ContactForm() {
                                     value={formData.service}
                                     onChange={handleChange}
                                 >
-                                    <option value="">Select a service</option>
+                                    <option value="">{formServicePlaceholder}</option>
                                     {services.map((service, idx) => (
                                         <option key={idx} value={service}>{service}</option>
                                     ))}
@@ -242,13 +257,13 @@ function ContactForm() {
                             transition={{ duration: 0.5, delay: 0.8 }}
                         >
                             <label className="block text-lg font-semibold text-primary-dark dark:text-primary-light mb-3">
-                                Your Project Details <span className="text-red-500">*</span>
+                                {formMessageLabel} <span className="text-red-500">*</span>
                             </label>
                             <textarea
                                 className="w-full px-6 py-5 min-h-[180px] border-2 border-gray-200 dark:border-gray-600 rounded-2xl bg-white dark:bg-ternary-dark text-primary-dark dark:text-secondary-light focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300 placeholder-gray-400 resize-none"
                                 id="message"
                                 name="message"
-                                placeholder="Tell me about your project goals, timeline, and any specific requirements..."
+                                placeholder={formMessagePlaceholder}
                                 value={formData.message}
                                 onChange={handleChange}
                                 required
@@ -277,12 +292,12 @@ function ContactForm() {
                                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                                         className="w-6 h-6 border-2 border-white border-t-transparent rounded-full mr-3"
                                     />
-                                    Sending Your Message...
+                                    {formSendingButton}
                                 </>
                             ) : (
                                 <>
                                     <FiSend className="mr-3 group-hover:translate-x-1 transition-transform duration-300" />
-                                    Send Message
+                                    {formSubmitButton}
                                 </>
                             )}
                         </motion.button>

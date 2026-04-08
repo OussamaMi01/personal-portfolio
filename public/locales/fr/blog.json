@@ -1,0 +1,28 @@
+{
+  "ui": {
+    "badge": "Centre de Connaissances",
+    "title": "Mon",
+    "titleHighlight": "Blog",
+    "subtitle": "Réflexions, tutoriels et insights sur la technologie et la créativité"
+  },
+  "title": "Blog",
+  "subtitle": "Réflexions, tutoriels et insights sur la technologie et la créativité",
+  "readMore": "Lire l'article",
+  "readTime": "min de lecture",
+  "publishedOn": "Publié le",
+  "relatedPosts": "Articles similaires",
+  "categories": {
+    "react": "React & Next.js",
+    "typescript": "TypeScript",
+    "node": "Node.js",
+    "python": "Python",
+    "database": "Base de données",
+    "mobile": "Mobile",
+    "trends": "Tendances du secteur"
+  },
+  "platform": {
+    "preview": "Aperçu",
+    "fullArticle": "Lire l'article complet sur",
+    "moreArticles": "Plus d'articles disponibles sur ma plateforme blog"
+  }
+}

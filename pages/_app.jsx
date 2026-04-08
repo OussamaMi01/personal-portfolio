@@ -1,31 +1,22 @@
+// pages/_app.js
 import '../styles/globals.css';
 import { AnimatePresence } from 'framer-motion';
 import DefaultLayout from '../components/layout/DefaultLayout';
 import { useRouter } from 'next/router';
+import { appWithTranslation } from 'next-i18next';
+import nextI18NextConfig from '../next-i18next.config.js';
 
 function MyApp({ Component, pageProps }) {
     const router = useRouter();
-    const isAdminRoute = router.pathname.startsWith('/admin');
 
     return (
-        <AnimatePresence mode="wait">
-            <div className={`transition duration-300 ${
-                isAdminRoute 
-                    ? 'min-h-screen bg-gray-50 dark:bg-gray-900' 
-                    : 'bg-secondary-light dark:bg-primary-dark'
-            }`}>
-                {isAdminRoute ? (
-                    // Admin routes don't use the DefaultLayout
-                    <Component {...pageProps} />
-                ) : (
-                    // Regular portfolio routes use DefaultLayout
-                    <DefaultLayout>
-                        <Component {...pageProps} />
-                    </DefaultLayout>
-                )}
-            </div>
-        </AnimatePresence>
+        <DefaultLayout>
+            <AnimatePresence mode="wait">
+                {/* key={router.asPath} triggers exit/enter animation on every route change */}
+                <Component key={router.asPath} {...pageProps} />
+            </AnimatePresence>
+        </DefaultLayout>
     );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp, nextI18NextConfig);

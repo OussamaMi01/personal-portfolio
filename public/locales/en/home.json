@@ -1,0 +1,156 @@
+{
+  "page": {
+    "title": "Home"
+  },
+  "projects": {
+    "viewAll": "View All Projects"
+  },
+  "blog": {
+    "latest": "Latest",
+    "insights": "Insights",
+    "subtitle": "Sharing knowledge, tutorials, and industry perspectives",
+    "readAll": "Read All Articles"
+  },
+  "stats": {
+    "byTheNumbers": "By The",
+    "numbers": "Numbers",
+    "projectsCompleted": "Projects Completed",
+    "yearsExperience": "Years Experience",
+    "satisfiedClients": "Satisfied Clients",
+    "technologies": "Technologies"
+  },
+  "cta": {
+    "ready": "Ready to Start Your",
+    "project": "Project",
+    "subtitle": "Let's collaborate to bring your ideas to life with innovative solutions and creative expertise.",
+    "getInTouch": "Get In Touch",
+    "viewWork": "View My Work"
+  },
+  "banner": {
+    "welcome": "Welcome to my portfolio",
+    "greeting": "Hello, I'm",
+    "name": "Oussama",
+    "roles": {
+      "developer": "Developer",
+      "creator": "Creator"
+    },
+    "downloadCv": "Download CV",
+    "developer": {
+      "title": "Full-Stack Developer & Tech Innovator",
+      "description": "Crafting scalable digital solutions with modern technologies and cutting-edge frameworks",
+      "cta": "View My Projects"
+    },
+    "creator": {
+      "title": "Digital Creator & Visual Storyteller",
+      "description": "Transforming ideas into compelling visual experiences that captivate and inspire audiences",
+      "cta": "See My Work"
+    },
+    "imageAlt": {
+      "developer": "Developer working on code",
+      "creator": "Digital creator at work"
+    }
+  },
+  "services": {
+    "badge": "Professional Services",
+    "title": "Comprehensive",
+    "titleHighlight": "Services",
+    "subtitle": "End-to-end solutions blending technical expertise and creative innovation",
+    "keyBenefits": "Key Benefits",
+    "keyFeatures": "Key Features",
+    "technologiesTools": "Technologies & Tools",
+    "empty": "No services found",
+    "emptyHint": "Try switching your professional role to discover relevant service offerings.",
+    "showLess": "Show Less",
+    "readMore": "Read More",
+    "getStarted": "Get Started",
+    "ctaTitle": "Ready to Start Your Project?",
+    "ctaSubtitle": "Let's discuss your requirements and create a customized solution that drives real results for your business.",
+    "getInTouch": "Get In Touch",
+    "viewWork": "View My Work"
+  },
+  "experience": {
+    "badge": "Professional Journey",
+    "title": "Work",
+    "titleHighlight": "Experience",
+    "subtitle": "My career progression showcasing technical expertise and professional growth across diverse roles and industries",
+    "responsibilities": "Key Responsibilities",
+    "achievements": "Key Achievements",
+    "technologies": "Technologies & Skills",
+    "showLessTech": "Show Less Technologies",
+    "showAllTech": "Show All {{count}} Technologies",
+    "empty": "No experience found",
+    "emptyHint": "Try switching your professional role to discover relevant experience items.",
+    "showLess": "Show Less",
+    "readMore": "Read More",
+    "ctaTitle": "Want to Work Together?",
+    "ctaSubtitle": "Let's discuss how my experience and skills can contribute to your team's success.",
+    "getInTouch": "Get In Touch",
+    "downloadResume": "Download Resume"
+  },
+  "testimonials": {
+    "title": "Client Testimonials",
+    "subtitle": "What clients and collaborators say about working with me"
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Technologies and tools I work with",
+    "engineerTitle": "Tech Stack & Expertise",
+    "engineerSubtitle": "Technologies I work with to build amazing digital experiences",
+    "creatorTitle": "Creative Tools & Skills",
+    "creatorSubtitle": "Tools and skills I use to create compelling visual stories",
+    "categories": {
+      "language": "Programming Languages",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Databases",
+      "devops": "DevOps",
+      "cloud": "Cloud",
+      "tool": "Tools",
+      "ai": "AI & ML",
+      "marketing": "Marketing",
+      "content": "Content",
+      "design": "Design",
+      "creative": "Creative",
+      "communication": "Communication",
+      "platform": "Platforms"
+    },
+    "stats": {
+      "skillsCount": "+ Skills",
+      "learning": "Continuously Learning"
+    }
+  },
+  "featuredProjects": {
+    "title": "Featured Projects",
+    "subtitle": "Showcasing my latest work and creative solutions that drive real results"
+  },
+  "section": {
+    "skills": {
+      "title": "Skills & Expertise",
+      "subtitle": "Technologies and tools I work with"
+    },
+    "featuredProjects": {
+      "title": "Featured Projects",
+      "subtitle": "Showcasing my latest work and creative solutions that drive real results"
+    },
+    "experience": {
+      "title": "Professional Experience",
+      "subtitle": "My career journey and professional achievements"
+    },
+    "services": {
+      "title": "What I Offer",
+      "subtitle": "Comprehensive solutions tailored to your needs"
+    },
+    "testimonials": {
+      "title": "What People Say",
+      "subtitle": "Feedback from clients and collaborators"
+    },
+    "blog": {
+      "title": "Latest Insights",
+      "subtitle": "Thoughts, tutorials, and industry perspectives"
+    },
+    "stats": {
+      "title": "By The Numbers",
+      "subtitle": "Quantifying my impact and experience"
+    }
+  }
+}

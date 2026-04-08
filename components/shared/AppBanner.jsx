@@ -1,33 +1,34 @@
 // components/shared/AppBanner.jsx
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiCode, FiFeather, FiArrowRight, FiGithub, FiInstagram, FiDownload } from 'react-icons/fi';
+import { FiCode, FiFeather, FiArrowRight, FiGithub, FiDownload } from 'react-icons/fi';
+import { FaTiktok } from 'react-icons/fa';
+import { useTranslation } from 'next-i18next';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
 import Image from 'next/image';
 import Link from 'next/link';
-import { AiFillTikTok } from 'react-icons/ai';
-import { FaTiktok } from 'react-icons/fa';
 
 function AppBanner({ currentRole = 'developer', setCurrentRole }) {
   const [activeTheme] = useThemeSwitcher();
+  const { t } = useTranslation('home');
 
   const roles = {
     developer: {
-      title: "Full-Stack Developer & Tech Innovator",
-      description: "Crafting scalable digital solutions with modern technologies and cutting-edge frameworks",
+      title: t('banner.developer.title'),
+      description: t('banner.developer.description'),
       icon: <FiCode className="text-xl" />,
       color: "indigo",
-      cta: "View My Projects",
+      cta: t('banner.developer.cta'),
       social: [
         { icon: <FiGithub />, label: "GitHub", href: "https://github.com/OussamaMi01/" }
       ],
       image: "/images/banner/developer.jpg"
     },
     creator: {
-      title: "Digital Creator & Visual Storyteller",
-      description: "Transforming ideas into compelling visual experiences that captivate and inspire audiences",
+      title: t('banner.creator.title'),
+      description: t('banner.creator.description'),
       icon: <FiFeather className="text-xl" />,
       color: "purple",
-      cta: "See My Work",
+      cta: t('banner.creator.cta'),
       social: [
         { icon: <FaTiktok />, label: "TikTok", href: "https://www.tiktok.com/@os_design.tn" },
       ],
@@ -35,7 +36,6 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
     }
   };
 
-  // Ensure currentRole is valid, fallback to 'developer'
   const validCurrentRole = roles[currentRole] ? currentRole : 'developer';
   const currentRoleData = roles[validCurrentRole];
 
@@ -56,7 +56,7 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
           className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/20 dark:to-purple-900/20 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800"
         >
           <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2 animate-pulse"></div>
-          <span className="text-sm font-medium">Welcome to my portfolio</span>
+          <span className="text-sm font-medium">{t('banner.welcome')}</span>
         </motion.div>
 
         {/* Main Heading */}
@@ -67,7 +67,7 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
           className="space-y-4"
         >
           <h1 className="font-general-semibold text-4xl lg:text-5xl xl:text-6xl text-ternary-dark dark:text-primary-light leading-tight">
-            Hello, I&apos;m{" "}
+            {t('banner.greeting')}{" "}
             <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
               Oussama
             </span>
@@ -93,7 +93,7 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
           </AnimatePresence>
         </motion.div>
 
-        {/* Enhanced Role Toggle */}
+        {/* Role Toggle */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -113,7 +113,7 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
                 whileTap={{ scale: 0.95 }}
               >
                 <FiCode className="mr-2 text-lg" />
-                <span className="font-medium">Developer</span>
+                <span className="font-medium">{t('banner.roles.developer')}</span>
               </motion.button>
               <motion.button
                 onClick={() => setCurrentRole('creator')}
@@ -126,7 +126,7 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
                 whileTap={{ scale: 0.95 }}
               >
                 <FiFeather className="mr-2 text-lg" />
-                <span className="font-medium">Creator</span>
+                <span className="font-medium">{t('banner.roles.creator')}</span>
               </motion.button>
             </div>
 
@@ -151,7 +151,7 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
             </div>
           </div>
 
-          {/* Call to Action Buttons */}
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -160,10 +160,7 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
           >
             <Link href="/projects" passHref legacyBehavior>
               <motion.a
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: "0 20px 40px -10px rgba(99, 102, 241, 0.4)" 
-                }}
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px -10px rgba(99, 102, 241, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
                 className="group flex items-center justify-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-medium cursor-pointer min-w-[200px]"
               >
@@ -171,31 +168,25 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
                 <FiArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.a>
             </Link>
-            
+
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="group flex items-center justify-center px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-xl hover:border-indigo-400 dark:hover:border-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 font-medium min-w-[200px]"
-              onClick={() => {
-                console.log('Download CV');
-              }}
+              onClick={() => { console.log('Download CV'); }}
             >
               <FiDownload className="mr-3 group-hover:scale-110 transition-transform duration-300" />
-              <span className="font-semibold">Download CV</span>
+              <span className="font-semibold">{t('banner.downloadCv')}</span>
             </motion.button>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Enhanced Image Section */}
+      {/* Image Section */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ 
-          ease: 'easeInOut', 
-          duration: 0.9, 
-          delay: 0.5 
-        }}
+        transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.5 }}
         className="w-full lg:w-1/2 relative flex justify-center"
       >
         <div className="relative h-80 sm:h-96 md:h-[450px] lg:h-[500px] xl:h-[550px] w-full max-w-2xl">
@@ -218,34 +209,17 @@ function AppBanner({ currentRole = 'developer', setCurrentRole }) {
                   priority={true}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                
-                {/* Enhanced Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/30 dark:to-black/50"></div>
-                
-              
               </div>
             </motion.div>
           </AnimatePresence>
 
-          {/* Enhanced Background Decorative Elements */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1 }}
-            className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full blur-3xl opacity-20 -z-10"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.2 }}
-            className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-3xl opacity-20 -z-10"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.4 }}
-            className="absolute top-1/2 -left-12 w-24 h-24 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-2xl opacity-15 -z-10"
-          />
+          <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1 }}
+            className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full blur-3xl opacity-20 -z-10" />
+          <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.2 }}
+            className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-3xl opacity-20 -z-10" />
+          <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.4 }}
+            className="absolute top-1/2 -left-12 w-24 h-24 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-2xl opacity-15 -z-10" />
         </div>
       </motion.div>
     </motion.section>

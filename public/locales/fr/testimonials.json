@@ -1,0 +1,41 @@
+{
+  "ui": {
+    "badge": "Témoignages clients",
+    "title": "Ce qu'ils",
+    "titleHighlight": "disent",
+    "subtitle": "Retours de clients et collaborateurs qui font confiance à mon travail",
+    "of": "sur"
+  },
+  "items": {
+    "al-idhafa": {
+     
+      "company": "Al Idhafa Tech",
+      "quote": "Oussama apporte une rare combinaison d'innovation technique et de vision créative au projet. Sa capacité à résoudre des problèmes complexes tout en maintenant la cohérence en fait un collaborateur précieux.",
+      "rating": 5,
+      "image": "/images/company-logos/al-idhafa.jpg"
+    },
+    "we-are-kasserine": {
+      
+      "company": "We Are Kasserine",
+      "quote": "Travailler avec Oussama a été une expérience fantastique. Son attention aux détails et sa capacité à produire un contenu époustouflant ont considérablement élevé notre stratégie marketing.",
+      "rating": 5,
+      "image": "/images/company-logos/we-are-kasserine.jpg"
+    },
+    "bariq-rifki": {
+      "name": "Bariq Rifki",
+      "title": "Créateur de Contenu",
+      "company": "Digital Creator",
+      "quote": "Les compétences créatives d'Oussama en montage vidéo sont exceptionnelles. Il a transformé mes idées en vidéos visuellement captivantes qui ont fasciné mon audience.",
+      "rating": 5,
+      "image": "/images/testimonials/client1.jpg"
+    },
+    "amine-chebbi": {
+      "name": "Amine Chebbi",
+      "title": "Créateur de Contenu & CEO",
+      "company": "Chebbi Trading",
+      "quote": "La collaboration avec Oussama était vraiment inspirante. Sa créativité m'a aidé à expliquer des sujets complexes de manière claire et engageante.",
+      "rating": 5,
+      "image": "/images/testimonials/client2.jpg"
+    }
+  }
+}

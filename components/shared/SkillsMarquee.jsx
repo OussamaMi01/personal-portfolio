@@ -1,6 +1,7 @@
 // components/shared/SkillsMarquee.jsx
 import { motion, AnimatePresence } from 'framer-motion';
 import { useMemo, useState, useEffect } from 'react';
+import { useTranslation } from 'next-i18next';
 import {
     FaJava, FaPython, FaJs, FaAngular, FaNodeJs, FaReact,
     FaGitAlt, FaCode, FaPaintBrush, FaAd, FaSearchengin, FaLightbulb, 
@@ -125,6 +126,7 @@ const marqueeVariants = {
 };
 
 function SkillsMarquee({ currentRole }) {
+    const { t } = useTranslation('home');
     const [isPaused, setIsPaused] = useState(false);
     const [hoveredSkill, setHoveredSkill] = useState(null);
 
@@ -140,10 +142,13 @@ function SkillsMarquee({ currentRole }) {
         return [...skillsWithIcons, ...skillsWithIcons];
     }, [currentRole]);
 
-    const title = currentRole === 'engineer' ? 'Tech Stack & Expertise' : 'Creative Tools & Skills';
+    const title = currentRole === 'engineer' 
+        ? t('skills.engineerTitle', 'Tech Stack & Expertise')
+        : t('skills.creatorTitle', 'Creative Tools & Skills');
+    
     const subtitle = currentRole === 'engineer' 
-        ? 'Technologies I work with to build amazing digital experiences'
-        : 'Tools and skills I use to create compelling visual stories';
+        ? t('skills.engineerSubtitle', 'Technologies I work with to build amazing digital experiences')
+        : t('skills.creatorSubtitle', 'Tools and skills I use to create compelling visual stories');
 
     if (!skillsToDisplay || skillsToDisplay.length === 0) {
         return null;
@@ -216,7 +221,7 @@ function SkillsMarquee({ currentRole }) {
                                     {name}
                                 </span>
                                 <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide">
-                                    {category}
+                                    {t(`skills.categories.${category}`, category)}
                                 </span>
                             </div>
                         </motion.div>
@@ -234,11 +239,15 @@ function SkillsMarquee({ currentRole }) {
                 <div className="flex flex-wrap justify-center gap-6 text-center">
                     <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                         <FiAward className="text-indigo-500" />
-                        <span className="font-medium">{skillsToDisplay.length / 2}+ Skills</span>
+                        <span className="font-medium">
+                            {t('skills.stats.skillsCount', { count: skillsToDisplay.length / 2 })}
+                        </span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                         <FiTrendingUp className="text-green-500" />
-                        <span className="font-medium">Continuously Learning</span>
+                        <span className="font-medium">
+                            {t('skills.stats.learning', 'Continuously Learning')}
+                        </span>
                     </div>
                 </div>
             </motion.div>

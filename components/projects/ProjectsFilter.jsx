@@ -5,17 +5,18 @@ import { FiChevronDown, FiX } from 'react-icons/fi';
 
 const selectOptions = [
   'All Projects',
+  'Cybersecurity',        
+  'Cloud Computing',     
+  'System Administration', 
   'Web Application',
+  'AI & Data Science',
+  'Distributed Systems',
   'Mobile Application',
-  'UI/UX Design',
-  'Branding',
+  'IT Service Management',
   'Digital Art',
   'Video Production',
-  'AI & Data Science',
-  'Cybersecurity',
-  'Cloud Computing',
-  'System Administration',
-  'IT Service Management',
+  'UI/UX Design',
+  'Branding',
   'Software Engineering'
 ];
 

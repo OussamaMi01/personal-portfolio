@@ -28,11 +28,8 @@ function PagesMetaHead({
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Oussama Missaoui's Portfolio" />
       
-      {/* Twitter Card Meta Tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:creator" content="@OussamaMissaoui" />
+      
+      
     </Head>
   );
 }

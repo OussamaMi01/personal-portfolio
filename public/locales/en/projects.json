@@ -1,0 +1,343 @@
+{
+  "badge": "Projects",
+  "title": "Featured",
+  "titleHighlight": "Projects",
+  "subtitle": "Showcasing my latest work and creative solutions that drive real results",
+  "searchPlaceholder": "Search projects...",
+  "showing": "Showing",
+  "projects": "projects",
+  "project": "project",
+  "for": "for",
+  "in": "in",
+  "clearFilters": "Clear filters",
+  "noProjectsFound": "No projects found",
+  "noProjectsHint": "Try adjusting your search or filter to find what you're looking for.",
+  "clearAllFilters": "Clear all filters",
+  "categories": {
+    "all": "All Projects",
+    "web": "Web Applications",
+    "mobile": "Mobile Apps",
+    "ai": "AI & Data Science",
+    "design": "Digital Art",
+    "video": "Video Production",
+    "security": "Cybersecurity",
+    "cloud": "Cloud Computing",
+    "system": "System Administration",
+    "distributed": "Distributed Systems"
+  },
+  "filters": {
+    "all": "All",
+    "engineer": "Engineering",
+    "creator": "Creative"
+  },
+  "status": {
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "planned": "Planned"
+  },
+  "details": {
+    "overview": "Project Overview",
+    "objective": "Objective",
+    "technologies": "Technologies Used",
+    "achievements": "Key Achievements",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code",
+    "viewOnBehance": "View on Behance",
+    "watchVideo": "Watch Video",
+    "completionDate": "Completion Date",
+    "role": "My Role"
+  },
+  "items": {
+    "dfs-project-id": {
+      "title": "Distributed File System (DFS)",
+      "category": "Distributed Systems",
+      "tags": ["Distributed Systems", "Java", "Networking"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Designed and implemented a robust Distributed File System (DFS) using Java RMI for distributed data storage and retrieval, focusing on high availability and fault tolerance.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Achieved 99.9% data availability and 20% faster retrieval by implementing fault tolerance and load balancing mechanisms.",
+        "Reduced network overhead by 15% via efficient data transfer mechanisms, optimizing overall system performance."
+      ]
+    },
+    "corba-distributed-system-id": {
+      "title": "CORBA Distributed System",
+      "category": "Distributed Systems",
+      "tags": ["Distributed Systems", "CORBA"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Built a CORBA-based distributed system, enabling seamless communication and interoperability between multiple client applications and a central server.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Reduced latency by 25% by optimizing object invocation mechanisms.",
+        "Demonstrated robust client-server interactions in a heterogeneous environment."
+      ]
+    },
+    "contact-management-app-id": {
+      "title": "Contact Management App",
+      "category": "Mobile Application",
+      "tags": ["Mobile App", "Android", "Java"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Developed an intuitive Android application in Java that allows users to securely store, efficiently edit, and quickly search contacts.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Optimized data retrieval by 35% for improved user experience, ensuring fast access to contact information.",
+        "Achieved a 50% user satisfaction rate in initial testing, leading to further app refinements based on valuable feedback."
+      ]
+    },
+    "ichri-ecommerce-website-id": {
+      "title": "Ichri.tn E-Commerce Website",
+      "category": "Web Application",
+      "tags": ["Web Development", "E-commerce", "Spring Boot", "Angular"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Developed a full-stack e-commerce platform for Ichri.tn, focusing on a seamless user experience, secure transactions, and efficient product management.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Implemented a robust back-end using Spring Boot and a dynamic front-end with Angular, ensuring high performance and scalability.",
+        "Enabled smooth product browsing, secure checkout processes, and improved overall user experience by 30% through intuitive design and efficient API interactions."
+      ]
+    },
+    "credit-card-fraud-detection-id": {
+      "title": "Credit Card Fraud Detection",
+      "category": "AI & Data Science",
+      "tags": ["Machine Learning", "Python", "Data Science"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Developed and trained a machine learning model to accurately detect fraudulent credit card transactions, minimizing financial risks.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Achieved improved accuracy in fraud detection by analyzing complex transaction patterns and anomalies, reducing false positives.",
+        "Implemented various classification algorithms and evaluated their performance to select the most effective model for real-time detection."
+      ]
+    },
+    "ai-matching-algorithm-id": {
+      "title": "AI Matching Algorithm For A Recruitment Platform",
+      "category": "AI & Data Science",
+      "tags": ["NLP", "Machine Learning", "Python", "spaCy"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Built a sophisticated AI-powered matching algorithm for a recruitment platform, leveraging NLP to accurately match candidates with job descriptions.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Developed a Named Entity Recognition (NER) model using spaCy to extract key entities from resumes and job postings, significantly enhancing text analysis and data extraction capabilities.",
+        "Improved candidate-job matching accuracy by 20%, leading to more relevant recommendations and a streamlined recruitment process."
+      ]
+    },
+    "car-selling-price-analysis-id": {
+      "title": "Analyzing Selling Price Of Used Cars",
+      "category": "AI & Data Science",
+      "tags": ["Data Analysis", "Python", "Predictive Modeling"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Conducted a comprehensive data analysis project in Python to identify and analyze factors affecting the selling price of used cars.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Built robust predictive models to accurately estimate car prices based on features like mileage, make, model, and condition, achieving high prediction accuracy.",
+        "Provided key insights into market trends and pricing strategies through detailed data visualization and statistical analysis."
+      ]
+    },
+    "siliana-kasserine-digital-art-behance-1": {
+      "title": "We Are Siliana-Kasserine: Collaborative Digital Art",
+      "category": "Digital Art",
+      "tags": ["Digital Art", "Collaboration", "Community Project", "Photoshop"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "A unique digital art collaboration project focusing on the cultural essence of Siliana and Kasserine, promoting local heritage through digital mediums.",
+      "projectDetailsHeading": "View Full Project on Behance",
+      "projectDetails": [
+        "Explore the creative process and final artworks of this collaborative digital art initiative. Click the link below to view the detailed case study and all artworks on Behance."
+      ]
+    },
+    "tunis-kasserine-digital-art-behance-1": {
+      "title": "We Are Tunis-Kasserine: Collaborative Digital Art 1",
+      "category": "Digital Art",
+      "tags": ["Digital Art", "Collaboration", "Community Project", "Photoshop"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "A unique digital art collaboration project focusing on the cultural essence of Tunis and Kasserine, promoting local heritage through digital mediums.",
+      "projectDetailsHeading": "View Full Project on Behance",
+      "projectDetails": [
+        "Explore the creative process and final artworks of this collaborative digital art initiative. Click the link below to view the detailed case study and all artworks on Behance."
+      ]
+    },
+    "tunis-kasserine-digital-art-behance-2": {
+      "title": "We Are Tunis-Kasserine: Collaborative Digital Art 2",
+      "category": "Digital Art",
+      "tags": ["Digital Art", "Collaboration", "Community Project", "Photoshop"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "This design captures the essence of the Tunis and Kasserine architectural heritage in a surreal and captivating way.",
+      "projectDetailsHeading": "View Full Project on Behance",
+      "projectDetails": [
+        "Explore the creative process and final artworks of this collaborative digital art initiative. Click the link below to view the detailed case study and all artworks on Behance."
+      ]
+    },
+    "we-are-kasserine-theme-nature-behance": {
+      "title": "We are Kasserine: Theme N°12 - Nature",
+      "category": "Digital Art",
+      "tags": ["Digital Art", "Collaboration", "Community Project", "Photoshop"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "This design features a vibrant vortex of natural elements, blending colors and abstract forms, created to represent the \"Nature\" theme for the \"We are Kasserine\" project.",
+      "projectDetailsHeading": "View Full Project on Behance",
+      "projectDetails": [
+        "Explore the creative process and final artworks of this collaborative digital art initiative. Click the link below to view the detailed case study and all artworks on Behance."
+      ]
+    },
+    "radio-talk-kasserine-behance": {
+      "title": "Radio Talk: We are Kasserine (mandate 22/23)",
+      "category": "Digital Art",
+      "tags": ["Digital Art", "Collaboration", "Community Project", "Photoshop", "Illustrator"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "This design features a vibrant vortex of natural elements, blending colors and abstract forms, created for the \"We are Kasserine\" radio talk during the 2022/2023 mandate.",
+      "projectDetailsHeading": "Project Details",
+      "projectDetails": [
+        "Explore the creative process and final artworks of this collaborative digital art initiative. The project aims to visually represent the dynamic essence of Kasserine through digital mediums. Click the link below to view the detailed case study and all artworks on Behance for a comprehensive understanding."
+      ]
+    },
+    "spiderman-samy-chaffai-artwork-behance": {
+      "title": "Spider-man X Samy Chaffai",
+      "category": "Digital Art",
+      "tags": ["Digital Art", "Photoshop", "Illustrator"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "This artwork is an inspiration from Spiderman movie, dedicated to the creative and hardworking person in Tunisia \"Samy Chaffai\".",
+      "projectDetailsHeading": "Project Details",
+      "projectDetails": [
+        "Explore the creative process of this artwork initiative. Click the link below to view the detailed case study and all artworks on Behance for a comprehensive understanding."
+      ]
+    },
+    "editing-challenge": {
+      "title": "Video Editor Challenge",
+      "category": "Video Production",
+      "tags": ["Video Production", "Editing", "Motion Graphics"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Video editing challenge demonstrating advanced editing skills and visual effects.",
+      "projectDetailsHeading": "Video Gallery",
+      "projectDetails": [
+        "This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video."
+      ]
+    },
+    "carry-trading": {
+      "title": "Carry Trading",
+      "category": "Video Production",
+      "tags": ["Video Production", "Editing", "Motion Graphics"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Explanatory video about the Carry Trading concept for financial markets.",
+      "projectDetailsHeading": "Video Gallery",
+      "projectDetails": [
+        "This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video."
+      ]
+    },
+    "digital-marketing-with-rabii": {
+      "title": "Optimize your SEO Keywords",
+      "category": "Video Production",
+      "tags": ["Video Production", "Editing"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Educational video about SEO keyword optimization (Arabic version).",
+      "projectDetailsHeading": "Video Gallery",
+      "projectDetails": [
+        "This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video."
+      ]
+    },
+    "e-book-promo-video": {
+      "title": "E-book Promo",
+      "category": "Video Production",
+      "tags": ["Video Production", "Editing", "Motion Graphics"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Promotional video for an e-book with motion graphics effects.",
+      "projectDetailsHeading": "Video Gallery",
+      "projectDetails": [
+        "This section highlights my expertise in video creation, including corporate videos, promotional content, and short documentaries. Click on any thumbnail to watch the video."
+      ]
+    },
+    "youtube-thumbnail": {
+      "title": "Youtube Thumbnail",
+      "category": "Digital Art",
+      "tags": ["Thumbnail", "Photoshop", "Picsart", "Digital Art"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "This Youtube thumbnail is designed to highlight the creative process and final artworks of this collaborative digital art initiative with a content creator.",
+      "projectDetailsHeading": "Project Details",
+      "projectDetails": [
+        "Explore the creative process of this artwork initiative. Click the link below to view the detailed case study and all artworks on Behance for a comprehensive understanding."
+      ]
+    },
+    "web-security-audit-owasp": {
+      "title": "OWASP ASVS Security Audit",
+      "category": "Cybersecurity",
+      "tags": ["Cybersecurity", "OWASP", "Security Audit", "Risk Assessment"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Conducted a comprehensive security audit of a web application following the OWASP ASVS (Application Security Verification Standard) methodology. The audit covered authentication, session management, access control, input validation, and cryptographic controls.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Identified 15+ security vulnerabilities including SQL injection, XSS, and misconfigured security headers, with criticality assessment and remediation recommendations.",
+        "Delivered a complete security audit report with executive summary, findings, risk assessment matrix, and prioritized remediation plan."
+      ]
+    },
+    "lpic2-self-study": {
+      "title": "LPIC-2 - Advanced System Administration",
+      "category": "System Administration",
+      "tags": ["Linux", "System Administration", "Kernel", "DNS", "Filesystems"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Self-study and hands-on practice for LPIC-2 certification (Linux Professional Institute Certification Level 2). Focused on kernel management, filesystem administration, and DNS/BIND configuration.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Mastered kernel module management, compilation, and troubleshooting through hands-on labs.",
+        "Configured and secured DNS servers with BIND9, including forward/reverse zones and security best practices.",
+        "Implemented advanced filesystem management including LVM, software RAID, and filesystem repair techniques."
+      ]
+    },
+    "aws-cloud-security": {
+      "title": "AWS Cloud Infrastructure Security",
+      "category": "Cloud Computing",
+      "tags": ["AWS", "Cloud Security", "DevSecOps", "Virtualization"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Deployed and secured a cloud infrastructure on AWS following best practices. Implemented network security, identity management, and data protection for a multi-tier web application.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Designed and implemented a secure VPC with public/private subnets, NAT gateways, and security groups following least-privilege principles.",
+        "Configured IAM roles and policies for fine-grained access control, implemented MFA, and set up CloudTrail for audit logging.",
+        "Deployed a web application with HTTPS termination using Application Load Balancer and AWS Certificate Manager."
+      ]
+    },
+    "iam-access-control": {
+      "title": "IAM Authentication System with MFA",
+      "category": "Cybersecurity",
+      "tags": ["IAM", "Authentication", "MFA", "Cybersecurity", "RBAC"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Built a complete identity and access management system with role-based access control (RBAC), multi-factor authentication (MFA), and secure session management.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Implemented role-based access control with granular permissions for admin, manager, and user roles.",
+        "Integrated time-based one-time password (TOTP) for MFA using Google Authenticator.",
+        "Designed secure session management with JWT tokens, including proper expiration and refresh mechanisms."
+      ]
+    },
+    "itil-process-implementation": {
+      "title": "ITIL Process Implementation",
+      "category": "IT Service Management",
+      "tags": ["ITIL", "Service Management", "SLA", "IT Processes"],
+      "clientHeading": "Project Overview",
+      "objectivesHeading": "Objective",
+      "objectivesDetails": "Studied and documented the implementation of key ITIL processes including Service Level Management, Availability Management, and Security Management.",
+      "projectDetailsHeading": "Key Achievements",
+      "projectDetails": [
+        "Designed SLA templates and monitoring charts for service level agreements.",
+        "Applied ITIL concepts to real-world scenarios through case studies and exercises."
+      ]
+    }
+  }
+}

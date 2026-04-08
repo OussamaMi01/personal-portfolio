@@ -1,0 +1,114 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "services": "Services",
+    "blog": "Blog",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "actions": {
+    "hireMe": "Engagez-moi",
+    "downloadCV": "Télécharger CV",
+    "viewAll": "Voir tout",
+    "readMore": "Lire la suite",
+    "showLess": "Voir moins",
+    "getStarted": "Commencer",
+    "learnMore": "En savoir plus",
+    "submit": "Soumettre",
+    "send": "Envoyer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "back": "Retour",
+    "close": "Fermer",
+    "viewProject": "Voir le projet",
+    "viewDetails": "Voir les détails",
+    "seeMore": "Voir plus",
+    "explore": "Explorer",
+    "backToTop": "Retour en haut"
+  },
+  "status": {
+    "available": "Disponible",
+    "busy": "Occupé",
+    "completed": "Terminé",
+    "inProgress": "En cours",
+    "planned": "Planifié"
+  },
+  "theme": {
+    "light": "Mode clair",
+    "dark": "Mode sombre",
+    "system": "Système",
+    "switch": "Changer de thème"
+  },
+  "language": {
+    "en": "Anglais",
+    "fr": "Français",
+    "switchTo": "Passer à",
+    "choose": "Choisir la langue",
+    "selectLanguage": "Sélectionnez votre langue préférée"
+  },
+  "time": {
+    "today": "Aujourd'hui",
+    "yesterday": "Hier",
+    "days": "jours",
+    "hours": "heures",
+    "minutes": "minutes",
+    "justNow": "À l'instant"
+  },
+  "errors": {
+    "notFound": "Page non trouvée",
+    "somethingWentWrong": "Une erreur est survenue",
+    "tryAgain": "Veuillez réessayer",
+    "unauthorized": "Accès non autorisé",
+    "forbidden": "Accès interdit",
+    "serverError": "Erreur interne du serveur",
+    "networkError": "Erreur réseau. Veuillez vérifier votre connexion"
+  },
+  "success": {
+    "saved": "Enregistré avec succès",
+    "updated": "Mis à jour avec succès",
+    "deleted": "Supprimé avec succès",
+    "sent": "Envoyé avec succès"
+  },
+  "loading": {
+    "default": "Chargement...",
+    "fetching": "Récupération des données...",
+    "saving": "Enregistrement...",
+    "processing": "Traitement en cours..."
+  },
+
+  "footer": {
+    "copyright": "© {{year}} Oussama Missaoui. Tous droits réservés.",
+    "builtWith": "Construit avec",
+    "hostedOn": "Hébergé sur",
+    "followMe": "Suivez-moi",
+    "quickLinks": "Liens rapides",
+    "contactInfo": "Coordonnées",
+    "about": "Développeur Full-Stack & Créateur Digital passionné par la création de solutions innovantes et d'expériences digitales créatives."
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "tiktok": "TikTok",
+    "behance": "Behance"
+  },
+  "seo": {
+    "defaultTitle": "Oussama Missaoui - Développeur Full-Stack & Créateur Digital",
+    "defaultDescription": "Développeur Full-Stack et Créateur Digital spécialisé dans le développement web, les solutions IA et les expériences digitales créatives.",
+    "keywords": "Développeur Full-Stack, Développement Web, IA, Machine Learning, Art Digital, Portfolio, Tunisie"
+  },
+  "cookies": {
+    "title": "Nous utilisons des cookies",
+    "message": "Ce site utilise des cookies pour améliorer votre expérience de navigation et analyser notre trafic.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "settings": "Paramètres des cookies"
+  }
+}

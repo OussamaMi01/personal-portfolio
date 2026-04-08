@@ -1,0 +1,343 @@
+{
+  "badge": "Projets",
+  "title": "Projets en",
+  "titleHighlight": "vedette",
+  "subtitle": "Présentation de mes derniers travaux et solutions créatives qui génèrent des résultats concrets",
+  "searchPlaceholder": "Rechercher des projets...",
+  "showing": "Affichage de",
+  "projects": "projets",
+  "project": "projet",
+  "for": "pour",
+  "in": "dans",
+  "clearFilters": "Effacer les filtres",
+  "noProjectsFound": "Aucun projet trouvé",
+  "noProjectsHint": "Essayez d'ajuster votre recherche ou vos filtres pour trouver ce que vous cherchez.",
+  "clearAllFilters": "Effacer tous les filtres",
+  "categories": {
+    "all": "Tous les projets",
+    "web": "Applications Web",
+    "mobile": "Applications Mobiles",
+    "ai": "IA & Science des Données",
+    "design": "Art numérique",
+    "video": "Production vidéo",
+    "security": "Cybersécurité",
+    "cloud": "Cloud Computing",
+    "system": "Administration Système",
+    "distributed": "Systèmes Distribués"
+  },
+  "filters": {
+    "all": "Tous",
+    "engineer": "Ingénierie",
+    "creator": "Créatif"
+  },
+  "status": {
+    "completed": "Terminé",
+    "inProgress": "En cours",
+    "planned": "Planifié"
+  },
+  "details": {
+    "overview": "Aperçu du projet",
+    "objective": "Objectif",
+    "technologies": "Technologies utilisées",
+    "achievements": "Réalisations clés",
+    "liveDemo": "Démo en direct",
+    "sourceCode": "Code source",
+    "viewOnBehance": "Voir sur Behance",
+    "watchVideo": "Regarder la vidéo",
+    "completionDate": "Date d'achèvement",
+    "role": "Mon rôle"
+  },
+  "items": {
+    "dfs-project-id": {
+      "title": "Système de Fichiers Distribué (DFS)",
+      "category": "Systèmes Distribués",
+      "tags": ["Systèmes Distribués", "Java", "Réseaux"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Conception et implémentation d'un système de fichiers distribué robuste (DFS) en Java RMI pour le stockage et la récupération distribués de données, axé sur la haute disponibilité et la tolérance aux pannes.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Disponibilité des données de 99,9% et récupération 20% plus rapide grâce à la tolérance aux pannes et à l'équilibrage de charge.",
+        "Réduction des surcharges réseau de 15% via des mécanismes de transfert de données efficaces."
+      ]
+    },
+    "corba-distributed-system-id": {
+      "title": "Système Distribué CORBA",
+      "category": "Systèmes Distribués",
+      "tags": ["Systèmes Distribués", "CORBA"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Construction d'un système distribué basé sur CORBA permettant une communication et une interopérabilité transparentes entre plusieurs applications clientes et un serveur central.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Réduction de la latence de 25% en optimisant les mécanismes d'invocation d'objets.",
+        "Démonstration d'interactions client-serveur robustes dans un environnement hétérogène."
+      ]
+    },
+    "contact-management-app-id": {
+      "title": "Application de Gestion de Contacts",
+      "category": "Application Mobile",
+      "tags": ["Application Mobile", "Android", "Java"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Développement d'une application Android intuitive en Java permettant aux utilisateurs de stocker, modifier et rechercher des contacts de manière sécurisée.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Optimisation de la récupération des données de 35% pour une meilleure expérience utilisateur.",
+        "Taux de satisfaction utilisateur de 50% lors des tests initiaux, menant à des améliorations supplémentaires."
+      ]
+    },
+    "ichri-ecommerce-website-id": {
+      "title": "Site E-Commerce Ichri.tn",
+      "category": "Application Web",
+      "tags": ["Développement Web", "E-commerce", "Spring Boot", "Angular"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Développement d'une plateforme e-commerce full-stack pour Ichri.tn, axée sur une expérience utilisateur fluide, des transactions sécurisées et une gestion efficace des produits.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Implémentation d'un back-end robuste avec Spring Boot et un front-end dynamique avec Angular, garantissant performance et évolutivité.",
+        "Navigation produit fluide et processus de paiement sécurisé améliorant l'expérience utilisateur de 30%."
+      ]
+    },
+    "credit-card-fraud-detection-id": {
+      "title": "Détection de Fraude par Carte Bancaire",
+      "category": "IA & Science des Données",
+      "tags": ["Machine Learning", "Python", "Science des Données"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Développement et entraînement d'un modèle de machine learning pour détecter avec précision les transactions frauduleuses par carte bancaire, minimisant les risques financiers.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Amélioration de la précision de détection des fraudes en analysant des patterns de transactions complexes, réduisant les faux positifs.",
+        "Implémentation de plusieurs algorithmes de classification et évaluation de leur performance pour sélectionner le modèle le plus efficace."
+      ]
+    },
+    "ai-matching-algorithm-id": {
+      "title": "Algorithme IA de Matching pour Plateforme de Recrutement",
+      "category": "IA & Science des Données",
+      "tags": ["NLP", "Machine Learning", "Python", "spaCy"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Construction d'un algorithme de matching IA sophistiqué pour une plateforme de recrutement, utilisant le NLP pour faire correspondre avec précision les candidats aux descriptions de poste.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Développement d'un modèle NER avec spaCy pour extraire les entités clés des CV et offres d'emploi, améliorant l'analyse textuelle.",
+        "Amélioration de la précision du matching candidat-poste de 20%, menant à des recommandations plus pertinentes."
+      ]
+    },
+    "car-selling-price-analysis-id": {
+      "title": "Analyse du Prix de Vente des Voitures d'Occasion",
+      "category": "IA & Science des Données",
+      "tags": ["Analyse de Données", "Python", "Modélisation Prédictive"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Réalisation d'un projet d'analyse de données en Python pour identifier et analyser les facteurs affectant le prix de vente des voitures d'occasion.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Construction de modèles prédictifs robustes pour estimer les prix des véhicules selon le kilométrage, la marque et l'état.",
+        "Insights clés sur les tendances du marché et les stratégies de tarification via la visualisation des données."
+      ]
+    },
+    "siliana-kasserine-digital-art-behance-1": {
+      "title": "Nous Sommes Siliana-Kasserine : Art Digital Collaboratif",
+      "category": "Art Digital",
+      "tags": ["Art Digital", "Collaboration", "Projet Communautaire", "Photoshop"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Projet d'art digital collaboratif axé sur l'essence culturelle de Siliana et Kasserine, promouvant le patrimoine local à travers les médias numériques.",
+      "projectDetailsHeading": "Voir le projet complet sur Behance",
+      "projectDetails": [
+        "Explorez le processus créatif et les œuvres finales de cette initiative d'art digital collaboratif sur Behance."
+      ]
+    },
+    "tunis-kasserine-digital-art-behance-1": {
+      "title": "Nous Sommes Tunis-Kasserine : Art Digital Collaboratif 1",
+      "category": "Art Digital",
+      "tags": ["Art Digital", "Collaboration", "Projet Communautaire", "Photoshop"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Projet d'art digital collaboratif axé sur l'essence culturelle de Tunis et Kasserine, promouvant le patrimoine local à travers les médias numériques.",
+      "projectDetailsHeading": "Voir le projet complet sur Behance",
+      "projectDetails": [
+        "Explorez le processus créatif et les œuvres finales de cette initiative sur Behance."
+      ]
+    },
+    "tunis-kasserine-digital-art-behance-2": {
+      "title": "Nous Sommes Tunis-Kasserine : Art Digital Collaboratif 2",
+      "category": "Art Digital",
+      "tags": ["Art Digital", "Collaboration", "Projet Communautaire", "Photoshop"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Ce design capture l'essence du patrimoine architectural de Tunis et Kasserine de manière surréaliste et captivante.",
+      "projectDetailsHeading": "Voir le projet complet sur Behance",
+      "projectDetails": [
+        "Explorez le processus créatif et les œuvres finales de cette initiative sur Behance."
+      ]
+    },
+    "we-are-kasserine-theme-nature-behance": {
+      "title": "Nous Sommes Kasserine : Thème N°12 - Nature",
+      "category": "Art Digital",
+      "tags": ["Art Digital", "Collaboration", "Projet Communautaire", "Photoshop"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Ce design présente un tourbillon vibrant d'éléments naturels, mêlant couleurs et formes abstraites, créé pour représenter le thème \"Nature\" du projet \"We are Kasserine\".",
+      "projectDetailsHeading": "Voir le projet complet sur Behance",
+      "projectDetails": [
+        "Explorez le processus créatif et les œuvres finales de cette initiative sur Behance."
+      ]
+    },
+    "radio-talk-kasserine-behance": {
+      "title": "Passage Radio : We are Kasserine (mandat 22/23)",
+      "category": "Art Digital",
+      "tags": ["Art Digital", "Collaboration", "Projet Communautaire", "Photoshop", "Illustrator"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Ce design présente un tourbillon d'éléments naturels créé pour le passage radio \"We are Kasserine\" durant le mandat 2022/2023.",
+      "projectDetailsHeading": "Détails du projet",
+      "projectDetails": [
+        "Explorez le processus créatif de cette initiative d'art digital collaboratif sur Behance."
+      ]
+    },
+    "spiderman-samy-chaffai-artwork-behance": {
+      "title": "Spider-man X Samy Chaffai",
+      "category": "Art Digital",
+      "tags": ["Art Digital", "Photoshop", "Illustrator"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Cette œuvre est une inspiration du film Spider-Man, dédiée à la personnalité créative et travailleuse en Tunisie \"Samy Chaffai\".",
+      "projectDetailsHeading": "Détails du projet",
+      "projectDetails": [
+        "Explorez le processus créatif de cette œuvre sur Behance."
+      ]
+    },
+    "editing-challenge": {
+      "title": "Challenge Montage Vidéo",
+      "category": "Production Vidéo",
+      "tags": ["Production Vidéo", "Montage", "Motion Graphics"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Challenge de montage vidéo démontrant des compétences avancées en édition et effets visuels.",
+      "projectDetailsHeading": "Galerie Vidéo",
+      "projectDetails": [
+        "Cette section met en valeur mon expertise en création vidéo. Cliquez sur une vignette pour regarder la vidéo."
+      ]
+    },
+    "carry-trading": {
+      "title": "Carry Trading",
+      "category": "Production Vidéo",
+      "tags": ["Production Vidéo", "Montage", "Motion Graphics"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Vidéo explicative sur le concept du Carry Trading pour les marchés financiers.",
+      "projectDetailsHeading": "Galerie Vidéo",
+      "projectDetails": [
+        "Cette section met en valeur mon expertise en création vidéo. Cliquez sur une vignette pour regarder la vidéo."
+      ]
+    },
+    "digital-marketing-with-rabii": {
+      "title": "Optimisez vos Mots-clés SEO",
+      "category": "Production Vidéo",
+      "tags": ["Production Vidéo", "Montage"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Vidéo éducative sur l'optimisation des mots-clés SEO (version arabe).",
+      "projectDetailsHeading": "Galerie Vidéo",
+      "projectDetails": [
+        "Cette section met en valeur mon expertise en création vidéo. Cliquez sur une vignette pour regarder la vidéo."
+      ]
+    },
+    "e-book-promo-video": {
+      "title": "Promo E-book",
+      "category": "Production Vidéo",
+      "tags": ["Production Vidéo", "Montage", "Motion Graphics"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Vidéo promotionnelle pour un e-book avec des effets de motion graphics.",
+      "projectDetailsHeading": "Galerie Vidéo",
+      "projectDetails": [
+        "Cette section met en valeur mon expertise en création vidéo. Cliquez sur une vignette pour regarder la vidéo."
+      ]
+    },
+    "youtube-thumbnail": {
+      "title": "Miniature YouTube",
+      "category": "Art Digital",
+      "tags": ["Miniature", "Photoshop", "Picsart", "Art Digital"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Cette miniature YouTube est conçue pour mettre en valeur le processus créatif d'une initiative d'art digital collaboratif avec un créateur de contenu.",
+      "projectDetailsHeading": "Détails du projet",
+      "projectDetails": [
+        "Explorez le processus créatif de cette initiative sur Behance."
+      ]
+    },
+    "web-security-audit-owasp": {
+      "title": "Audit de Sécurité OWASP ASVS",
+      "category": "Cybersécurité",
+      "tags": ["Cybersécurité", "OWASP", "Audit de Sécurité", "Évaluation des Risques"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Réalisation d'un audit de sécurité complet d'une application web selon la méthodologie OWASP ASVS, couvrant l'authentification, la gestion des sessions, le contrôle d'accès et la validation des entrées.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Identification de 15+ vulnérabilités de sécurité incluant injection SQL, XSS et en-têtes mal configurés, avec évaluation de criticité et recommandations.",
+        "Livraison d'un rapport complet avec résumé exécutif, constats, matrice de risques et plan de remédiation priorisé."
+      ]
+    },
+    "lpic2-self-study": {
+      "title": "LPIC-2 - Administration Système Avancée",
+      "category": "Administration Système",
+      "tags": ["Linux", "Administration Système", "Kernel", "DNS", "Systèmes de Fichiers"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Auto-apprentissage et pratique pour la certification LPIC-2. Axé sur la gestion du kernel, l'administration des systèmes de fichiers et la configuration DNS/BIND.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Maîtrise de la gestion des modules kernel, compilation et dépannage via des labs pratiques.",
+        "Configuration et sécurisation de serveurs DNS avec BIND9, incluant les zones forward/reverse.",
+        "Implémentation de la gestion avancée des systèmes de fichiers incluant LVM, RAID logiciel et techniques de réparation."
+      ]
+    },
+    "aws-cloud-security": {
+      "title": "Sécurisation d'Infrastructure Cloud AWS",
+      "category": "Cloud Computing",
+      "tags": ["AWS", "Sécurité Cloud", "DevSecOps", "Virtualisation"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Déploiement et sécurisation d'une infrastructure cloud sur AWS selon les meilleures pratiques. Implémentation de la sécurité réseau, de la gestion des identités et de la protection des données.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Conception d'un VPC sécurisé avec sous-réseaux publics/privés, passerelles NAT et groupes de sécurité selon le principe du moindre privilège.",
+        "Configuration des rôles et politiques IAM pour un contrôle d'accès granulaire, implémentation MFA et audit CloudTrail.",
+        "Déploiement d'une application web avec terminaison HTTPS via Application Load Balancer et AWS Certificate Manager."
+      ]
+    },
+    "iam-access-control": {
+      "title": "Système d'Authentification avec IAM et MFA",
+      "category": "Cybersécurité",
+      "tags": ["IAM", "Authentification", "MFA", "Cybersécurité", "RBAC"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Construction d'un système complet de gestion des identités et des accès avec contrôle d'accès basé sur les rôles (RBAC), authentification multi-facteurs (MFA) et gestion sécurisée des sessions.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Implémentation du contrôle d'accès basé sur les rôles avec permissions granulaires pour admin, manager et utilisateur.",
+        "Intégration du mot de passe à usage unique basé sur le temps (TOTP) pour MFA avec Google Authenticator.",
+        "Conception d'une gestion sécurisée des sessions avec tokens JWT, incluant expiration et mécanismes de rafraîchissement."
+      ]
+    },
+    "itil-process-implementation": {
+      "title": "Implémentation de Processus ITIL",
+      "category": "Gestion des Services IT",
+      "tags": ["ITIL", "Gestion des Services", "SLA", "Processus IT"],
+      "clientHeading": "Aperçu du projet",
+      "objectivesHeading": "Objectif",
+      "objectivesDetails": "Étude et documentation de l'implémentation des processus ITIL clés incluant la gestion des niveaux de service, la gestion de la disponibilité et la gestion de la sécurité.",
+      "projectDetailsHeading": "Réalisations clés",
+      "projectDetails": [
+        "Conception de modèles SLA et graphiques de monitoring pour les accords de niveau de service.",
+        "Application des concepts ITIL à des scénarios réels via des études de cas et exercices."
+      ]
+    }
+  }
+}

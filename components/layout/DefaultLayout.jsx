@@ -244,17 +244,7 @@ const DefaultLayout = ({ children }) => {
       {/* Add main content ID for skip link */}
       <div id="main-content" className="sr-only">Main Content</div>
 
-      {/* Print Styles */}
-      <style jsx global>{`
-        @media print {
-          .fixed {
-            position: static !important;
-          }
-          main {
-            padding-top: 0 !important;
-          }
-        }
-      `}</style>
+     
     </>
   );
 };

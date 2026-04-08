@@ -2,11 +2,10 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { clientsData, clientsHeading } from '../../data/clientsData';
 import AboutClientSingle from './AboutClientSingle';
 
-function AboutClients() {
-  const [clients] = useState(clientsData);
+function AboutClients({ clientsData, heading, description }) {
+  const [clients] = useState(clientsData || []);
   const [isPaused, setIsPaused] = useState(false);
 
   const [ref, inView] = useInView({
@@ -22,7 +21,7 @@ function AboutClients() {
 
   const marqueeVariants = {
     animate: {
-      x: [0, -1032], // Adjusted for 4 sets of clients
+      x: [0, -1032],
       transition: {
         x: {
           repeat: Infinity,
@@ -102,7 +101,7 @@ function AboutClients() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              {clientsHeading}
+              {heading}
             </motion.h2>
             <motion.p
               className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
@@ -110,7 +109,7 @@ function AboutClients() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              The essential tools and platforms that power my development and design workflow.
+              {description}
             </motion.p>
           </div>
 
@@ -120,6 +119,10 @@ function AboutClients() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
+            {/* Gradient Overlays for fade effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-indigo-50/80 dark:from-gray-900/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-indigo-50/80 dark:from-gray-900/80 to-transparent z-10 pointer-events-none" />
+            
             <motion.div
               variants={marqueeVariants}
               animate={isPaused ? "paused" : "animate"}

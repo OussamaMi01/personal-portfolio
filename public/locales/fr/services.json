@@ -1,0 +1,156 @@
+{
+  "badge": "Services professionnels",
+  "title": "Services",
+  "titleHighlight": "Complets",
+  "subtitle": "Des solutions de bout en bout alliant expertise technique et innovation créative",
+  "keyBenefits": "Avantages clés",
+  "keyFeatures": "Fonctionnalités clés",
+  "technologiesTools": "Technologies & Outils",
+  "empty": "Aucun service trouvé",
+  "emptyHint": "Essayez de changer votre rôle professionnel pour découvrir les offres de services pertinentes.",
+  "showLess": "Voir moins",
+  "readMore": "Lire plus",
+  "getStarted": "Commencer",
+  "ctaTitle": "Prêt à démarrer votre projet ?",
+  "ctaSubtitle": "Discutons de vos besoins et créons une solution personnalisée qui génère de vrais résultats pour votre entreprise.",
+  "getInTouch": "Contactez-moi",
+  "viewWork": "Voir mon travail",
+  "pageTitle": "Services | Oussama Missaoui",
+  "pageDescription": "Explorez ma gamme complète de services techniques et créatifs conçus pour résoudre vos défis professionnels",
+  
+  "items": {
+    "full-stack-development": {
+      "title": "Développement Full-Stack",
+      "description": "Solutions web complètes de la conception au déploiement, construisant des applications évolutives et performantes avec des technologies modernes.",
+      "category": "development",
+      "duration": "2-4 semaines",
+      "startingPrice": "270 - 850 USD",
+      "clientBenefits": [
+        "Mise sur le marché plus rapide des produits numériques",
+        "Réduction des coûts de développement avec des solutions intégrées",
+        "Expériences utilisateur fluides sur tous les appareils",
+        "Architecture pérenne pour la croissance de l'entreprise",
+        "Base de code maintenable et évolutive"
+      ],
+      "technologies": ["React", "Next.js", "Node.js", "TypeScript", "MongoDB", "PostgreSQL"],
+      "features": [
+        "Design Responsive", "Intégration API", "Conception de base de données",
+        "Optimisation des performances", "Mise en œuvre de la sécurité", "Optimisation SEO"
+      ]
+    },
+    "mobile-app-development": {
+      "title": "Développement d'Applications Mobiles",
+      "description": "Applications Android natives axées sur la performance, l'UX intuitive et la création de valeur commerciale concrète.",
+      "category": "mobile",
+      "duration": "3-6 semaines",
+      "startingPrice": "510 - 1700 USD",
+      "clientBenefits": [
+        "Engagement client accru via les canaux mobiles",
+        "Processus métier rationalisés avec des applications personnalisées",
+        "Présence de marque renforcée dans les app stores",
+        "Gestion sécurisée des données et conformité aux normes",
+        "Fonctionnalité hors ligne et notifications push"
+      ],
+      "technologies": ["Java", "Kotlin", "Android SDK", "Firebase", "Material Design"],
+      "features": [
+        "Performance Native", "UI Material Design", "Notifications Push",
+        "Capacité Hors Ligne", "Authentification Sécurisée", "Achats In-App"
+      ]
+    },
+    "ai-machine-learning": {
+      "title": "IA & Machine Learning",
+      "description": "Systèmes intelligents qui automatisent les processus complexes, découvrent des insights cachés et améliorent la prise de décision grâce aux technologies IA.",
+      "category": "ai-ml",
+      "duration": "2-5 semaines",
+      "startingPrice": "340 - 1360 USD",
+      "clientBenefits": [
+        "Automatisation des tâches répétitives pour réduire les coûts opérationnels",
+        "Insights basés sur les données pour la prise de décision stratégique",
+        "Expériences client personnalisées à grande échelle",
+        "Analytique prédictive pour des stratégies commerciales proactives",
+        "Avantage concurrentiel grâce à l'innovation IA"
+      ],
+      "technologies": ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "OpenCV", "NLP"],
+      "features": [
+        "Modélisation Prédictive", "Traitement du Langage Naturel", "Vision par Ordinateur",
+        "Systèmes de Recommandation", "Détection d'Anomalies", "Reporting Automatisé"
+      ]
+    },
+    "data-analytics-visualization": {
+      "title": "Analytique & Visualisation de Données",
+      "description": "Transformer des ensembles de données complexes en intelligence claire et exploitable grâce à des analyses avancées et des visualisations percutantes.",
+      "category": "analytics",
+      "duration": "1-3 semaines",
+      "startingPrice": "170 - 510 USD",
+      "clientBenefits": [
+        "Visualisation claire des métriques de performance",
+        "Identification des opportunités de croissance inexploitées",
+        "ROI mesurable sur les dépenses marketing et opérationnelles",
+        "Insights concurrentiels issus de l'analyse des données de marché",
+        "Culture et processus de décision basés sur les données"
+      ],
+      "technologies": ["Python", "Pandas", "SQL", "Tableau", "Power BI", "Matplotlib"],
+      "features": [
+        "Tableaux de Bord Interactifs", "Analytique en Temps Réel", "Reporting Personnalisé",
+        "Entrepôt de Données", "Métriques de Performance", "Analyse des Tendances"
+      ]
+    },
+    "ui-ux-design-branding": {
+      "title": "Design UI/UX & Identité de Marque",
+      "description": "Identités de marque visuellement percutantes et expériences utilisateur intuitives qui résonnent avec les audiences et génèrent des résultats commerciaux.",
+      "category": "design",
+      "duration": "1-2 semaines",
+      "startingPrice": "100 - 270 USD",
+      "clientBenefits": [
+        "Reconnaissance de marque et mémorisation client renforcées",
+        "Engagement plus élevé avec du contenu visuel percutant",
+        "Satisfaction et fidélisation utilisateur améliorées",
+        "Différenciation concurrentielle sur des marchés saturés",
+        "Expérience de marque cohérente sur tous les points de contact"
+      ],
+      "technologies": ["Figma", "Adobe XD", "Sketch", "Illustrator", "Photoshop", "InVision"],
+      "features": [
+        "Recherche Utilisateur", "Wireframing & Prototypage", "Design Visuel",
+        "Systèmes de Design", "Identité de Marque", "Tests d'Utilisabilité"
+      ]
+    },
+    "ecommerce-solutions": {
+      "title": "Solutions E-Commerce",
+      "description": "Développement complet de boutique en ligne avec des expériences d'achat fluides, des paiements sécurisés et une architecture évolutive.",
+      "category": "ecommerce",
+      "duration": "3-6 semaines",
+      "startingPrice": "510 - 1360 USD",
+      "clientBenefits": [
+        "Capacité de vente mondiale 24h/24 et 7j/7",
+        "Coûts opérationnels réduits par rapport aux magasins physiques",
+        "Plateforme évolutive pour la croissance de l'entreprise",
+        "Gestion intégrée des stocks et des commandes",
+        "Capacités de vente multicanal"
+      ],
+      "technologies": ["Shopify", "WooCommerce", "Stripe", "PayPal", "React", "Node.js"],
+      "features": [
+        "Catalogues Produits", "Panier d'Achat", "Passerelle de Paiement",
+        "Gestion des Commandes", "Suivi des Stocks", "Tableau de Bord Analytique"
+      ]
+    },
+    "cloud-infrastructure-devops": {
+      "title": "Infrastructure Cloud & DevOps",
+      "description": "Solutions cloud évolutives et pipelines de déploiement automatisés pour des applications fiables et haute performance.",
+      "category": "devops",
+      "duration": "2-4 semaines",
+      "startingPrice": "340 - 1000 USD",
+      "clientBenefits": [
+        "Fiabilité et disponibilité des applications améliorées",
+        "Cycles de déploiement plus rapides et réduction du time-to-market",
+        "Infrastructure évolutive pour la croissance de l'entreprise",
+        "Coûts opérationnels réduits grâce à l'automatisation",
+        "Sécurité et conformité renforcées"
+      ],
+      "technologies": ["AWS", "Docker", "Kubernetes", "Terraform", "Jenkins", "GitHub Actions"],
+      "features": [
+        "Conteneurisation", "Auto-scaling", "Équilibrage de Charge",
+        "Monitoring & Journalisation", "Reprise après Sinistre", "Conformité Sécurité"
+      ]
+    }
+  }
+}

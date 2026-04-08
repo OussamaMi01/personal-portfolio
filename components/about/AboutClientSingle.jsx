@@ -33,7 +33,7 @@ function AboutClientSingle({ title, icon }) {
         ) : (
           <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 w-full h-full rounded-xl flex items-center justify-center group-hover:from-indigo-100 group-hover:to-purple-100 dark:group-hover:from-indigo-900/20 dark:group-hover:to-purple-900/20 transition-all duration-300">
             <span className="text-2xl font-bold text-gray-400 group-hover:text-indigo-500 transition-colors duration-300">
-              {title.charAt(0)}
+              {title ? title.charAt(0) : '?'}
             </span>
           </div>
         )}
