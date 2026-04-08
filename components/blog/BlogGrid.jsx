@@ -58,7 +58,7 @@ const BlogGrid = ({ limit = 3, showFeatured = true, columns = 3 }) => {
                     </h3>
                     
                     <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                        I'm working on creating valuable content about web development, 
+                        I&lsquo;m working on creating valuable content about web development, 
                         cybersecurity, and digital creativity. Stay tuned for tutorials, 
                         insights, and industry perspectives.
                     </p>
