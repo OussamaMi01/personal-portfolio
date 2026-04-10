@@ -116,9 +116,7 @@ const proficiencyColors = {
 export const useToolkitData = () => {
   const { t } = useTranslation('about');
 
-  // Debug log
-  console.log('Toolkit data:', t('toolkit', { returnObjects: true }));
-
+ 
   // Get toolkit data from translations
   const toolkit = t('toolkit', { returnObjects: true }) || {
     heading: "Development Toolkit & Ecosystem",

@@ -131,8 +131,8 @@ const DefaultLayout = ({ children }) => {
           paddingTop: bannerVisible ? 'calc(52px + 80px)' : '80px' 
         }}
       >
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white/50 dark:from-gray-900/50 dark:to-ternary-dark/50 pointer-events-none" />
+        {/* Background Pattern - Removed white overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent dark:from-gray-900/30 dark:to-ternary-dark/30 pointer-events-none" />
         
         {/* Content Container */}
         <div className="relative z-10">
@@ -142,7 +142,7 @@ const DefaultLayout = ({ children }) => {
         </div>
       </motion.main>
 
-      {/* Footer */}
+      {/* Footer  */}
       <AppFooter />
 
       {/* Scroll to Top Button */}
@@ -198,7 +198,7 @@ const DefaultLayout = ({ children }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.div
@@ -223,7 +223,7 @@ const DefaultLayout = ({ children }) => {
               <nav className="space-y-4">
                 <button
                   onClick={scrollToTop}
-                  className="w-full text-left p-3 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
+                  className="w-full text-left p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
                 >
                   {language === 'fr' ? 'Retour en haut' : 'Back to Top'}
                 </button>
@@ -243,8 +243,6 @@ const DefaultLayout = ({ children }) => {
 
       {/* Add main content ID for skip link */}
       <div id="main-content" className="sr-only">Main Content</div>
-
-     
     </>
   );
 };

@@ -26,14 +26,14 @@ const AnnouncementBanner = ({ language = 'en', onDismiss }) => {
 
   const translations = {
     en: {
-      title: "Multi-Language Support Coming Soon!",
-      description: "French & English translations are on the way. Switch languages easily with the new selector in the header.",
+      title: "Multi-Language Support is Live!",
+      description: "French & English translations are now available. Switch languages easily with the new selector in the header.",
       cta: "Learn more",
       dismiss: "Dismiss"
     },
     fr: {
-      title: "Support multilingue bientôt disponible !",
-      description: "Les traductions françaises et anglaises arrivent bientôt. Changez de langue facilement avec le nouveau sélecteur dans l'en-tête.",
+      title: "Support multilingue est maintenant disponible !",
+      description: "Les traductions françaises et anglaises sont disponibles. Changez de langue facilement avec le nouveau sélecteur dans l'en-tête.",
       cta: "En savoir plus",
       dismiss: "Ignorer"
     }

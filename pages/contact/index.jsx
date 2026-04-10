@@ -13,7 +13,7 @@ const ContactPage = () => {
         <>
             <PagesMetaHead 
                 title={t('page.title', 'Contact | Oussama Missaoui')}
-                description={t('page.subtitle', 'Get in touch with me for your project needs. I\'m available for collaborations, freelance work, and consulting.')}
+                description={t('page.subtitle', 'Get in touch with me for your project needs.')}
             />
             
             <div className="container mx-auto px-4 sm:px-6 py-16 lg:py-24">

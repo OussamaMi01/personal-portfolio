@@ -6,15 +6,15 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
 const languages = [
-    { code: 'en', name: 'English',  flagEmoji: '🇺🇸' },
+    { code: 'en', name: 'English', flagEmoji: '🇺🇸' },
     { code: 'fr', name: 'Français', flagEmoji: '🇫🇷' },
 ];
 
 const LanguageSwitcher = () => {
     const router = useRouter();
     const { t } = useTranslation('common');
-    const [isOpen, setIsOpen]       = useState(false);
-    const [mounted, setMounted]     = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const [switching, setSwitching] = useState(false);
 
     useEffect(() => { setMounted(true); }, []);
@@ -26,18 +26,33 @@ const LanguageSwitcher = () => {
             setIsOpen(false);
             return;
         }
+        
         setSwitching(true);
         setIsOpen(false);
 
-        // router.push with { locale } triggers getStaticProps for the new locale,
-        // fetches all serverSideTranslations namespaces, and updates the page
-        // without a full browser reload. Translations update instantly on complete.
-        await router.push(router.asPath, router.asPath, {
-            locale: langCode,
-            scroll: false,
-        });
+        // Save preference to localStorage
+        localStorage.setItem('preferred-language', langCode);
 
-        setSwitching(false);
+        // Get current path and query
+        const { pathname, query, asPath } = router;
+        
+        // Use replace with locale and force a hard navigation by using window.location as fallback
+        try {
+            // First try Next.js router
+            await router.push({ pathname, query }, asPath, { locale: langCode, scroll: false });
+            
+            // Force a re-render by reloading the page after a short delay
+            // This ensures all components get the new translations
+            setTimeout(() => {
+                window.location.reload();
+            }, 100);
+        } catch (error) {
+            // Fallback to full page reload if router fails
+            window.location.href = `/${langCode}${asPath}`;
+        } finally {
+            // Don't set switching to false immediately because we're reloading
+            // setSwitching(false);
+        }
     };
 
     useEffect(() => {
@@ -91,8 +106,8 @@ const LanguageSwitcher = () => {
                         />
                         <motion.div
                             initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0,   scale: 1    }}
-                            exit={{    opacity: 0, y: -10, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -10, scale: 0.95 }}
                             transition={{ duration: 0.15 }}
                             className="absolute right-0 mt-2 w-48 bg-white dark:bg-ternary-dark rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
                         >

@@ -122,132 +122,128 @@ function AppFooter() {
     };
 
     return (
+        
         <motion.footer
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="relative mt-20 sm:mt-24"
-        >
-            {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-100/50 dark:to-gray-900/50 pointer-events-none" />
-            
-            {/* Main Footer Content */}
+            className="relative bg-white dark:bg-ternary-dark  shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+            {/* Main Footer Container */}
             <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-                    className="pt-16 sm:pt-20 pb-8 rounded-t-3xl 
-                               bg-white dark:bg-ternary-dark 
-                               border-t border-l border-r 
-                               border-gray-200 dark:border-gray-700
-                               shadow-2xl"
+                    className="bg-white dark:bg-ternary-dark rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
                 >
-                    {/* Footer Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 px-4">
-                        
-                        {/* About Section */}
-                        <div className="text-center md:text-left">
-                            <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
-                                Oussama Missaoui
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                                {t('footer.about', 'Full-Stack Developer & Digital Creator passionate about building innovative solutions and creative digital experiences.')}
-                            </p>
-                        </div>
-
-                        {/* Quick Links */}
-                        <div className="text-center md:text-left">
-                            <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
-                                {t('footer.quickLinks', 'Quick Links')}
-                            </h3>
-                            <ul className="space-y-2">
-                                {quickLinks.map((link) => (
-                                    <li key={link.name}>
-                                        <Link
-                                            href={link.path}
-                                            className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 text-sm"
-                                        >
-                                            {t(`navigation.${link.name}`, link.name)}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Contact Info */}
-                        <div className="text-center md:text-left">
-                            <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
-                                {t('footer.contactInfo', 'Contact Info')}
-                            </h3>
-                            <ul className="space-y-3">
-                                <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
-                                    <FiMapPin className="text-indigo-500 flex-shrink-0" />
-                                    <span>Sfax, Tunisia</span>
-                                </li>
-                                <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
-                                    <FiMail className="text-indigo-500 flex-shrink-0" />
-                                    <a href="mailto:oussama.missaoui.it@gmail.com" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                                        oussama.missaoui.it@gmail.com
-                                    </a>
-                                </li>
-                                <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
-                                    <FiPhone className="text-indigo-500 flex-shrink-0" />
-                                    <a href="tel:+21623257784" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                                        +216 23 257 784
-                                    </a>
-                                </li>
-                                <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
-                                    <FiClock className="text-indigo-500 flex-shrink-0" />
-                                    <span>Mon-Fri: 9am-6pm (GMT+1)</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* Social Links */}
-                        <div className="text-center md:text-left">
-                            <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
-                                {t('footer.followMe', 'Follow Me')}
-                            </h3>
-                            <div className="flex justify-center md:justify-start gap-3">
-                                {socialLinks.map((link) => {
-                                    const Icon = link.icon;
-                                    return (
-                                        <motion.a
-                                            key={link.id}
-                                            href={link.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            whileHover={{ y: -3, scale: 1.1 }}
-                                            whileTap={{ scale: 0.95 }}
-                                            className={`p-2 rounded-xl transition-all duration-300 ${link.bgColor} ${link.color}`}
-                                            aria-label={t(`social.${link.name}`, link.name)}
-                                        >
-                                            <Icon className="text-xl" />
-                                        </motion.a>
-                                    );
-                                })}
-                            </div>
+                    {/* Footer Content */}
+                    <div className="p-8">
+                        {/* Footer Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                             
-                            {/* Tech Stack Badge */}
-                            <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-                                <p className="text-xs text-gray-500 dark:text-gray-400">
-                                    {t('footer.builtWith', 'Built with')}{' '}
-                                    <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-                                        Next.js
-                                    </span>{' '}
-                                    &{' '}
-                                    <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-                                        Tailwind CSS
-                                    </span>
+                            {/* About Section */}
+                            <div className="text-center md:text-left">
+                                <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
+                                    Oussama Missaoui
+                                </h3>
+                                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                    {t('footer.about', 'Full-Stack Developer & Digital Creator passionate about building innovative solutions and creative digital experiences.')}
                                 </p>
                             </div>
-                        </div>
-                    </div>
 
-                    {/* Copyright */}
-                    <div className="border-t border-gray-200 dark:border-gray-700 pt-8">
-                        <AppFooterCopyright />
+                            {/* Quick Links */}
+                            <div className="text-center md:text-left">
+                                <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
+                                    {t('footer.quickLinks', 'Quick Links')}
+                                </h3>
+                                <ul className="space-y-2">
+                                    {quickLinks.map((link) => (
+                                        <li key={link.name}>
+                                            <Link
+                                                href={link.path}
+                                                className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 text-sm"
+                                            >
+                                                {t(`navigation.${link.name}`, link.name)}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Contact Info */}
+                            <div className="text-center md:text-left">
+                                <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
+                                    {t('footer.contactInfo', 'Contact Info')}
+                                </h3>
+                                <ul className="space-y-3">
+                                    <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
+                                        <FiMapPin className="text-indigo-500 flex-shrink-0" />
+                                        <span>Sfax, Tunisia</span>
+                                    </li>
+                                    <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
+                                        <FiMail className="text-indigo-500 flex-shrink-0" />
+                                        <a href="mailto:oussama.missaoui.it@gmail.com" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                            oussama.missaoui.it@gmail.com
+                                        </a>
+                                    </li>
+                                    <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
+                                        <FiPhone className="text-indigo-500 flex-shrink-0" />
+                                        <a href="tel:+21623257784" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                            +216 23 257 784
+                                        </a>
+                                    </li>
+                                    <li className="flex items-center justify-center md:justify-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
+                                        <FiClock className="text-indigo-500 flex-shrink-0" />
+                                        <span>Mon-Fri: 9am-6pm (GMT+1)</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            {/* Social Links */}
+                            <div className="text-center md:text-left">
+                                <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4">
+                                    {t('footer.followMe', 'Follow Me')}
+                                </h3>
+                                <div className="flex justify-center md:justify-start gap-3">
+                                    {socialLinks.map((link) => {
+                                        const Icon = link.icon;
+                                        return (
+                                            <motion.a
+                                                key={link.id}
+                                                href={link.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                whileHover={{ y: -3, scale: 1.1 }}
+                                                whileTap={{ scale: 0.95 }}
+                                                className={`p-2 rounded-xl transition-all duration-300 ${link.bgColor} ${link.color}`}
+                                                aria-label={t(`social.${link.name}`, link.name)}
+                                            >
+                                                <Icon className="text-xl" />
+                                            </motion.a>
+                                        );
+                                    })}
+                                </div>
+                                
+                                {/* Tech Stack Badge */}
+                                <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                                        {t('footer.builtWith', 'Built with')}{' '}
+                                        <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+                                            Next.js
+                                        </span>{' '}
+                                        &{' '}
+                                        <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+                                            Tailwind CSS
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Copyright */}
+                        <div className="border-t border-gray-200 dark:border-gray-700 pt-8">
+                            <AppFooterCopyright />
+                        </div>
                     </div>
                 </motion.div>
             </div>
@@ -276,8 +272,8 @@ function AppFooter() {
 
             {/* Decorative Elements */}
             <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none">
-                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-200 dark:bg-indigo-900 rounded-full opacity-20 blur-xl" />
-                <div className="absolute -bottom-32 -right-24 w-48 h-48 bg-purple-200 dark:bg-purple-900 rounded-full opacity-20 blur-xl" />
+                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-100/30 dark:bg-indigo-900/20 rounded-full blur-2xl" />
+                <div className="absolute -bottom-32 -right-24 w-48 h-48 bg-purple-100/30 dark:bg-purple-900/20 rounded-full blur-2xl" />
             </div>
         </motion.footer>
     );

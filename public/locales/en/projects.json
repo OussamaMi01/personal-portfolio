@@ -57,7 +57,7 @@
       "objectivesDetails": "Designed and implemented a robust Distributed File System (DFS) using Java RMI for distributed data storage and retrieval, focusing on high availability and fault tolerance.",
       "projectDetailsHeading": "Key Achievements",
       "projectDetails": [
-        "Achieved 99.9% data availability and 20% faster retrieval by implementing fault tolerance and load balancing mechanisms.",
+        "Achieved 70% data availability and 20% faster retrieval by implementing fault tolerance and load balancing mechanisms.",
         "Reduced network overhead by 15% via efficient data transfer mechanisms, optimizing overall system performance."
       ]
     },

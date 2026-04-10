@@ -219,7 +219,8 @@ export async function getStaticProps({ locale }) {
                 'services', 
                 'testimonials',
                 'blog',       
-                'about'        
+                'about', 
+                'contact'     
             ])),
         },
     };

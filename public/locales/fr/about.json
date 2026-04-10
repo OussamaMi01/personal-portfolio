@@ -1,4 +1,26 @@
 {
+  "ui": {
+    "tabs": {
+      "overview": "Aperçu",
+      "technical": "Développement",
+      "cybersecurity": "Cybersécurité",
+      "seeking": "Objectifs de carrière",
+      "detailed": "Histoire complète"
+    },
+    "profile": {
+      "education": "Formation",
+      "current": "En cours",
+      "focusAreas": "Domaines de focus",
+      "connect": "Connectons-nous",
+      "quickFact": "Le saviez-vous ?",
+      "anotherFact": "Autre anecdote",
+      "currentlyLearning": "En cours d'apprentissage"
+    },
+    "content": {
+      "targetRoles": "Rôles ciblés",
+      "philosophy": "Ma philosophie de sécurité",
+      "noContent": "Aucun contenu disponible pour cette section."
+    },
   "page": {
     "title": "À propos de moi",
     "subtitle": "Découvrez la personne derrière le code"
@@ -247,4 +269,5 @@
       "Traduire les exigences de sécurité en code fonctionnel"
     ]
   }
+}
 }

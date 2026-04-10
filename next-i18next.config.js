@@ -14,6 +14,7 @@ module.exports = {
     'services',
     'testimonials',
     'blog',
+    'contact'
   ],
   defaultNS: 'common',
   // Ensure locale files are loaded from the correct path

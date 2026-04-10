@@ -95,7 +95,7 @@ export const projectsData = [
             ProjectDetails: [
                 {
                     id: uuidv4(),
-                    details: 'Achieved 99.9% data availability and 20% faster retrieval by implementing fault tolerance and load balancing mechanisms.',
+                    details: 'Achieved 70% data availability and 20% faster retrieval by implementing fault tolerance and load balancing mechanisms.',
                 },
                 {
                     id: uuidv4(),

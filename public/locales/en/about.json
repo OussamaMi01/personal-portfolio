@@ -1,4 +1,26 @@
 {
+   "ui": {
+    "tabs": {
+      "overview": "Overview",
+      "technical": "Development",
+      "cybersecurity": "Cybersecurity",
+      "seeking": "Career Goals",
+      "detailed": "Full Story"
+    },
+    "profile": {
+      "education": "Education",
+      "current": "Current",
+      "focusAreas": "Focus Areas",
+      "connect": "Let's Connect",
+      "quickFact": "Quick Fact",
+      "anotherFact": "Show another fact",
+      "currentlyLearning": "Currently Learning"
+    },
+    "content": {
+      "targetRoles": "Target Roles",
+      "philosophy": "My Security Philosophy",
+      "noContent": "No content available for this section."
+    },
   "page": {
     "title": "About Me",
     "subtitle": "Get to know the person behind the code"
@@ -247,4 +269,5 @@
       "Translating security requirements into working code"
     ]
   }
+}
 }

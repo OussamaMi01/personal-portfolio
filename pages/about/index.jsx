@@ -10,7 +10,7 @@ import useTranslatedAboutData from '../../hooks/useTranslatedAboutData';
 import useToolkitData from '../../hooks/useToolkitData';
 
 function About() {
-  const { t } = useTranslation('about');
+  const { t } = useTranslation('common', 'about');
   const aboutData = useTranslatedAboutData();
   const toolkitData = useToolkitData();
 

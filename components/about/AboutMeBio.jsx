@@ -17,11 +17,11 @@ import {
     FiBook,
     FiBriefcase
 } from 'react-icons/fi';
-
+import { useTranslation } from 'next-i18next';
 function AboutMeBio({ aboutData }) {
     const [activeTab, setActiveTab] = useState('overview');
     const [randomFact, setRandomFact] = useState('');
-
+    const { t } = useTranslation('about');
     // Initialize random fact when component mounts or aboutData changes
     useEffect(() => {
         if (aboutData && typeof aboutData.getRandomFunFact === 'function') {
@@ -59,18 +59,12 @@ function AboutMeBio({ aboutData }) {
             url: 'https://linkedin.com/in/oussama-missaoui-a48589246',
             label: 'Connect on LinkedIn'
         },
-        {
-            name: 'Instagram',
-            icon: <FiInstagram className="text-xl" />,
-            color: 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700',
-            url: 'https://instagram.com/os.design.tn',
-            label: 'Follow on Instagram'
-        },
+      
         {
             name: 'Email',
             icon: <FiMail className="text-xl" />,
             color: 'bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600',
-            url: 'mailto:your.email@domain.com',
+            url: 'mailto:oussama.missaoui.it@gmail.com',
             label: 'Send me an email'
         }
     ];
@@ -257,7 +251,7 @@ function AboutMeBio({ aboutData }) {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2">
-                                        Currently Learning
+                                        {t('Currently Learning')}
                                     </h4>
                                     <div className="flex flex-wrap gap-2">
                                         {personalInfo.currentlyLearning.map((item, idx) => (
@@ -355,58 +349,6 @@ function AboutMeBio({ aboutData }) {
                                 </p>
                             )}
 
-                            {/* Combined Expertise Section for Overview Tab */}
-                            {activeTab === 'overview' && aboutData.getCombinedExpertise && (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 0.5, delay: 0.5 }}
-                                    className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700"
-                                >
-                                    <div className="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/10 dark:to-blue-900/10 rounded-xl p-6 border border-indigo-200 dark:border-indigo-800">
-                                        <div className="flex items-center gap-3 mb-4">
-                                            <FiShield className="text-2xl text-indigo-500" />
-                                            <h3 className="text-xl font-bold text-indigo-700 dark:text-indigo-300">
-                                                My Unique Value Proposition
-                                            </h3>
-                                        </div>
-                                        <p className="text-gray-700 dark:text-gray-300 mb-4">
-                                            I bring a <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-                                                {aboutData.getCombinedExpertise().strength || 'Development + Security Education'}
-                                            </span> -
-                                            practical software development skills combined with formal cybersecurity education.
-                                        </p>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                            <div>
-                                                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center gap-2">
-                                                    <FiCode className="text-indigo-500" />
-                                                    Development Skills
-                                                </h4>
-                                                <ul className="space-y-1">
-                                                    {aboutData.getDevelopmentSkills && aboutData.getDevelopmentSkills().slice(0, 5).map((skill, idx) => (
-                                                        <li key={idx} className="text-sm text-gray-600 dark:text-gray-400">
-                                                            • {skill.name || skill}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center gap-2">
-                                                    <FiShield className="text-indigo-500" />
-                                                    Cybersecurity Knowledge
-                                                </h4>
-                                                <ul className="space-y-1">
-                                                    {aboutData.getSecuritySkills && aboutData.getSecuritySkills().slice(0, 5).map((skill, idx) => (
-                                                        <li key={idx} className="text-sm text-gray-600 dark:text-gray-400">
-                                                            • {skill.name || skill}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            )}
 
                             {/* Target Roles for Seeking Tab */}
                             {activeTab === 'seeking' && careerPhilosophy.targetRoles && careerPhilosophy.targetRoles.length > 0 && (
@@ -453,7 +395,7 @@ function AboutMeBio({ aboutData }) {
                         >
                             <h3 className="text-xl font-bold text-primary-dark dark:text-primary-light mb-4 flex items-center gap-2">
                                 <FiAward className="text-indigo-500" />
-                                My Security Philosophy
+                                {t('My Security Philosophy')}
                             </h3>
                             <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                                 {careerPhilosophy.mission}
@@ -480,42 +422,7 @@ function AboutMeBio({ aboutData }) {
                         </motion.div>
                     )}
 
-                    {/* CTA Section */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.8 }}
-                        className="mt-8 flex flex-col sm:flex-row gap-4 justify-between items-center"
-                    >
-                        <div>
-                            <h4 className="font-semibold text-primary-dark dark:text-primary-light mb-2">
-                                Looking for security-focused developers?
-                            </h4>
-                            <p className="text-gray-600 dark:text-gray-400 text-sm">
-                                Let&apos;s discuss how my unique skill set can enhance your team&apos;s security posture
-                            </p>
-                        </div>
-                        <div className="flex gap-3">
-                            <motion.a
-                                href="/contact"
-                                whileHover={{ scale: 1.05, y: -2 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                            >
-                                <FiMail className="text-lg" />
-                                Get In Touch
-                            </motion.a>
-                            <motion.a
-                                href="/resume.pdf"
-                                whileHover={{ scale: 1.05, y: -2 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="flex items-center gap-2 px-6 py-3 border-2 border-indigo-500 text-indigo-600 dark:text-indigo-400 font-semibold rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
-                            >
-                                <FiDownload className="text-lg" />
-                                Download CV
-                            </motion.a>
-                        </div>
-                    </motion.div>
+                  
                 </div>
             </motion.div>
         </motion.div>
