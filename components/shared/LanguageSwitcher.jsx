@@ -1,7 +1,7 @@
 // components/shared/LanguageSwitcher.jsx
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiGlobe, FiCheck } from 'react-icons/fi';
+import { FiGlobe, FiCheck, FiLoader } from 'react-icons/fi';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
@@ -13,32 +13,36 @@ const languages = [
 const LanguageSwitcher = () => {
     const router = useRouter();
     const { t } = useTranslation('common');
-    const [isOpen, setIsOpen]   = useState(false);
-    const [mounted, setMounted] = useState(false);
+    const [isOpen, setIsOpen]       = useState(false);
+    const [mounted, setMounted]     = useState(false);
+    const [switching, setSwitching] = useState(false);
 
     useEffect(() => { setMounted(true); }, []);
 
     const currentLang = router.locale || 'en';
 
-    const handleLanguageChange = (langCode) => {
-        if (langCode === currentLang) {
+    const handleLanguageChange = async (langCode) => {
+        if (langCode === currentLang || switching) {
             setIsOpen(false);
             return;
         }
-
-        // ✅ Use Next.js router — preserves the current path, triggers
-        //    getStaticProps/getServerSideProps with the new locale, and
-        //    loads the correct translation namespaces automatically.
-        router.push(router.asPath, router.asPath, { locale: langCode, scroll: false });
+        setSwitching(true);
         setIsOpen(false);
+
+        // router.push with { locale } triggers getStaticProps for the new locale,
+        // fetches all serverSideTranslations namespaces, and updates the page
+        // without a full browser reload. Translations update instantly on complete.
+        await router.push(router.asPath, router.asPath, {
+            locale: langCode,
+            scroll: false,
+        });
+
+        setSwitching(false);
     };
 
-    // Close dropdown on outside click (keyboard too)
     useEffect(() => {
         if (!isOpen) return;
-        const close = (e) => {
-            if (e.key === 'Escape') setIsOpen(false);
-        };
+        const close = (e) => { if (e.key === 'Escape') setIsOpen(false); };
         window.addEventListener('keydown', close);
         return () => window.removeEventListener('keydown', close);
     }, [isOpen]);
@@ -52,14 +56,24 @@ const LanguageSwitcher = () => {
     return (
         <div className="relative">
             <motion.button
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: switching ? 1 : 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => !switching && setIsOpen(o => !o)}
                 aria-label="Switch language"
                 aria-expanded={isOpen}
-                className="relative p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-500 shadow-lg border-2 border-gray-200/50 dark:border-gray-700/50"
+                disabled={switching}
+                className="relative p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-500 shadow-lg border-2 border-gray-200/50 dark:border-gray-700/50 disabled:opacity-60"
             >
-                <FiGlobe className="text-xl" />
+                {switching ? (
+                    <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
+                    >
+                        <FiLoader className="text-xl text-indigo-500" />
+                    </motion.div>
+                ) : (
+                    <FiGlobe className="text-xl" />
+                )}
                 <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold border-2 border-white dark:border-gray-800">
                     {currentLang.toUpperCase()}
                 </div>
@@ -68,7 +82,6 @@ const LanguageSwitcher = () => {
             <AnimatePresence>
                 {isOpen && (
                     <>
-                        {/* Backdrop — closes on click anywhere outside */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -76,7 +89,6 @@ const LanguageSwitcher = () => {
                             onClick={() => setIsOpen(false)}
                             className="fixed inset-0 z-40"
                         />
-
                         <motion.div
                             initial={{ opacity: 0, y: -10, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0,   scale: 1    }}
@@ -89,7 +101,6 @@ const LanguageSwitcher = () => {
                                     {t('language.choose', 'Choose language')}
                                 </h3>
                             </div>
-
                             <div className="p-2">
                                 {languages.map((lang) => (
                                     <motion.button
