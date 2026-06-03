@@ -15,7 +15,6 @@ import SectionDivider from '../components/shared/SectionDivider';
 import TestimonialsSection from '../components/testimonials/TestimonialsSection';
 import StatsCard from '../components/shared/StatsCard';
 import NotificationModal from '../components/shared/NotificationModal';
-import AchievementsSection from '../components/achievements';
 
 export default function Home() {
     const { t } = useTranslation('home');
@@ -57,8 +56,7 @@ export default function Home() {
             {/* Divider 1 - After Skills */}
             <SectionDivider delay={0.3} />
 
-            {/* Achievements Section - Fixed */}
-            <AchievementsSection />
+            
 
             {/* Divider 2 - After Achievements */}
             <SectionDivider delay={0.3} />
