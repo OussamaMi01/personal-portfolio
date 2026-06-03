@@ -13,14 +13,17 @@ import Experience from '../components/experience/Experience';
 import Service from '../components/service/Service';
 import SectionDivider from '../components/shared/SectionDivider';
 import TestimonialsSection from '../components/testimonials/TestimonialsSection';
-import BlogGrid from '../components/blog/BlogGrid';
 import StatsCard from '../components/shared/StatsCard';
+import NotificationModal from '../components/shared/NotificationModal';
+import AchievementsSection from '../components/achievements';
 
 export default function Home() {
     const { t } = useTranslation('home');
     const [currentRole, setCurrentRole] = useState('engineer');
-
+    const [showNotification, setShowNotification] = useState(true);
+    
     return (
+
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -28,8 +31,15 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="space-y-32 lg:space-y-40"
         >
+            
             <PagesMetaHead title={t('page.title', 'Home')} />
-
+             {/* Notification Modal */}
+            <NotificationModal 
+                isOpen={showNotification} 
+                onClose={() => setShowNotification(false)} 
+            />
+           
+            
             {/* AppBanner Section */}
             <section>
                 <AppBanner currentRole={currentRole} setCurrentRole={setCurrentRole} />
@@ -45,6 +55,12 @@ export default function Home() {
             </motion.section>
 
             {/* Divider 1 - After Skills */}
+            <SectionDivider delay={0.3} />
+
+            {/* Achievements Section - Fixed */}
+            <AchievementsSection />
+
+            {/* Divider 2 - After Achievements */}
             <SectionDivider delay={0.3} />
 
             {/* Projects Grid Section */}
@@ -79,7 +95,7 @@ export default function Home() {
                 </motion.div>
             </motion.section>
 
-            {/* Divider 2 - After Projects */}
+            {/* Divider 3 - After Projects */}
             <SectionDivider delay={0.5} variant="minimal" />
 
             {/* Experience Section */}
@@ -91,7 +107,7 @@ export default function Home() {
                 <Experience currentRole={currentRole} />
             </motion.section>
 
-            {/* Divider 3 - After Experience */}
+            {/* Divider 4 - After Experience */}
             <SectionDivider delay={0.7} size="lg" />
 
             {/* Services Section */}
@@ -103,7 +119,7 @@ export default function Home() {
                 <Service currentRole={currentRole} />
             </motion.section>
 
-            {/* Divider 4 - After Services */}
+            {/* Divider 5 - After Services */}
             <SectionDivider delay={0.9} variant="fancy" />
 
             {/* Testimonials Section */}
@@ -115,9 +131,7 @@ export default function Home() {
                 <TestimonialsSection />
             </motion.section>
 
-           
-
-            {/* Divider 5 - After Testimonials */}
+            {/* Divider 6 - After Testimonials */}
             <SectionDivider delay={1.1} variant="minimal" />
 
             {/* Stats Section */}
@@ -207,7 +221,6 @@ export default function Home() {
     );
 }
 
-// Add ALL necessary namespaces for i18n support
 export async function getStaticProps({ locale }) {
     return {
         props: {
