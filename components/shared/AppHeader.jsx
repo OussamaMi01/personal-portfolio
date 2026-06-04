@@ -29,11 +29,30 @@ function AppHeader() {
   const [mounted, setMounted]     = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
 
-  // ✅ activeLink is always in sync — derived from router, not stored in state
+  // Get current language from URL
+  const getCurrentLanguage = () => {
+    const path = window.location.pathname;
+    const firstSegment = path.split('/')[1];
+    if (firstSegment === 'fr') return 'fr';
+    return 'en';
+  };
+
+  const [currentLang, setCurrentLang] = useState('en');
+
+  useEffect(() => {
+    setMounted(true);
+    setCurrentLang(getCurrentLanguage());
+  }, []);
+
+  // Simple navigation function that preserves language
+  const navigateTo = (path) => {
+    const currentLang = getCurrentLanguage();
+    const newPath = currentLang === 'fr' && path !== '/' ? `/${currentLang}${path}` : path;
+    window.location.href = newPath;
+  };
+
   const activeLink = router.pathname;
 
-  // ✅ navLinks built inline from t() — rebuilds automatically when locale changes
-  //    No useEffect + useState needed; t() is reactive to i18n.language
   const navLinks = [
     { name: t('navigation.home',       'Home'),       path: '/',           icon: <HiOutlineHome size={24} />,          color: 'from-blue-500 to-cyan-500'    },
     { name: t('navigation.projects',   'Projects'),   path: '/projects',   icon: <HiOutlineCode size={24} />,          color: 'from-green-500 to-emerald-500' },
@@ -43,8 +62,6 @@ function AppHeader() {
     { name: t('navigation.about',      'About'),      path: '/about',      icon: <HiOutlineUser size={24} />,          color: 'from-indigo-500 to-blue-500'  },
     { name: t('navigation.contact',    'Contact'),    path: '/contact',    icon: <HiOutlineChat size={24} />,          color: 'from-teal-500 to-cyan-500'    },
   ];
-
-  useEffect(() => { setMounted(true); }, []);
 
   // Scroll watcher
   useEffect(() => {
@@ -66,7 +83,7 @@ function AppHeader() {
     return () => { document.body.style.overflow = 'unset'; };
   }, [showMenu]);
 
-  // ✅ Close mobile menu automatically on any route change (incl. locale switch)
+  // Close mobile menu on route change
   useEffect(() => {
     setShowMenu(false);
   }, [router.asPath]);
@@ -92,10 +109,9 @@ function AppHeader() {
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 md:h-24">
 
-            {/* Logo */}
+            {/* Logo - Simple navigation */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-shrink-0">
-              {/* ✅ <Link> — instant client-side navigation, no reload */}
-              <Link href="/" className="block cursor-pointer">
+              <button onClick={() => navigateTo('/')} className="block cursor-pointer">
                 {mounted ? (
                   <div className="relative w-14 h-14 md:w-16 md:h-16">
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-0.5">
@@ -113,41 +129,36 @@ function AppHeader() {
                 ) : (
                   <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 animate-pulse" />
                 )}
-              </Link>
+              </button>
             </motion.div>
 
-            {/* Desktop Nav */}
+            {/* Desktop Nav - Simple buttons */}
             <nav className="hidden lg:flex items-center justify-center flex-1 max-w-3xl">
               <div className="flex items-center space-x-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl px-4 py-3 border-2 border-gray-100/60 dark:border-gray-700/60 shadow-2xl">
                 {navLinks.map((link, i) => {
                   const isActive = activeLink === link.path;
                   return (
-                    // ✅ Pure <Link> — Next.js handles prefetching + client-side nav
-                    //    No onClick state mutation, no manual navigation
-                    <Link key={i} href={link.path}>
-                      <motion.div
-                        whileHover={{ y: -3, scale: 1.08 }}
-                        whileTap={{ scale: 0.95 }}
-                        onHoverStart={() => setHoveredLink(link.path)}
-                        onHoverEnd={() => setHoveredLink(null)}
-                        className={`px-5 py-3 text-base font-semibold flex items-center transition-all duration-300 rounded-xl relative overflow-hidden ${
-                          isActive
-                            ? `text-white bg-gradient-to-r ${link.color} shadow-lg`
-                            : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-                        }`}
-                      >
-                        {/* Subtle hover glow for inactive links */}
-                        {!isActive && hoveredLink === link.path && (
-                          <motion.div
-                            layoutId="navHover"
-                            className="absolute inset-0 bg-white/80 dark:bg-gray-700/80 rounded-xl"
-                            initial={false}
-                          />
-                        )}
-                        <span className="relative z-10 mr-3">{link.icon}</span>
-                        <span className="relative z-10 font-semibold tracking-wide">{link.name}</span>
-                      </motion.div>
-                    </Link>
+                    <button
+                      key={i}
+                      onClick={() => navigateTo(link.path)}
+                      className={`px-5 py-3 text-base font-semibold flex items-center transition-all duration-300 rounded-xl relative overflow-hidden ${
+                        isActive
+                          ? `text-white bg-gradient-to-r ${link.color} shadow-lg`
+                          : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+                      }`}
+                      onMouseEnter={() => setHoveredLink(link.path)}
+                      onMouseLeave={() => setHoveredLink(null)}
+                    >
+                      {!isActive && hoveredLink === link.path && (
+                        <motion.div
+                          layoutId="navHover"
+                          className="absolute inset-0 bg-white/80 dark:bg-gray-700/80 rounded-xl"
+                          initial={false}
+                        />
+                      )}
+                      <span className="relative z-10 mr-3">{link.icon}</span>
+                      <span className="relative z-10 font-semibold tracking-wide">{link.name}</span>
+                    </button>
                   );
                 })}
               </div>
@@ -198,7 +209,7 @@ function AppHeader() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Simple buttons */}
         <AnimatePresence>
           {showMenu && (
             <motion.div
@@ -207,25 +218,26 @@ function AppHeader() {
               exit={{ opacity: 0, y: -20 }}
               className="lg:hidden fixed top-[80px] left-4 right-4 z-50"
             >
-              <div className="bg-white dark:bg-ternary-dark rounded-3xl shadow-3xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+              <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-3xl border border-gray-200 dark:border-gray-700 overflow-hidden">
                 <div className="p-4 space-y-2">
                   {navLinks.map((link, i) => {
                     const isActive = activeLink === link.path;
                     return (
-                      // ✅ <Link> handles navigation — menu closes via router.asPath useEffect
-                      <Link key={i} href={link.path}>
-                        <motion.div
-                          whileTap={{ scale: 0.97 }}
-                          className={`flex items-center p-3 rounded-xl transition-colors duration-200 ${
-                            isActive
-                              ? `bg-gradient-to-r ${link.color} text-white`
-                              : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300'
-                          }`}
-                        >
-                          <span className="mr-3">{link.icon}</span>
-                          <span className="font-medium">{link.name}</span>
-                        </motion.div>
-                      </Link>
+                      <button
+                        key={i}
+                        onClick={() => {
+                          navigateTo(link.path);
+                          setShowMenu(false);
+                        }}
+                        className={`w-full flex items-center p-3 rounded-xl transition-colors duration-200 ${
+                          isActive
+                            ? `bg-gradient-to-r ${link.color} text-white`
+                            : 'hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
+                        }`}
+                      >
+                        <span className="mr-3">{link.icon}</span>
+                        <span className="font-medium">{link.name}</span>
+                      </button>
                     );
                   })}
                 </div>
