@@ -1,9 +1,6 @@
-// components/shared/LanguageSwitcher.jsx
+// components/shared/LanguageSwitcher.jsx - Simple version
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiGlobe, FiCheck, FiLoader } from 'react-icons/fi';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
+import { FiGlobe, FiCheck } from 'react-icons/fi';
 
 const languages = [
     { code: 'en', name: 'English', flagEmoji: '🇺🇸' },
@@ -11,137 +8,93 @@ const languages = [
 ];
 
 const LanguageSwitcher = () => {
-    const router = useRouter();
-    const { t } = useTranslation('common');
     const [isOpen, setIsOpen] = useState(false);
-    const [mounted, setMounted] = useState(false);
-    const [switching, setSwitching] = useState(false);
+    const [currentLang, setCurrentLang] = useState('en');
 
-    useEffect(() => { setMounted(true); }, []);
+    useEffect(() => {
+        // Get current language from URL
+        const path = window.location.pathname;
+        const firstSegment = path.split('/')[1];
+        if (firstSegment === 'en' || firstSegment === 'fr') {
+            setCurrentLang(firstSegment);
+        } else {
+            setCurrentLang('en');
+        }
+    }, []);
 
-    const currentLang = router.locale || 'en';
-
-    const handleLanguageChange = async (langCode) => {
-        if (langCode === currentLang || switching) {
+    const handleLanguageChange = (langCode) => {
+        if (langCode === currentLang) {
             setIsOpen(false);
             return;
         }
-        
-        setSwitching(true);
-        setIsOpen(false);
 
-        // Save preference to localStorage
+        // Save to localStorage
         localStorage.setItem('preferred-language', langCode);
 
-        // Get current path and query
-        const { pathname, query, asPath } = router;
-        
-        // Use replace with locale and force a hard navigation by using window.location as fallback
-        try {
-            // First try Next.js router
-            await router.push({ pathname, query }, asPath, { locale: langCode, scroll: false });
-            
-            // Force a re-render by reloading the page after a short delay
-            // This ensures all components get the new translations
-            setTimeout(() => {
-                window.location.reload();
-            }, 100);
-        } catch (error) {
-            // Fallback to full page reload if router fails
-            window.location.href = `/${langCode}${asPath}`;
-        } finally {
-            // Don't set switching to false immediately because we're reloading
-            // setSwitching(false);
+        // Get current path without language prefix
+        let currentPath = window.location.pathname;
+        // Remove existing language prefix if present
+        if (currentPath.startsWith('/en/') || currentPath.startsWith('/fr/')) {
+            currentPath = currentPath.substring(3) || '/';
+        } else if (currentPath === '/en' || currentPath === '/fr') {
+            currentPath = '/';
         }
+
+        // Build new URL with new language
+        const newPath = langCode === 'en' ? currentPath : `/${langCode}${currentPath}`;
+        
+        // Navigate to new URL (this will trigger a full page load but works reliably)
+        window.location.href = newPath;
     };
-
-    useEffect(() => {
-        if (!isOpen) return;
-        const close = (e) => { if (e.key === 'Escape') setIsOpen(false); };
-        window.addEventListener('keydown', close);
-        return () => window.removeEventListener('keydown', close);
-    }, [isOpen]);
-
-    if (!mounted) {
-        return (
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 animate-pulse" />
-        );
-    }
 
     return (
         <div className="relative">
-            <motion.button
-                whileHover={{ scale: switching ? 1 : 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => !switching && setIsOpen(o => !o)}
-                aria-label="Switch language"
-                aria-expanded={isOpen}
-                disabled={switching}
-                className="relative p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-500 shadow-lg border-2 border-gray-200/50 dark:border-gray-700/50 disabled:opacity-60"
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="relative p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-500 shadow-lg border-2 border-gray-200/50 dark:border-gray-700/50"
             >
-                {switching ? (
-                    <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
-                    >
-                        <FiLoader className="text-xl text-indigo-500" />
-                    </motion.div>
-                ) : (
-                    <FiGlobe className="text-xl" />
-                )}
+                <FiGlobe className="text-xl" />
                 <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold border-2 border-white dark:border-gray-800">
                     {currentLang.toUpperCase()}
                 </div>
-            </motion.button>
+            </button>
 
-            <AnimatePresence>
-                {isOpen && (
-                    <>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setIsOpen(false)}
-                            className="fixed inset-0 z-40"
-                        />
-                        <motion.div
-                            initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                            transition={{ duration: 0.15 }}
-                            className="absolute right-0 mt-2 w-48 bg-white dark:bg-ternary-dark rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
-                        >
-                            <div className="px-4 py-3 border-b border-gray-100 dark:border-gray-800">
-                                <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                                    {t('language.choose', 'Choose language')}
-                                </h3>
-                            </div>
-                            <div className="p-2">
-                                {languages.map((lang) => (
-                                    <motion.button
-                                        key={lang.code}
-                                        whileHover={{ x: 4 }}
-                                        onClick={() => handleLanguageChange(lang.code)}
-                                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-300 ${
-                                            currentLang === lang.code
-                                                ? 'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400'
-                                                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
-                                        }`}
-                                    >
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-xl">{lang.flagEmoji}</span>
-                                            <span className="font-medium">{lang.name}</span>
-                                        </div>
-                                        {currentLang === lang.code && (
-                                            <FiCheck className="w-4 h-4" />
-                                        )}
-                                    </motion.button>
-                                ))}
-                            </div>
-                        </motion.div>
-                    </>
-                )}
-            </AnimatePresence>
+            {isOpen && (
+                <>
+                    <div 
+                        className="fixed inset-0 z-40" 
+                        onClick={() => setIsOpen(false)}
+                    />
+                    <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50">
+                        <div className="px-4 py-3 border-b border-gray-100 dark:border-gray-700">
+                            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                                Choose language
+                            </h3>
+                        </div>
+                        <div className="p-2">
+                            {languages.map((lang) => (
+                                <button
+                                    key={lang.code}
+                                    onClick={() => handleLanguageChange(lang.code)}
+                                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-300 ${
+                                        currentLang === lang.code
+                                            ? 'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400'
+                                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                                    }`}
+                                >
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-xl">{lang.flagEmoji}</span>
+                                        <span className="font-medium">{lang.name}</span>
+                                    </div>
+                                    {currentLang === lang.code && (
+                                        <FiCheck className="w-4 h-4" />
+                                    )}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </>
+            )}
         </div>
     );
 };
