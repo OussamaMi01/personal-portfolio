@@ -137,7 +137,7 @@ export default async function handler(req, res) {
                                 If you have any urgent questions, feel free to reply to this email or use the social links from my portfolio.
                             </p>
                             <p style="text-align: center;">
-                                <a href="https://yourportfolio.com" class="link-button">Visit My Portfolio</a>
+                                <a href="https://oussama-missaoui.netlify.app" class="link-button">Visit My Portfolio</a>
                             </p>
                         </div>
                         <div class="footer">
