@@ -74,42 +74,6 @@
       "tags": ["Kubernetes", "Container Orchestration", "Cloud Native"],
       "issuer": "Linux Foundation",
       "date": "May 2026"
-    },
-    "content-creation": {
-      "title": "Content Creation Mastery",
-      "description": "Mastered content creation strategies including storytelling, audience engagement, and multi-platform content distribution.",
-      "category": "Achievement",
-      "status": "Completed",
-      "tags": ["Content Creation", "Storytelling", "Digital Media", "Engagement"],
-      "issuer": "Google Digital Garage",
-      "date": "April 2026"
-    },
-    "graphic-design": {
-      "title": "Graphic Design Fundamentals",
-      "description": "Certified in graphic design principles including typography, color theory, layout, and visual communication using Adobe Creative Suite.",
-      "category": "Certification",
-      "status": "Completed",
-      "tags": ["Graphic Design", "Typography", "Color Theory", "Adobe Creative Suite"],
-      "issuer": "Adobe Education",
-      "date": "March 2026"
-    },
-    "digital-marketing": {
-      "title": "Digital Marketing Strategy",
-      "description": "Certified in digital marketing strategies including SEO, social media marketing, email campaigns, and analytics.",
-      "category": "Badge",
-      "status": "Completed",
-      "tags": ["Digital Marketing", "SEO", "Social Media", "Analytics"],
-      "issuer": "HubSpot Academy",
-      "date": "February 2026"
-    },
-    "video-editing": {
-      "title": "Video Editing & Production",
-      "description": "Professional video editing and production course covering storytelling, editing techniques, color grading, and audio design.",
-      "category": "Course",
-      "status": "Completed",
-      "tags": ["Video Editing", "Production", "Color Grading", "Audio Design"],
-      "issuer": "Skillshare",
-      "date": "January 2026"
     }
   }
 }
