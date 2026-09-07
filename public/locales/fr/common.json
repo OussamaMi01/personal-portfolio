@@ -110,5 +110,41 @@
     "accept": "Accepter",
     "decline": "Refuser",
     "settings": "Paramètres des cookies"
+  },
+
+
+  "notification": {
+    "title": "Mises à jour du Portfolio & Roadmap",
+    "subtitle": "Nouveautés et à venir",
+    "status": "Statut du Portfolio",
+    "statusMessage": "Entièrement opérationnel avec toutes les fonctionnalités principales",
+    "currentFeatures": "✨ Fonctionnalités actuelles",
+    "inProgress": "🚧 En développement",
+    "upcomingFeatures": "🔮 À venir prochainement",
+    "features": {
+      "fullStack": "Développement Full-Stack",
+      "mobile": "Développement d'applications mobiles",
+      "i18n": "Support multilingue (EN/FR)",
+      "performance": "Performance optimisée",
+      "security": "Meilleures pratiques de sécurité"
+    },
+    "upcoming": {
+      "blog": "Plateforme de blog technique",
+      "interactive": "Terrain de jeu de code interactif",
+      "pwa": "Application mobile PWA",
+      "cms": "Intégration CMS headless",
+      "analytics": "Tableau de bord d'analytique avancé"
+    },
+    "progress": {
+      "portfolio": "Refonte du portfolio v3.0",
+      "api": "Documentation API REST",
+      "testimonials": "Témoignages vidéo"
+    },
+    "feedback": {
+      "title": "Vous avez des suggestions ?",
+      "message": "J'aimerais connaître vos idées pour améliorer ce portfolio !",
+      "button": "Partager un retour →"
+    },
+    "footer": "Cette notification ne vous dérangera plus jusqu'à la prochaine mise à jour majeure."
   }
 }

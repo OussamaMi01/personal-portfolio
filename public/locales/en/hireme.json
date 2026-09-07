@@ -1,0 +1,61 @@
+{
+  "modal": {
+    "title": "Let's Start Your Project",
+    "subtitle": "Step {{step}} of {{total}} - {{title}}"
+  },
+  "steps": {
+    "basicInfo": "Basic Info",
+    "projectDetails": "Project Details",
+    "reviewSend": "Review & Send"
+  },
+  "labels": {
+    "name": "Your Full Name",
+    "email": "your.email@example.com",
+    "projectCategory": "Select project category",
+    "projectDescription": "Describe your project goals, requirements, timeline, and any specific features you need...",
+    "review": "Review & Send",
+    "nameLabel": "Name:",
+    "emailLabel": "Email:",
+    "projectTypeLabel": "Project Type:",
+    "personalInfo": "Personal Information",
+    "projectDetails": "Project Details",
+    "instantCommunication": "Prefer instant communication?"
+  },
+  "buttons": {
+    "back": "Back",
+    "continue": "Continue",
+    "send": "Send Message",
+    "sending": "Sending..."
+  },
+  "errors": {
+    "nameRequired": "Name is required",
+    "emailRequired": "Email is required",
+    "validEmail": "Please enter a valid email address",
+    "subjectRequired": "Please select a project category",
+    "messageRequired": "Please describe your project",
+    "messageMinLength": "Please provide more details about your project",
+    "fillRequired": "Please fill in all required fields correctly.",
+    "sendFailed": "Failed to send message. Please try again.",
+    "networkError": "Network error. Please check your connection and try again."
+  },
+  "success": {
+    "message": "Your message has been sent successfully!"
+  },
+  "projectOptions": {
+    "webApp": "Web Application",
+    "mobileApp": "Mobile Application",
+    "uiUx": "UI/UX Design",
+    "branding": "Branding & Identity",
+    "digitalMarketing": "Digital Marketing",
+    "ecommerce": "E-commerce Solution",
+    "api": "API Development",
+    "consultation": "Consultation",
+    "other": "Other"
+  },
+  "social": {
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "gmail": "Gmail",
+    "linkedin": "LinkedIn"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "modal": {
+    "title": "Commençons Votre Projet",
+    "subtitle": "Étape {{step}} sur {{total}} - {{title}}"
+  },
+  "steps": {
+    "basicInfo": "Informations de Base",
+    "projectDetails": "Détails du Projet",
+    "reviewSend": "Révision & Envoi"
+  },
+  "labels": {
+    "name": "Votre Nom Complet",
+    "email": "votre.email@exemple.com",
+    "projectCategory": "Sélectionnez la catégorie du projet",
+    "projectDescription": "Décrivez les objectifs de votre projet, vos exigences, votre calendrier et toutes les fonctionnalités spécifiques dont vous avez besoin...",
+    "review": "Révision & Envoi",
+    "nameLabel": "Nom :",
+    "emailLabel": "Email :",
+    "projectTypeLabel": "Type de Projet :",
+    "personalInfo": "Informations Personnelles",
+    "projectDetails": "Détails du Projet",
+    "instantCommunication": "Vous préférez une communication instantanée ?"
+  },
+  "buttons": {
+    "back": "Retour",
+    "continue": "Continuer",
+    "send": "Envoyer le Message",
+    "sending": "Envoi en cours..."
+  },
+  "errors": {
+    "nameRequired": "Le nom est requis",
+    "emailRequired": "L'email est requis",
+    "validEmail": "Veuillez entrer une adresse email valide",
+    "subjectRequired": "Veuillez sélectionner une catégorie de projet",
+    "messageRequired": "Veuillez décrire votre projet",
+    "messageMinLength": "Veuillez fournir plus de détails sur votre projet",
+    "fillRequired": "Veuillez remplir tous les champs obligatoires correctement.",
+    "sendFailed": "Échec de l'envoi du message. Veuillez réessayer.",
+    "networkError": "Erreur réseau. Veuillez vérifier votre connexion et réessayer."
+  },
+  "success": {
+    "message": "Votre message a été envoyé avec succès !"
+  },
+  "projectOptions": {
+    "webApp": "Application Web",
+    "mobileApp": "Application Mobile",
+    "uiUx": "Design UI/UX",
+    "branding": "Branding & Identité",
+    "digitalMarketing": "Marketing Digital",
+    "ecommerce": "Solution E-commerce",
+    "api": "Développement API",
+    "consultation": "Consultation",
+    "other": "Autre"
+  },
+  "social": {
+    "whatsapp": "WhatsApp",
+    "telegram": "Télégram",
+    "gmail": "Gmail",
+    "linkedin": "LinkedIn"
+  }
+}

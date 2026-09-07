@@ -14,7 +14,7 @@ import Service from '../components/service/Service';
 import SectionDivider from '../components/shared/SectionDivider';
 import TestimonialsSection from '../components/testimonials/TestimonialsSection';
 import StatsCard from '../components/shared/StatsCard';
-import NotificationModal from '../components/shared/NotificationModal';
+import AchievementsSection from '../components/achievements';
 
 export default function Home() {
     const { t } = useTranslation('home');
@@ -32,11 +32,7 @@ export default function Home() {
         >
             
             <PagesMetaHead title={t('page.title', 'Home')} />
-             {/* Notification Modal */}
-            <NotificationModal 
-                isOpen={showNotification} 
-                onClose={() => setShowNotification(false)} 
-            />
+         
            
             
             {/* AppBanner Section */}
@@ -56,7 +52,8 @@ export default function Home() {
             {/* Divider 1 - After Skills */}
             <SectionDivider delay={0.3} />
 
-            
+            {/* Achievements Section - Fixed */}
+            <AchievementsSection currentRole={currentRole} />
 
             {/* Divider 2 - After Achievements */}
             <SectionDivider delay={0.3} />
@@ -231,7 +228,9 @@ export async function getStaticProps({ locale }) {
                 'testimonials',
                 'blog',       
                 'about', 
-                'contact'     
+                'contact',
+                'hireme',
+               'achievements'     
             ])),
         },
     };

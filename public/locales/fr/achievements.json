@@ -1,0 +1,115 @@
+{
+  "badge": "🏆 Certifications & Réalisations",
+  "categories": {
+    "all": "Tout",
+    "certification": "Certifications",
+    "badge": "Badges",
+    "achievement": "Réalisations",
+    "course": "Formations"
+  },
+  "status": {
+    "completed": "Terminé",
+    "in-progress": "En cours",
+    "planned": "Planifié"
+  },
+  "modal": {
+    "year": "Année",
+    "status": "Statut",
+    "skills": "Compétences",
+    "about": "À propos",
+    "skillsCovered": "Compétences couvertes",
+    "verify": "Vérifier le certificat",
+    "close": "Fermer"
+  },
+  "empty": {
+    "title": "Aucune Réalisation",
+    "description": "Aucune réalisation disponible pour ce rôle.",
+    "filterEmpty": "Aucune réalisation trouvée dans cette catégorie pour votre rôle actuel."
+  },
+  "roles": {
+    "engineer": {
+      "title": "Réalisations en Ingénierie",
+      "subtitle": "Certifications, badges et réalisations dans mon parcours en génie logiciel",
+      "badge": "Certificats Techniques & Ingénierie"
+    },
+    "creator": {
+      "title": "Réalisations Créatives",
+      "subtitle": "Certifications, badges et réalisations dans mon parcours créatif",
+      "badge": "Certificats Créatifs & Design"
+    }
+  },
+  "items": {
+    "cybersecurity": {
+      "title": "Cybersécurité Essentielle",
+      "description": "Concepts fondamentaux de la cybersécurité couvrant les menaces, vulnérabilités et contrôles de sécurité dans les environnements d'entreprise.",
+      "category": "Badge",
+      "status": "Terminé",
+      "tags": ["Cybersécurité", "Analyse des menaces", "Pare-feu", "Cryptographie"],
+      "issuer": "The Linux Foundation",
+      "date": "Mai 2026"
+    },
+    "aws-cloud-essentials": {
+      "title": "AWS Cloud Computing Essentiel",
+      "description": "Services AWS, architecture cloud, sécurité et fondamentaux de tarification alignés sur les objectifs de l'examen AWS Cloud Practitioner.",
+      "category": "Certification",
+      "status": "Terminé",
+      "tags": ["AWS", "Cloud Computing", "EC2", "S3", "IAM"],
+      "issuer": "AWS Training & Certification",
+      "date": "Février 2026"
+    },
+    "auth-authorization": {
+      "title": "Authentification et Autorisation Web/API",
+      "description": "Concepts d'authentification et d'autorisation pour les applications web et API, couvrant OAuth 2.0, OpenID Connect, JWT et les meilleures pratiques de contrôle d'accès sécurisé.",
+      "category": "Badge",
+      "status": "Terminé",
+      "tags": ["Authentification", "Autorisation", "OAuth", "OpenID", "JWT", "Sécurité API"],
+      "issuer": "The Linux Foundation",
+      "date": "Mars 2026"
+    },
+    "intro-to-kubernetes": {
+      "title": "Introduction à Kubernetes",
+      "description": "Apprenez les fondamentaux de Kubernetes, y compris l'orchestration de conteneurs, la gestion des pods et l'administration des clusters.",
+      "category": "Badge",
+      "status": "Terminé",
+      "tags": ["Kubernetes", "Orchestration de conteneurs", "Cloud Native"],
+      "issuer": "Linux Foundation",
+      "date": "Mai 2026"
+    },
+    "content-creation": {
+      "title": "Maîtrise de la Création de Contenu",
+      "description": "Maîtrise des stratégies de création de contenu incluant le storytelling, l'engagement de l'audience et la distribution multi-plateformes.",
+      "category": "Réalisation",
+      "status": "Terminé",
+      "tags": ["Création de contenu", "Storytelling", "Médias numériques", "Engagement"],
+      "issuer": "Google Digital Garage",
+      "date": "Avril 2026"
+    },
+    "graphic-design": {
+      "title": "Fondamentaux du Design Graphique",
+      "description": "Certifié en principes de design graphique incluant la typographie, la théorie des couleurs, la mise en page et la communication visuelle avec Adobe Creative Suite.",
+      "category": "Certification",
+      "status": "Terminé",
+      "tags": ["Design Graphique", "Typographie", "Théorie des couleurs", "Adobe Creative Suite"],
+      "issuer": "Adobe Education",
+      "date": "Mars 2026"
+    },
+    "digital-marketing": {
+      "title": "Stratégie de Marketing Digital",
+      "description": "Certifié en stratégies de marketing digital incluant SEO, marketing sur les réseaux sociaux, campagnes email et analyses.",
+      "category": "Badge",
+      "status": "Terminé",
+      "tags": ["Marketing Digital", "SEO", "Réseaux sociaux", "Analyses"],
+      "issuer": "HubSpot Academy",
+      "date": "Février 2026"
+    },
+    "video-editing": {
+      "title": "Montage Vidéo & Production",
+      "description": "Cours professionnel de montage vidéo et production couvrant le storytelling, les techniques de montage, l'étalonnage des couleurs et le design audio.",
+      "category": "Formation",
+      "status": "Terminé",
+      "tags": ["Montage Vidéo", "Production", "Étalonnage des couleurs", "Design audio"],
+      "issuer": "Skillshare",
+      "date": "Janvier 2026"
+    }
+  }
+}

@@ -79,6 +79,7 @@
     "saving": "Saving...",
     "processing": "Processing..."
   },
+
    "footer": {
     "copyright": "© {{year}} Oussama Missaoui. All rights reserved.",
     "builtWith": "Built with",
@@ -109,5 +110,44 @@
     "accept": "Accept",
     "decline": "Decline",
     "settings": "Cookie Settings"
+  },
+
+  
+
+
+
+  "notification": {
+    "title": "Portfolio Updates & Roadmap",
+    "subtitle": "What's new and what's coming next",
+    "status": "Portfolio Status",
+    "statusMessage": "Fully operational with all core features",
+    "currentFeatures": "✨ Current Features",
+    "inProgress": "🚧 In Development",
+    "upcomingFeatures": "🔮 Coming Soon",
+    "features": {
+      "fullStack": "Full-Stack Development",
+      "mobile": "Mobile App Development",
+      "i18n": "Multi-language Support (EN/FR)",
+      "performance": "Performance Optimized",
+      "security": "Security Best Practices"
+    },
+    "upcoming": {
+      "blog": "Technical Blog Platform",
+      "interactive": "Interactive Code Playground",
+      "pwa": "PWA Mobile App",
+      "cms": "Headless CMS Integration",
+      "analytics": "Advanced Analytics Dashboard"
+    },
+    "progress": {
+      "portfolio": "Portfolio v3.0 Redesign",
+      "api": "REST API Documentation",
+      "testimonials": "Video Testimonials"
+    },
+    "feedback": {
+      "title": "Have suggestions?",
+      "message": "I'd love to hear your ideas for improving this portfolio!",
+      "button": "Share Feedback →"
+    },
+    "footer": "This notification won't bother you again until the next major update."
   }
 }
