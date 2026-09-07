@@ -1,5 +1,6 @@
 // hooks/useToolkitData.js
 import { useTranslation } from 'next-i18next';
+import { useMemo } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as SiIcons from 'react-icons/si';
 import * as FiIcons from 'react-icons/fi';
@@ -116,37 +117,46 @@ const proficiencyColors = {
 export const useToolkitData = () => {
   const { t } = useTranslation('about');
 
- 
-  // Get toolkit data from translations
-  const toolkit = t('toolkit', { returnObjects: true }) || {
-    heading: "Development Toolkit & Ecosystem",
-    categories: {
-      all: "All Tools",
-      development: "Development",
-      design: "Design",
-      system: "Operating Systems",
-      devops: "DevOps",
-      deployment: "Deployment",
-      cloud: "Cloud Services",
-      database: "Databases",
-      collaboration: "Collaboration",
-      productivity: "Productivity",
-      versionControl: "Version Control"
-    },
-    proficiency: {
-      expert: "Expert",
-      advanced: "Advanced",
-      intermediate: "Intermediate",
-      beginner: "Beginner"
-    },
-    tools: []
-  };
+  // Get toolkit data from translations using the same pattern as useHireMeData
+  const toolkitData = useMemo(() => {
+    // Get each section individually with fallbacks
+    const heading = t('toolkit.heading', 'Development Toolkit & Ecosystem');
+    const subtitle = t('toolkit.subtitle');
+    const categories = {
+      all: t('toolkit.categories.all', 'All Tools'),
+      development: t('toolkit.categories.development', 'Development'),
+      design: t('toolkit.categories.design', 'Design'),
+      system: t('toolkit.categories.system', 'Operating Systems'),
+      devops: t('toolkit.categories.devops', 'DevOps'),
+      deployment: t('toolkit.categories.deployment', 'Deployment'),
+      cloud: t('toolkit.categories.cloud', 'Cloud Services'),
+      database: t('toolkit.categories.database', 'Databases'),
+      collaboration: t('toolkit.categories.collaboration', 'Collaboration'),
+      productivity: t('toolkit.categories.productivity', 'Productivity'),
+      versionControl: t('toolkit.categories.versionControl', 'Version Control'),
+    };
 
-  // Get tools array
-  const toolsArray = toolkit.tools || [];
+    const proficiency = {
+      expert: t('toolkit.proficiency.expert', 'Expert'),
+      advanced: t('toolkit.proficiency.advanced', 'Advanced'),
+      intermediate: t('toolkit.proficiency.intermediate', 'Intermediate'),
+      beginner: t('toolkit.proficiency.beginner', 'Beginner'),
+    };
+
+    // Get tools array from translation or use default
+    const tools = t('toolkit.tools', { returnObjects: true }) || [];
+
+    return {
+      heading,
+      subtitle,
+      categories,
+      proficiency,
+      tools,
+    };
+  }, [t]);
 
   // Transform tools data by adding icon components and IDs
-  const clientsData = toolsArray.map((tool) => ({
+  const clientsData = toolkitData.tools.map((tool) => ({
     id: tool.id || uuidv4(),
     title: tool.title || '',
     icon: iconMap[tool.icon] || FiIcons.FiCode, // Fallback icon
@@ -157,24 +167,24 @@ export const useToolkitData = () => {
   }));
 
   // Get categories from translations
-  const toolkitCategories = toolkit.categories || {};
+  const toolkitCategories = toolkitData.categories || {};
 
   // Proficiency levels with labels from translations
   const proficiencyLevels = {
     expert: { 
-      label: toolkit.proficiency?.expert || 'Expert', 
+      label: toolkitData.proficiency?.expert || 'Expert', 
       color: proficiencyColors.expert 
     },
     advanced: { 
-      label: toolkit.proficiency?.advanced || 'Advanced', 
+      label: toolkitData.proficiency?.advanced || 'Advanced', 
       color: proficiencyColors.advanced 
     },
     intermediate: { 
-      label: toolkit.proficiency?.intermediate || 'Intermediate', 
+      label: toolkitData.proficiency?.intermediate || 'Intermediate', 
       color: proficiencyColors.intermediate 
     },
     beginner: { 
-      label: toolkit.proficiency?.beginner || 'Beginner', 
+      label: toolkitData.proficiency?.beginner || 'Beginner', 
       color: proficiencyColors.beginner 
     },
   };
@@ -195,7 +205,8 @@ export const useToolkitData = () => {
     .slice(0, 12);
 
   return {
-    clientsHeading: toolkit.heading || 'Development Toolkit & Ecosystem',
+    clientsHeading: toolkitData.heading,
+    clentsSubtitle: toolkitData.subtitle,
     clientsData,
     toolkitCategories,
     proficiencyLevels,
